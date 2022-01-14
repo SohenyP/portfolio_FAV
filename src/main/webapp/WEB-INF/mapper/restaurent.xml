@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- https://mybatis.org/mybatis-3/ko/getting-started.html -->
+<!-- 매핑된 SQL 구문 살펴보기에서 가져옴 -->
+<mapper namespace="restaurent">
+
+	<!-- f_restaurent 식당 목록 받아오기 -->
+	<select id="selectRestaurent" parameterType="restaurentVO" resultType="restaurentVO">
+		SELECT rowNum, restauName, restauAddr, restauLat, restauLng, restauCity, restauImg1, restauImg2, restauImg3, restauStyle, restauMenu, memberId 
+		FROM restaurent_list
+		<where>
+			<if test="memberId != null">memberId = #{memberId}</if>
+			<if test="restauName != null">AND restauName = #{restauName}</if>
+		</where>
+	</select>
+
+
+</mapper>

@@ -1,0 +1,2161 @@
+@charset "UTF-8";
+
+/* 초기화 */
+@import url("http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Raleway:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+@font-face {
+  font-family: "DoHyeon-Regular";
+    src: url('../media/Do_Hyeon/DoHyeon-Regular.eot');
+    src: url('../media/Do_Hyeon/DoHyeon-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.woff2') format('woff2'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.woff') format('woff'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.ttf') format('truetype'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.svg#DoHyeon-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+ 	font-family: "Nanum_Gothic";
+    src: url('../media/Nanum_Gothic/NanumGothic.eot');
+    src: url('../media/Nanum_Gothic/NanumGothic.eot?#iefix') format('embedded-opentype'),
+        url('../media/Nanum_Gothic/NanumGothic.woff2') format('woff2'),
+        url('../media/Nanum_Gothic/NanumGothic.woff') format('woff'),
+        url('../media/Nanum_Gothic/NanumGothic.ttf') format('truetype'),
+        url('../media/Nanum_Gothic/NanumGothic.svg#NanumGothic') format('svg');
+    font-weight: 900;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DoHyeon-Regular", sans-serif;
+  color: #323232;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  max-width: 3840px;
+  min-width: 480px;
+}
+
+a {
+  text-decoration: none;
+  color: #323232;
+}
+
+/* 데스크탑 */
+
+/* Home 몸통 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* 헤더 기본틀 */
+.container header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+  position: fixed;
+  background-color: #fff;
+  z-index: 100;
+  /* min-width: 480px; */
+}
+/* 헤더 가운데 최상단 로고 사이즈 */
+.container header > a {
+  /* padding: 1rem; */
+  margin-bottom: 60px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.container header > a > img {
+  width: 400px;
+  height: 80px;
+  transition: 0.3s;
+}
+
+/* 헤더 네비, 검색, 유저 영역 설정 */
+.container header .navNsearch {
+  width: 60%; /*변경*/
+  display: flex;
+}
+
+/* 헤더 토탈 메뉴 영역 */
+.container header .totalmenu {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.container header .totalmenu i {
+  height: 100%;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.container header .totalmenu i:hover {
+  color: #22c7a9;
+}
+.container header .totalmenu i:hover > ul {
+  display: block;
+}
+.container header .totalmenu ul {
+  font-size: 20px;
+  font-weight: normal;
+  width: 280px;
+  z-index: 10;
+  position: absolute;
+  top: 88px;
+  left: -200px;
+  background-color: rgba(249, 250, 210, 0.8);
+  display: none;
+}
+.container header .totalmenu ul li {
+  padding: 19px;
+  display: flex;
+  justify-content: space-between;
+}
+.container header .totalmenu ul li:hover {
+  background-color: rgba(249, 250, 210, 0.9);
+  padding: 25px;
+  transition: 0.5s;
+}
+.container header .totalmenu ul li:hover > a {
+  color: #22c7a9;
+  font-size: 22px;
+  transition: 0.5s;
+}
+.container header .totalmenu ul li:hover img {
+  display: inline;
+}
+.container header .totalmenu ul li span img {
+  width: 25px;
+  height: 25px;
+  display: none;
+}
+/* 헤더 가운데 메인 메뉴 영역 */
+.container header .navNsearch .search-inner {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+}
+.container header .navNsearch .search-inner ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.container header .navNsearch .search-inner ul li {
+  flex: 1;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+.container header .navNsearch .search-inner ul li a {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.container header .navNsearch .search-inner ul li a:after {
+  content: "";
+  border-bottom: 2px solid;
+  padding: 0 10px;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+.container header .navNsearch .search-inner ul li a:hover:after {
+  transform: scaleX(1);
+  width: 5%;
+  color: #22c7a9;
+}
+.container header .navNsearch .search-inner ul li a:hover {
+  color: #22c7a9;
+}
+
+/* 헤더 우측 검색, 사용자 메뉴 */
+.container header .navNsearch .usernav {
+  flex: 2;
+  width: 100%;
+  height: 100%;
+}
+.container header .navNsearch .usernav > ul {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+/* 헤더 우측 검색바 */
+.container header .navNsearch .usernav > ul > li:nth-child(1) {
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search {
+  background-color: #22c7a9;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  /* 얘를 기준으로 relative주고, 나머지 전부 absolute로 위치 조절 */
+  position: relative;
+  transition: 0.5s;
+}
+/* 버튼 누를시 active 클래스 추가해서 width만 확장 */
+.container header .usernav > ul > li:nth-child(1) > #user-search.wide {
+  width: 168px;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  /* 가로줄 가운데 */
+  text-align: center;
+  /* 세로줄 가운데 */
+  line-height: 40px;
+  font-size: 1.2rem;
+  background-color: #22c7a9;
+  cursor: pointer;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .inputbox {
+   width: 100px;
+  position: absolute;
+  top: 8px;
+  left: 40px;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .inputbox input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  background-color: #22c7a9;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .inputbox input[type="text"]:focus {
+  background-color: #22c7a9;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .clear {
+  /* 위치가 이래도 가려지는건, search안에 있지만 사이즈가 50x50이라 가려짐. width확장되면 나타남 */
+  position: absolute;
+  right: 10px;
+  top: 25%;
+  cursor: pointer;
+}
+
+/* 헤더 우측 로그인, 회원가입 */
+.container header .navNsearch .usernav > ul > li:nth-child(2) {
+  padding: 2rem 2rem 1rem 2rem;
+  font-size: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2):hover > i {
+  color: #22c7a9;
+  transition: 0.5s ease-out;
+}
+/* .container header .navNsearch .usernav > ul > li:nth-child(2):hover > i > ul {
+  display: block;
+} */
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i {
+  position: relative;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul {
+  position: absolute;
+  top: 54px;
+  /* left: -55px; */
+  left: -100px;
+  z-index: 10;
+  width: 300px;
+  font-size: 1.5rem;
+  text-align: center;
+  display: none;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li {
+  padding: 1rem 0.5rem;
+  width: 150px;
+  background-color: rgba(249, 250, 210, 0.8);
+  font-size: 20px;
+  font-weight: normal;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li:hover {
+  background-color: rgba(249, 250, 210, 0.9);
+  transition: 0.5s ease-out;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li:hover > a {
+  color: #22c7a9;
+  font-size: 22px;
+  padding: 1.5rem;
+  transition: 0.5s;
+}
+
+/* 어사이드 공지사항 슬라이더 */
+.container aside {
+  width: 100%;
+  position: relative;
+  top: 250px;
+  min-width: 480px;
+}
+
+
+/* 메인 */
+.container main {
+  width: 100%;
+  position: relative;
+  top: 250px;
+  min-width: 480px;
+}
+.container main section {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+.container main section h1 {
+  font-size: 3rem;
+  padding: 3rem 0;
+}
+
+/* 푸터 */
+.container footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1.9rem;
+  position: relative;
+  top: 250px;
+}
+
+.container footer .f-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container footer #wrap1 {
+  background-color: #f1f1f1;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.container footer #wrap1 > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: left;
+  width: 70%;
+  margin: 3rem 0;
+}
+.container footer #wrap1 > ul > li {
+  width: 100%;
+}
+.container footer #wrap1 > ul > li > h4::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  width: 90%;
+  margin: 0.5rem 0;
+}
+
+.container footer #wrap1 ul li ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 0.95rem;
+}
+.container footer #wrap1 ul li ul li {
+  padding: 0.5rem;
+}
+.container footer #wrap1 ul li ul li a {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.8rem;
+}
+.container footer #wrap1 ul li ul li a:hover {
+  text-decoration: underline;
+}
+.container footer #wrap2 {
+  width: 100%;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+}
+.container footer #wrap2 .wrap-inner {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.container footer #wrap2 ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  /* flex-wrap: wrap; */
+}
+.container footer #wrap2 ul li,
+.container footer #wrap2 ul li a {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+.container footer #wrap2 .rights li:not(:nth-child(5)):after {
+  content: "";
+  display: inline;
+  border-right: 1px solid #cccccc;
+  margin: 0 2rem;
+  text-align: center;
+}
+.container footer #wrap2 .sns li {
+  margin: 0 0.5rem;
+}
+.container footer #wrap3 {
+  width: 100%;
+  margin-top: 3rem;
+}
+.container footer #wrap3 .info {
+  width: 66%;
+  padding-right: 1rem;
+}
+.container footer #wrap3 .info img {
+  width: 300px;
+  height: 65px;
+}
+.container footer #wrap3 .info p {
+  color: #cccccc;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.container footer #wrap3 .info p i {
+  color: #cccccc;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.container footer #wrap3 .contact .phone::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  margin: 1rem 0;
+}
+
+/* 모바일 바 */
+.mobile-bar {
+  border: 0.1em solid #ddd;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  padding: 0.5em 0;
+  justify-content: center;
+}
+.mobile-bar ul {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 0;
+  padding: 0 1em;
+}
+.mobile-bar ul li {
+  margin: 0 auto;
+  padding: 0 2em;
+  color: #a3a3a3;
+}
+.mobile-bar label {
+  cursor: pointer;
+  font-size: 0.6em;
+}
+.mobile-bar label i {
+  font-size: 2.3em;
+}
+.mobile-bar input {
+  display: none;
+}
+.mobile-bar input:checked ~ label {
+  color: #222222;
+}
+.mobile-bar input:checked ~ label > i {
+  color: #22c7a9;
+}
+
+
+
+/* 로그인 CSS */
+
+/* 로그인파트 */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main .login-cont {
+    width: 500px;
+    min-width: 300px;
+    padding: 5rem 0;
+    margin: 0 .5rem
+}
+main .login-cont .login-form input[type="text"],
+main .login-cont .login-form input[type="password"] {
+    width: 100%;
+    margin: .2rem 0;
+    padding: .8rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  	font-family: 'Noto Sans KR', sans-serif;
+  	font-size: 1rem;
+}
+main .login-cont .login-form input[type="text"]::placeholder,
+main .login-cont .login-form input[type="password"]::placeholder {
+    font-size: 1rem;
+    color: #ccc;
+    letter-spacing: 1.5px;
+  	font-family: 'Noto Sans KR', sans-serif;
+}
+main .login-cont .login-form input[type="text"]:focus,
+main .login-cont .login-form input[type="password"]:focus {
+    outline: 1px solid #323232;
+}
+main .login-cont .login-form form .secure-find {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+main .login-cont .login-form form .secure-find .findInfo a:first-child::after {
+    content: "";
+    display: inline;
+    border-right: 1px solid #ccc;
+    margin-left: .5rem;
+}
+main .login-cont .login-form button[type="submit"]
+{
+    width: 100%;
+    background-color: #22c7a9;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    padding: .5rem 0;
+    cursor: pointer;
+}
+main .login-cont #findForm button[type="button"] {
+    width: 49%;
+    background-color: #22c7a9;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+    padding: .5rem 0;
+    cursor: pointer;
+    display: inline;
+}
+main .login-cont .make-account {
+    width: 100%;
+    display: block;
+    margin-top: .5rem;
+    padding: .5rem 0;
+    border: 1px solid #22c7a9;
+    border-radius: 5px;
+}
+main .login-cont .make-account span {
+    height: 100%;
+    width: 100%;
+    color: #22c7a9;
+}
+
+/* 모달 */
+#modalCont-idpw, #modalCont-find  {
+    /* 화면 가득 채운채 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgba(219, 219, 219, .7);
+    /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 모달 숨기기 */
+    display: none;
+}
+#modalCont-idpw .modal,
+#modalCont-find .modal {
+    background-color: #fff;
+    width: 350px;
+    padding: 2rem;
+    box-shadow: .2rem .2rem .3rem .2rem #ddd;
+    text-align: center;
+    display: none;
+}
+#modalCont-idpw .title,
+#modalCont-find .title {
+    text-align: left;
+}
+#modalCont-idpw .modal h2::after,
+#modalCont-find .modal h2::after {
+    content: "";
+    display: block;
+    border: 1px solid #bbbbbb;
+}
+#modalCont-idpw .modal p,
+#modalCont-find .modal p {
+    width: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+.loginModalBtn,
+#findModalBtn {
+    background: #22c7a9;
+    padding: .5rem 5rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+}
+/* 회원가입 Before */
+main .chooseWhichTypeOfMember {
+    min-width: 400px;
+    padding: 5rem 0;
+}
+main .chooseWhichTypeOfMember h1 {
+    margin-bottom: 2rem;
+}
+main .chooseWhichTypeOfMember h1:after {
+	content: "";
+	display: block;
+	border: 1px solid #323232;
+	margin-top: 20px;
+}
+main .chooseWhichTypeOfMember ul {
+    width: 100%;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main .chooseWhichTypeOfMember ul a li {
+	padding: 10px 50px;
+	margin: 0 15px;
+	background-color: #22c7a9;
+	cursor: pointer;
+}
+main .chooseWhichTypeOfMember ul a li {
+  	font-weight: bold;
+	font-size: 23px;
+  	font-family: "Nanum_Gothic";
+	color: #fff;
+}
+main .chooseWhichTypeOfMember ul a li span {
+  	font-family: "Nanum_Gothic";
+	font-size: 15px;
+	color: #fff;
+}
+main .chooseWhichTypeOfMember ul a li:hover {
+	background-color: #64d7c2;
+}
+
+/* 회원가입 CSS */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+main .makeAccount-cont {
+    width: 100%;
+    min-width: 400px;
+    padding: 5rem 0;
+}
+main .makeAccount-cont h1 {
+    margin-bottom: 2rem;
+}
+main .makeAccount-cont .account-form {
+    width: 100%;
+    padding-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+}
+main .makeAccount-cont .account-form form>p {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    border-bottom: 2px solid black;
+  	font-family: 'Noto Sans KR', sans-serif;
+    font-size: .8rem;
+    padding-bottom: .5rem;
+    margin-bottom: 2rem;
+}
+main .makeAccount-cont .account-form form p span {
+    color: #b20000;
+    padding: 0 .3rem;
+}
+main .makeAccount-cont .account-form form table {
+    border-spacing: 1.5rem;
+}
+main .makeAccount-cont .account-form form table tbody tr th {
+    text-align: left;
+    width: 200px;
+    font-size: 1.3rem;
+    font-weight: normal;
+    /* font-family: "Noto_Sans_KR",sans-serif; */
+}
+main .makeAccount-cont .account-form form table tbody tr th span {
+    color: #b20000;
+    padding: 0 .3rem;
+}
+main .makeAccount-cont .account-form form table tbody tr:not(:last-child) td {
+	text-align: left;
+}
+/* 아이디 */
+main .makeAccount-cont .account-form form table tbody tr#idRuleRow {
+	display: none;
+}
+main .makeAccount-cont .account-form form table tbody tr#idRuleRow td ul#idRule {
+	text-align: left;
+}
+main .makeAccount-cont .account-form form table tbody tr#idRuleRow td ul#idRule li.invalid:before {
+	content: "✖ ";
+	display: inline;
+}
+main .makeAccount-cont .account-form form table tbody tr#idRuleRow td ul#idRule li{
+  	font-family: 'Noto Sans KR', sans-serif;
+ 	font-weight: bold;
+    color: #b20000;
+    font-size: 15px;
+    line-height: 35px;
+}
+main .makeAccount-cont .account-form form table tbody tr#idRuleRow td ul#idRule li.valid {
+	color: #22c7a9;
+}
+main .makeAccount-cont .account-form form table tbody tr#idRuleRow td ul#idRule li.valid:before {
+	content: "✔ ";
+	display: inline;
+}
+/* 비밀번호 */
+main .makeAccount-cont .account-form form table tbody tr#pwRuleRow {
+	display: none;
+}
+main .makeAccount-cont .account-form form table tbody tr#pwRuleRow td ul#pwRule {
+	text-align: left;
+}
+main .makeAccount-cont .account-form form table tbody tr#pwRuleRow td ul#pwRule li.invalid:before {
+	content: "✖ ";
+	display: inline;
+}
+main .makeAccount-cont .account-form form table tbody tr#pwRuleRow td ul#pwRule li{
+  	font-family: 'Noto Sans KR', sans-serif;
+ 	font-weight: bold;
+    color: #b20000;
+    font-size: 15px;
+    line-height: 35px;
+}
+main .makeAccount-cont .account-form form table tbody tr#pwRuleRow td ul#pwRule li.valid {
+	color: #22c7a9;
+}
+main .makeAccount-cont .account-form form table tbody tr#pwRuleRow td ul#pwRule li.valid:before {
+	content: "✔ ";
+	display: inline;
+}
+main .makeAccount-cont .account-form form table tbody tr#currentPwPart td #incorrect {
+    font-size: .8rem;
+    font-weight: bold;
+  	font-family: 'Noto Sans KR', sans-serif;
+    padding-top: .5rem;
+    color: #b20000;
+    display: none;
+}
+main .makeAccount-cont .account-form form table tbody tr#pwPart2 td #wrong{
+    font-size: .8rem;
+    font-weight: bold;
+  	font-family: 'Noto Sans KR', sans-serif;
+    padding-top: .5rem;
+    color: #b20000;
+    display: none;
+}
+/* 이메일 */
+main .makeAccount-cont .account-form form table tbody tr#emailRuleRow {
+	display: none;
+}
+main .makeAccount-cont .account-form form table tbody tr#emailRuleRow td ul#emailRule {
+	text-align: left;
+}
+main .makeAccount-cont .account-form form table tbody tr#emailRuleRow td ul#emailRule li.invalid:before {
+	content: "✖ ";
+	display: inline;
+}
+main .makeAccount-cont .account-form form table tbody tr#emailRuleRow td ul#emailRule li{
+  	font-family: 'Noto Sans KR', sans-serif;
+ 	font-weight: bold;
+    color: #b20000;
+    font-size: 15px;
+    line-height: 35px;
+}
+main .makeAccount-cont .account-form form table tbody tr#emailRuleRow td ul#emailRule li.valid {
+	color: #22c7a9;
+}
+main .makeAccount-cont .account-form form table tbody tr#emailRuleRow td ul#emailRule li.valid:before {
+	content: "✔ ";
+	display: inline;
+}
+
+main .makeAccount-cont .account-form form table tbody tr td input {
+    width: 300px;
+    padding: .5rem 1rem;
+    margin-right: .5rem;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    font-weight: normal;
+  	font-family: 'Noto Sans KR', sans-serif;
+}
+main .makeAccount-cont .account-form form table tbody tr td input::placeholder {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #bbbbbb;
+}
+main .makeAccount-cont .account-form form table tbody tr:not(tr#agreementTr) td button{
+    border: 1px solid #22c7a9;
+    border-radius: 5px;
+    color: #22c7a9;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight:500;
+    width: 130px;
+    padding: 10px 0;
+}
+main .makeAccount-cont .account-form form table tbody tr:not(tr#agreementTr) td button:hover,
+main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #getaddress:hover {
+    color: #fff;
+    background: #22c7a9;
+}
+main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress {
+    text-align: left;
+    height: 100%;
+}
+main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress input {
+    margin-bottom: 1rem;
+}
+main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #postcode {
+    width: 170px;
+}
+main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #getaddress {
+    width: 110px;
+    border: 1px solid #22c7a9;
+    border-radius: 5px;
+    color: #22c7a9;
+    background-color: transparent;
+    font-family: "DoHyeon-Regular", sans-serif;
+    font-size: 1.1rem;
+}
+main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #address  {
+    width: 440px;
+}
+main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #detailAddress {
+    width: 440px;
+}
+main .makeAccount-cont .account-form form table tbody tr#birthTr td .newBirth {
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    width: 300px;
+}
+main .makeAccount-cont .account-form form table tbody tr#birthTr td .newBirth input {
+    width: 93px;
+    border: none;
+    outline: none;
+    text-align: center;
+    margin: 0;
+}
+main .makeAccount-cont .account-form form table tbody tr#birthTr td .newBirth span {
+    display: inline;
+    height: 20px;
+    width: 1px;
+    border-right: 1px solid #bbbbbb;
+}
+main .makeAccount-cont .account-form form table tbody tr:last-child td div {
+    text-align: left;
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .makeAccount-cont .account-form form table tbody tr:last-child td div input {
+    display: none;
+} 
+main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"] + label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 70px;
+}
+main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"] + label:before {
+    content: "√";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    width: 35px;
+    height: 35px;
+    border: 5px solid #bbbbbb;
+    border-radius: 50px;
+    color: #bbbbbb;
+}
+main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"]:checked + label:after {
+    content: "√";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    width: 35px;
+    height: 35px;
+    border: 5px solid #22c7a9;
+    border-radius: 50px;
+    color: #22c7a9;
+}
+main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"] + label .label-text {
+    font-size: 1rem;
+  	font-family: 'Noto Sans KR', sans-serif;
+
+}
+main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"] + label .mandy {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #bbbbbb;
+}
+main .makeAccount-cont .account-form form table tbody tr:last-child td div button {
+    float: right;
+    text-decoration: underline;
+}
+main .makeAccount-cont .account-form form #join,
+main .makeAccount-cont .account-form form #revise {
+    width: 700px;
+    background-color: #22c7a9;    
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 2.5rem;
+    padding: 1rem;
+    margin: 5rem 0;
+    cursor: pointer;
+}
+
+/* 모달 */
+#modalCont-id {
+    /* 화면 가득 채운채 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgba(219, 219, 219, .7);
+    /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 모달 숨기기 */
+    display: none;
+}
+#modalCont-id-check {
+    /* 화면 가득 채운채 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgba(219, 219, 219, .7);
+    /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 모달 숨기기 */
+    display: none;
+}
+#modalCont-email {
+    /* 화면 가득 채운채 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgba(219, 219, 219, .7);
+    /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 모달 숨기기 */
+    display: none;
+}
+#modalCont-email-check {
+    /* 화면 가득 채운채 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgba(219, 219, 219, .7);
+    /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 모달 숨기기 */
+    display: none;
+}
+#modalCont-phone {
+    /* 화면 가득 채운채 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: rgba(219, 219, 219, .7);
+    /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 모달 숨기기 */
+    display: none;
+}
+#modalCont-phone .modal,
+#modalCont-id .modal,
+#modalCont-id-check .modal,
+#modalCont-email .modal,
+#modalCont-email-check .modal {
+    background-color: #fff;
+    width: 300px;
+    padding: 2rem;
+    box-shadow: .2rem .2rem .3rem .2rem #ddd;
+    text-align: center;
+}
+#modalCont-phone .title,
+#modalCont-id .title,
+#modalCont-id-check .title,
+#modalCont-email .title,
+#modalCont-email-check .title {
+    text-align: left;
+}
+#modalCont-phone .modal h2::after,
+#modalCont-id .modal h2::after,
+#modalCont-id-check.modal h2::after,
+#modalCont-email .modal h2::after,
+#modalCont-email-check .modal h2::after {
+    content: "";
+    display: block;
+    border: 1px solid #bbbbbb;
+}
+#modalCont-phone .modal p,
+#modalCont-id .modal p,
+#modalCont-id-check .modal p,
+#modalCont-email .modal p,
+#modalCont-email-check .modal p {
+    width: 100%;
+    padding: 3rem 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+#makeAccountBtn1,
+#makeAccountBtn2,
+#makeAccountBtn3 {
+    background: #22c7a9;
+    padding: .5rem 5rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+}
+
+
+
+/* 페이브 소개 CSS */
+header {
+  z-index: 500;
+}
+.videoCont {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  top: 250px;
+  z-index: 1;
+  object-fit: contain;
+}
+.videoCont #videobg {
+  width: 100%;
+  max-width: 3840px;
+}
+.brandTitle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+.brandTitle h1 {
+  font-size: 12rem;
+  margin-bottom: 5rem;
+  color: #22c7a9;
+  background-clip: text;
+  text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+}
+  .brandTitle p {
+  font-size: 2rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #fff;
+}
+
+
+/* 식당찾기 & 지역별 식당 CSS */
+.containerForRestaurent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  max-width: 3840px;
+}
+
+/* 헤더 기본틀 */
+.containerForRestaurent header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+  position: fixed;
+  background-color: #fff;
+  z-index: 100;
+}
+/* 헤더 가운데 최상단 로고 사이즈 */
+.containerForRestaurent header > a {
+  /* padding: 1rem; */
+  margin-bottom: 4rem;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.container header > a > img {
+  width: 400px;
+  height: 80px;
+  transition: 0.3s;
+}
+
+/* 헤더 네비, 검색, 유저 영역 설정 */
+.containerForRestaurent header .navNsearch {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 헤더 토탈 메뉴 영역 */
+.containerForRestaurent header .totalmenu {
+  flex: 2;
+  height: 100%;
+}
+/* 헤더 가운데 메인 메뉴 영역 */
+.containerForRestaurent header .navNsearch .search-inner {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+}
+.containerForRestaurent header .navNsearch .search-inner ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.containerForRestaurent header .navNsearch .search-inner ul li {
+  flex: 1;
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+.containerForRestaurent header .navNsearch .search-inner ul li a {
+  padding: 1rem;
+  display: flex;
+  font-size: 18px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.containerForRestaurent header .navNsearch .search-inner ul li a:after {
+  content: "";
+  border-bottom: 2px solid;
+  padding: 0 0.5rem;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+.containerForRestaurent header .navNsearch .search-inner ul li a:hover:after {
+  transform: scaleX(1);
+  width: 5%;
+  color: #22c7a9;
+}
+.containerForRestaurent header .navNsearch .search-inner ul li a:hover {
+  color: #22c7a9;
+}
+
+/* 헤더 우측 검색, 사용자 메뉴 */
+.containerForRestaurent header .navNsearch .usernav {
+  flex: 2;
+  width: 100%;
+  height: 100%;
+}
+.containerForRestaurent header .navNsearch .usernav > ul {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+/* 헤더 우측 검색바 */
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(1) {
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(1) > #user-search {
+  background-color: #22c7a9;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  /* 얘를 기준으로 relative주고, 나머지 전부 absolute로 위치 조절 */
+  position: relative;
+  transition: 0.5s;
+}
+/* 버튼 누를시 active 클래스 추가해서 width만 확장하기 */
+.containerForRestaurent header .usernav > ul > li:nth-child(1) > #user-search.wide {
+  width: 180px;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(1) > #user-search
+  .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  /* 가로줄 가운데 */
+  text-align: center;
+  /* 세로줄 가운데 */
+  line-height: 40px;
+  font-size: 1.2rem;
+  background-color: #22c7a9;
+  cursor: pointer;
+}
+.containerForRestaurent
+  header
+  .navNsearch
+  .usernav
+  > ul
+  > li:nth-child(1)
+  > #user-search
+  .inputbox {
+  width: 100px;
+  position: absolute;
+  top: 8px;
+  left: 40px;
+}
+.containerForRestaurent
+  header
+  .navNsearch
+  .usernav
+  > ul
+  > li:nth-child(1)
+  > #user-search
+  .inputbox
+  input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  background-color: #22c7a9;
+}
+.containerForRestaurent
+  header
+  .navNsearch
+  .usernav
+  > ul
+  > li:nth-child(1)
+  > #user-search
+  .inputbox
+  input[type="text"]:focus {
+  background-color: #22c7a9;
+}
+.containerForRestaurent
+  header
+  .navNsearch
+  .usernav
+  > ul
+  > li:nth-child(1)
+  > #user-search
+  .clear {
+  /* 위치가 이래도 가려지는건, search안에 있지만 사이즈가 50x50이라 가려짐. width확장되면 나타남 */
+  position: absolute;
+  right: 10px;
+  top: 25%;
+  cursor: pointer;
+}
+
+/* 헤더 우측 로그인, 회원가입 */
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2) {
+  padding: 2rem 2rem 1rem 2rem;
+  font-size: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2):hover > i {
+  color: #22c7a9;
+  transition: 0.5s ease-out;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2):hover > i > ul {
+  display: block;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2) > i {
+  position: relative;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2) > i > ul {
+  position: absolute;
+  top: 54px;
+  left: -55px;
+  z-index: 10;
+  width: 300px;
+  font-size: 1.5rem;
+  text-align: center;
+  display: none;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li {
+  padding: 1rem 0.5rem;
+  width: 150px;
+  background-color: rgba(249, 250, 210, 0.8);
+  font-size: 20px;
+  font-weight: normal;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li:hover {
+  background-color: rgba(249, 250, 210, 0.9);
+  transition: 0.5s ease-out;
+}
+.containerForRestaurent header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li:hover > a {
+  color: #22c7a9;
+  font-size: 22px;
+  padding: 1.5rem;
+  transition: 0.5s;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* top: 89px; */
+}
+
+.restauCont {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.restauList {
+  flex: 2.5;
+  margin-top: 2.5rem;
+  padding: 3rem 20px;
+  min-width: 600px;
+  max-width: 600px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.restauList::-webkit-scrollbar {
+  display: none;
+}
+
+.restauMap {
+  flex: 5;
+}
+
+.restauMap {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.restauMap iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+/* 구글맵 */
+/* 인폼 텍스트 */
+.gm-style-iw-d>div {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(31, 180, 154);
+  text-shadow: 1px 2px 1px rgba(0,0,0,1);
+}
+/* 마커 인폼 배경 */
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track,
+.gm-style .gm-style-iw-d::-webkit-scrollbar-track-piece,
+.gm-style-iw-d,
+.gm-style .gm-style-iw-c  {
+    background-color: #f0d061;
+}
+
+.gm-style .gm-style-iw-t::after {
+    background: linear-gradient(45deg, #f0d061 50%, rgba(255, 255, 255, 0) 51%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* 말풍선 주소 텍스트 */
+.gm-style-iw-d>div>p {
+  font-weight: bold;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-shadow: none;
+}
+/* 화면 로드시 버튼 border, outline 금지 */
+.gm-ui-hover-effect {
+	outline: none;
+	border: none;
+}
+
+.restauList > .restauListTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.restauList > .restauListTitle > h1 {
+  font-size: 3rem;
+}
+
+.restauList > .restauListTitle > .sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.restauList > .restauListTitle > .sort > img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.restauList > .restauListTitle > .sort > img:focus,
+.restauList > .restauListTitle > .sort > img:active,
+.restauList > .restauListTitle > .sort > img:hover {
+  background-color: rgba(34, 199, 169, 0.8);
+  border-radius: 7px;
+  transition: 0.5s;
+  height: 35px;
+}
+
+#underLine::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #bbbbbb;
+  width: 100%;
+}
+
+/* 식당사진, 인폼 */
+.restauList article {
+  display: flex;
+  padding: 2rem 0;
+  width: 100%;
+}
+/* 슬라이드 */
+/* Slideshow container */
+.slideshow-container {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideshow-container > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px 10px;
+}
+
+.restaurentPrevBtn,
+.restaurentNextBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.restaurentNextBtn {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.restaurentPrevBtn:hover,
+.restaurentNextBtn:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation: fade 0.5s;
+}
+
+.dotbox {
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #22c7a9;
+}
+
+.restauList article .restauInform {
+  margin-left: 2rem;
+  white-space: nowrap;
+}
+.restauList article .restauInform h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4d4b4b;
+}
+
+.restauList article .restauInform h1 #star {
+  padding: 0.5rem;
+  font-size: 15px;
+  color: #22c7a9;
+}
+
+.restauList article .restauInform p {
+  color: #bbbbbb;
+  font-weight: bold;
+  font-size: .8rem;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.restauList article .restauInform p > a {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+}
+
+.restauList article .restauInform button {
+  width: 100px;
+  padding: .5rem;
+  margin-top: 1rem;
+  color: #4d4b4b;
+  font-weight: bold;
+  background-color: #22c7a9;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+/* 모달 */
+#modalCont-sort {
+  /* 화면 가득 채운채 고정 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: rgba(219, 219, 219, 0.7);
+  /* 가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 모달 숨기기 */
+  display: none;
+}
+#modalCont-sort .modal {
+  background-color: #fff;
+  width: 70%;
+  padding: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.3rem 0.2rem #ddd;
+  text-align: center;
+}
+#modalCont-sort .title {
+  text-align: left;
+}
+#modalCont-sort .modal h1::after {
+  content: "";
+  display: block;
+  border: 1px solid #bbbbbb;
+  margin-top: 0.2rem;
+}
+#modalCont-sort .city {
+  width: 100%;
+  padding: 2rem;
+}
+#modalCont-sort .city > p {
+  font-size: 2rem;
+  padding: 3rem;
+}
+#modalCont-sort .city .city-choice {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+#modalCont-sort .city > .city-choice > input[type="radio"] {
+  display: none;
+}
+#modalCont-sort .city > .city-choice > label:hover {
+  background-color: rgba(34, 199, 169, 0.8);
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+ #modalCont-sort .city > .city-choice > input[type="radio"]:checked + .city > .city-choice > label {
+  background-color: rgba(34, 199, 169, 0.8);
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+#modalCont-sort .city > .city-choice > label {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #bbbbbb;
+  border-radius: 15px 15px;
+  margin: 1rem;
+  cursor: pointer;
+}
+/* .style {
+  width: 100%;
+  padding: 3rem;
+}
+.style > p {
+  font-size: 2rem;
+  padding: 3rem;
+}
+.style .style-choice {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.style > .style-choice > input[type="checkbox"] {
+  display: none;
+}
+.style > .style-choice > input[type="checkbox"]:checked + label {
+  background-color: rgba(34, 199, 169, 1);
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.style > .style-choice > label {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  border: 1px solid #bbbbbb;
+  border-radius: 10px;
+  margin: 1rem;
+} */
+#restaurentModalBtn{
+  width: 100%;
+  background: #22c7a9;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* 쿠폰이벤트 CSS */
+.couponCont {
+  position: relative;
+  top: 250px;
+  width: 50%;
+  padding: 3rem 0;
+  display: grid;
+  grid-template: repeat(3, 1fr)/repeat(2, .5fr);
+  gap: 1rem;
+}
+.couponCont>a {
+  margin: 0 auto;
+}
+.event::before {
+  content: "";
+  display: inline;
+  width: 30px;
+  height: 100%;
+  background-color: #22c792;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.event {
+  width: 300px;
+  height: 90%;
+  padding: 20px 20px 20px 40px;
+  margin: auto .5rem;
+  text-align: center;
+  border: 1px solid #bbbbbb;
+  position: relative;
+}
+.event>h1 {
+  line-height: 3rem;
+  font-size: 1.2rem;
+}
+.event>h2 {
+  line-height: 3rem;
+  font-size: 1.8rem;
+}
+
+#event1 {
+  background: url(../media/bg/asidebg0.png);
+}
+
+#event2 {
+  background: url(../media/bg/asidebg1.png);
+}
+
+#event3 {
+  background: url(../media/bg/asidebg2.png);
+}
+
+#event4 {
+  background: url(../media/bg/asidebg3.png);
+}
+
+#event5 {
+  background: url(../media/bg/asidebg4.png);
+}
+
+/* 이벤트1~5 공통부 CSS */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.eventCont {
+  width: 800px;
+  margin: 3rem;
+  border: 1px solid #bbbbbb;
+}
+
+.eventTitle {
+  white-space: pre-line;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eventTitle h1,
+.eventTitle h3 {
+  text-align: left;
+}
+.eventTitle h3 {
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 500;
+}
+.eventTitle img {
+  width: 250px;
+}
+.eventContent {
+  width: 100%;
+  padding: 5rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventContent>form>button {
+  width: 300px;
+  padding: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background: none;
+}
+.eventContent>form>button:hover {
+  color: #fff;
+}
+
+.eventCoupon {
+  width: 100%;
+  background-size: 500px 300px;
+  text-align: center;
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.eventCoupon h1,
+.eventCoupon p {
+  text-shadow: 0 0 1px #111;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.eventNotice {
+  width: 100%;
+  text-align: center;
+  background-color: rgba(225, 225, 225, .5);
+  border-radius: 15px;
+  margin-top: 1rem;
+}
+
+.eventNotice p {
+  padding: .5rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: .8rem;
+}
+
+.eventNotice p:first-child {
+  text-decoration: underline;
+}
+
+.eventNotice::before {
+  content: "";
+  display: block;
+  width: 100%;
+}
+
+
+/* 예약하기 */
+#caution-title {
+  font-size: 1.2rem;
+}
+
+#caution-remark {
+  font-size: 13px;
+  color: rgb(235, 138, 103);
+}
+
+.container #reserveMain {
+  width: 100%;
+  position: relative;
+  top: 250 px;
+  min-width: 480 px;
+}
+
+#reserveMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#reserveMain .makeReserve-cont {
+  width: 100%;
+  /* padding: 5rem 0; */
+}
+
+#reserveMain .makeReserve-cont .reserve-form {
+  width: 100%;
+  padding-top: 6.5rem;
+  display: flex;
+}
+
+#reserveMain .makeReserve-cont .reserve-form form>p {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  border-bottom: 2px solid black;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: .8rem;
+  padding-bottom: .5rem;
+  margin-bottom: 2rem;
+}
+
+#reserveMain .makeReserve-cont .reserve-form form p span {
+  color: #b20000;
+  padding: 0 .3rem;
+}
+
+#reserveMain .makeReserve-cont .reserve-form form table {
+  border-spacing: 1.5rem;
+  /* border: 1px solid #111; */
+}
+
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr th {
+  text-align: left;
+  width: 200px;
+  font-size: 1.3rem;
+  font-weight: normal;
+  /* font-family: "Noto_Sans_KR",sans-serif; */
+}
+
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr th span {
+  color: #b20000;
+  padding: 0 .3rem;
+}
+
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr td input,
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr td #selectedCP,
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr td #selectedCP option {
+  width: 300px;
+  padding: .5rem 1rem;
+  margin-right: .5rem;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  font-weight: normal;  
+  font-family: 'Noto Sans KR', sans-serif;
+}
+#reserveMain .makeReserve-cont .reserve-form form table {
+  /* border-collapse: collapse; */
+  border-spacing: 20px;
+}
+#reserveMain .makeReserve-cont .reserve-form form table tbody {
+  border: 1px solid #111;
+}
+
+#reserveMain .makeReserve-cont .reserve-form form table tr td #cautionList li {
+  line-height: 2rem;
+  font-family: "Nanum_Gothic";
+  font-size: 13px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto
+}
+#reserveMain .makeReserve-cont .reserve-form form button {
+  width: 100%;
+  background-color: #22c7a9;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 2.5rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+
+/* 식당사진 */
+#backimg {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#backimg #imagebox {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  border: 5px double #bbbbbb;
+}
+
+#backimg #imagebox .nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+#backimg #imagebox img {
+  width: 100%;
+  height: 100%;
+}
+
+#backimg #imagebox button {
+  width: 2rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  color: darkslategray;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#backimg #imagebox #right {
+  right: 0;
+}
+
+#backimg #imagebox button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: gray;
+  font-weight: bold;
+}
+
+@keyframes fade {
+  from {
+      opacity: .4
+  }
+
+  to {
+      opacity: 1
+  }
+}
+
+.fade {
+  animation: fade .5s;
+}
+
+.received-restau {
+  width: 100%;
+  margin: 100px auto;
+}
+
+.received-restau .restauInform {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.received-restau .restauInform h1 {
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+.received-restau .restauInform p {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: bold;
+}
+
+/* 모달 */
+#modalContApproved {
+  /* 화면 가득 채운채 고정 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: rgba(219, 219, 219, .7);
+  /* 가운데 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 모달 숨기기 */
+  display: none;
+}
+
+#modalContApproved .modal {
+  background-color: #fff;
+  width: 350px;
+  padding: 2rem;
+  box-shadow: .2rem .2rem .3rem .2rem #ddd;
+  text-align: center;
+}
+
+#modalContApproved .title {
+  text-align: left;
+}
+
+#modalContApproved .modal h2::after {
+  content: "";
+  display: block;
+  border: 1px solid #bbbbbb;
+}
+
+#modalContApproved .modal p {
+  width: 100%;
+  padding: 3rem 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+#reservationModalBtn {
+  background: #22c7a9;
+  padding: .5rem 5rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+}
+
+/* 결제 끝내고 메인으로 돌아가기 버튼 */
+ #payResultToHome {
+  background: #22c7a9;
+  padding: .5rem 5rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+ }

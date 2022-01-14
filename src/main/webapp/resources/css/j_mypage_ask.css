@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+main .askContainer {
+	padding: 100px 50px;
+}
+main .askContainer #askTitle:after {
+	content: "";
+	display: block;
+	border-bottom: 2px solid black;
+	width: 20%; 
+	margin: 0 auto;
+	padding: 10px;
+}
+
+main .askContainer #askBox form #qnaInform {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 50px 0 0 0;
+}
+main .askContainer #askBox form #qnaInform #qnaId,
+main .askContainer #askBox form #qnaInform #bullet {
+	width: 100px;
+	height: 50px;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	font-family: "Nanum_Gothic";
+}
+main .askContainer #askBox form .contentBox {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+main .askContainer #askBox form .contentBox #qnaTitle {
+	font-size: 35px;
+	font-family: "Nanum_Gothic";
+	margin: 50px 0;
+	padding-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	outline:none;
+}
+main .askContainer #askBox form .contentBox #qnaContent {
+	width: 100%;
+	height: 600px;
+	resize: none;
+	font-family: "Nanum_Gothic";
+	font-size: 18px;
+	border: 1px solid #ddd;
+	outline:none;
+	padding: 20px 10px;
+	
+}
+main .askContainer #askBox form .btnBox {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+main .askContainer #askBox form .btnBox #backBoard3,
+main .askContainer #askBox form .btnBox #qnaPost {
+	width: 200px;
+	height: 50px;
+	outline: none;
+	background: none;
+	border: 2px solid #22c7a9;
+	color: #22c7a9;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+main .askContainer #askBox form .btnBox #backBoard3:hover,
+main .askContainer #askBox form .btnBox #qnaPost:hover {
+	background-color: #22c7a9;
+	color: #fff;
+}

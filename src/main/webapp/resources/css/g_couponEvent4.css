@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+/*  */
+#mainForEvent4 {
+	flex-direction: column;
+}
+/* 쿠폰 */
+.eventCont {
+	background: url(../media/bg/asidebg3.png);
+}
+
+.eventTitle {
+	background-color: #dde6cb;
+}
+
+.eventContent>form>button {
+	border: 1px solid #dde6cb;
+}
+
+.eventContent>form>button:hover {
+	background-color: #dde6cb;
+	color: #fff;
+}
+
+.eventCoupon {
+	background: url(../media/coupon7.png) no-repeat center;
+}
+
+.eventNotice::before {
+	border: 1px solid #bbbbbb;
+}
+/* 게시판 */
+#boardBox {
+	margin: 3% 0 30%;
+	width: 80%;
+}
+
+#boardBox .board_contents .faq_area h1 {
+	font-size: 3rem;
+	padding: 5rem 0;
+	text-align: center;
+}
+
+#boardBox .board_contents .faq_area h1::after {
+	content: "";
+	display: block;
+	border-bottom: 1px solid #bbbbbb;
+	margin: 30px auto;
+}
+
+#boardBox .board_contents .faq_area .writebtnBox {
+	width: 99%;
+	text-align: right;
+}
+
+#boardBox .board_contents .faq_area .writebtnBox button#writeRecipe {
+	padding: 5px;
+	font-size: 15px;
+	outline: none;
+	background: none;
+	border: 2px solid #22c7a9;
+	color: #22c7a9;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#boardBox .board_contents .faq_area .writebtnBox button#writeRecipe:hover
+	{
+	background-color: #22c7a9;
+	color: #fff;
+}
+
+.board_contents .faq_area table {
+	width: 100%;
+	border: 0;
+	border-spacing: 0;
+	text-align: center;
+	padding: 1rem;
+}
+
+.board_contents .faq_area table th, .board_contents .faq_area table td {
+	font-size: 0.875em;
+	word-wrap: break-word;
+	border: 0;
+	font-family: "Nanum_Gothic";
+}
+
+.board_contents .faq_area table thead th {
+	padding: 1rem;
+	line-height: 27px;
+	font-weight: normal;
+	background-color: #22c7a9;
+	color: #fff;
+}
+
+.board_contents .faq_area table tbody th, .board_contents .faq_area table tbody td
+	{
+	padding: 18px 0;
+	line-height: 20px;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
+}
+
+.board_contents .faq_area table tbody td {
+	padding: 0;
+}
+
+.board_contents .faq_area table tbody tr td a.info {
+	width: 300px;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-family: "Nanum_Gothic";
+	font-weight: bolder;
+}
+
+.board_contents .faq_area table tbody th {
+	padding: 10px 30px;
+	font-weight: normal;
+}
+
+.board_contents .faq_area table .on th, .board_contents .faq_area table .on td
+	{
+	background-color: #fcfcfc;
+	border-bottom: 0;
+}
+
+/* No */
+.board_contents .faq_area table tbody td.num {
+	text-align: center;
+}
+
+.board_contents .faq_area table .description {
+	display: none;
+}
+
+.board_contents .faq_area table .on .description {
+	display: table-row;
+	margin: 0 auto;
+}
+
+.board_contents .faq_area table .on .description td {
+	border-bottom: 1px solid #ddd;
+}
+
+.board_contents .faq_area table .description td .answer {
+	padding: 50px 0;
+	overflow: hidden;
+	line-height: 22px;
+	color: #333;
+	text-align: center;
+}
+.board_contents .faq_area table .description td .modifyBtn {
+
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.board_contents .faq_area table .description td .modifyBtn button {
+	width: 30px;
+	height: 30px;
+	outline: none;
+	background: none;
+	border: 2px solid #22c7a9;
+	color: #22c7a9;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.board_contents .faq_area table .description td .modifyBtn button:hover {
+	background-color: #22c7a9;
+	color: #fff;
+}
+.board_contents .faq_area table .description td .answer .title {
+	font-weight: 800;
+	font-family: "Nanum_Gothic";
+	
+}
+.board_contents .faq_area table .description td .answer .content {
+	font-family: "Nanum_Gothic";
+}
+
+.board_contents .faq_area table .description td .answer img {
+	width: 300px;
+	height: 300px;
+}
+
+
+/* 새글쓰기 */
+#writerBox,
+#modifyBox {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	display: none;
+}
+#writerBox #writer,
+#modifyBox #modifier {
+	width: 80%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+#writerBox #writer #writerInform,
+#modifyBox #modifier #modifierInform {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#writerBox #writer #writerInform #writerId,
+#writerBox #writer #writerInform #writerBulletPoint,
+#modifyBox #modifier #modifierInform #modifierId,
+#modifyBox #modifier #modifierInform #modifyBulletPoint {
+	width: 100px;
+	height: 50px;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	font-family: "Nanum_Gothic";
+}
+
+#writerBox #writer .contentBox,
+#modifyBox #modifier .contentBox {
+	width: 100%;
+	height: 100%;
+}
+#writerBox #writer .contentBox #writerTitle,
+#modifyBox #modifier .contentBox #modifyTitle {
+	width: 100%;
+	font-size: 35px;
+	font-family: "Nanum_Gothic";
+	margin-bottom: 100px;
+	padding-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #eee;
+	outline:none;
+}
+
+#writerBox #writer .contentBox #writerTtitle::placeholder{
+	font-size: 25px;
+	padding: 10px;
+	font-family: "Nanum_Gothic";
+}
+#writerBox #writer .contentBox #writerContent::placeholder {
+	font-size: 20px;
+	padding: 10px;
+	font-family: "Nanum_Gothic";
+}
+#writerBox #writer .contentBox #writerContent,
+#modifyBox #modifier .contentBox #modifyContent {
+	width: 100%;
+	height: 500px;
+	resize: none;
+	font-family: "Nanum_Gothic";
+	font-size: 18px;
+	border: 1px solid #eee;
+	outline:none;
+	
+}
+/* input에는 before, after 안먹힘... */
+#writerBox #writer .contentBox #writerTitle:after,
+#modifyBox #modifier .contentBox #modifyTitle:after {
+	content: "";
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid black;
+	margin-bottom: 20px;
+}
+#writerBox #writer .btnBox,
+#modifyBox #modifier.btnBox {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+#writerBox #writer .btnBox #submitPost,
+#writerBox #writer .btnBox #backBoard,
+#modifyBox #modifier .btnBox #modifyPost,
+#modifyBox #modifier .btnBox #backBoard2 {
+	width: 200px;
+	height: 50px;
+	outline: none;
+	background: none;
+	border: 2px solid #22c7a9;
+	color: #22c7a9;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#writerBox #writer .btnBox #submitPost:hover,
+#writerBox #writer .btnBox #backBoard:hover,
+#modifyBox #modifier .btnBox #modifyPost:hover,
+#modifyBox #modifier .btnBox #backBoard2:hover {
+	background-color: #22c7a9;
+	color: #fff;
+}

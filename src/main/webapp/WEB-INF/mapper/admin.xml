@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- https://mybatis.org/mybatis-3/ko/getting-started.html -->
+<!-- 매핑된 SQL 구문 살펴보기에서 가져옴 -->
+<mapper namespace="admin">
+
+	<!-- 관리자 정보 -->
+	<select id="selectAdmin" parameterType="adminVO" resultType="adminVO">
+		SELECT rowNum, adminId, adminPw, adminName, adminEmail, assigned
+		FROM account_admin
+		<where>
+			<if test="adminId != null">adminId = #{adminId}</if>
+			<if test="adminPw != null">AND adminPw = #{adminPw}</if>
+		</where>
+	</select>
+	
+	<!-- 관리자 추가 -->
+	<insert id="insertAdmin" parameterType="adminVO">
+		INSERT INTO account_admin(rowNum, adminId, adminPw, adminName, adminEmail, assigned)
+		VALUES(NULL, #{adminId}, #{adminPw}, #{adminName}, #{adminEmail}, #{assigned})
+	</insert>
+	
+	<!-- 관리자 제거 -->
+	<delete id="deleteAdmin" parameterType="adminVO">
+		UPDATE account_admin
+		SET adminPw = "사용가능", adminName = "사용가능", adminEmail = "사용가능", assigned = 'N'
+		WHERE adminId = #{adminId}
+	</delete>
+
+</mapper>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- https://mybatis.org/mybatis-3/ko/getting-started.html -->
+<!-- 매핑된 SQL 구문 살펴보기에서 가져옴 -->
+<mapper namespace="account">
+
+	<!-- c_login 로그인, 아이디찾기, 비번찾기 활용 -->
+	<select id="selectMember" parameterType="memberVO" resultType="memberVO">
+		SELECT memberId, memberPw, memberName, memberEmail, memberContact, memberAgree, joinDate 
+		FROM account_member
+		<where>
+			<if test="memberId!=null">
+				memberId = #{memberId}
+			</if>
+			<if test="memberName!=null">
+				AND memberName = #{memberName}
+			</if>
+			<if test="memberEmail!=null">
+				AND memberEmail = #{memberEmail}
+			</if>
+			<if test="memberPw!=memberPw">
+				AND memberPw = #{memberPw}
+			</if>
+		</where>
+	</select>
+	
+	
+
+	<!-- 회원가입 -->
+	<insert id="insertUser" parameterType="memberVO">
+		INSERT INTO account_member(memberId, memberPw, memberName, memberEmail, memberContact, memberAgree)
+		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberEmail}, #{memberContact}, #{memberAgree})
+	</insert>
+	
+  	<insert id="insertFaver" parameterType="faverVO">
+  		INSERT INTO account_faver(memberId, memberPw, memberName, memberEmail, memberContact, memberBirth, memberAgree) 
+  		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberEmail}, #{memberContact}, #{memberBirth}, #{memberAgree})
+  	</insert>
+  	
+  	<insert id="insertFavee" parameterType="faveeVO">
+  		INSERT INTO account_favee(memberId, memberPw, memberName, memberEmail, memberContact, restauName, restauAddr, memberAgree) 
+  		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberEmail}, #{memberContact}, #{restauName}, #{restauAddr}, #{memberAgree})
+  	</insert>
+  	
+  		
+	<!-- 회원탈퇴 -->
+	<delete id="deleteMember" parameterType="String">
+		UPDATE account_member SET memberPw = NULL WHERE memberId = #{memberId}
+	</delete>
+	
+
+	<!-- 마이페이지 이동시 고객타입 체크 -->
+	<select id="selectFaver" parameterType="faverVO" resultType="faverVO">
+		SELECT memberId, memberPw, memberName, memberEmail, memberContact, memberBirth, memberAgree, joinDate 
+		FROM account_faver 
+		WHERE memberId = #{memberId} 
+		<if test="memberPw != null">
+			AND memberPw = #{memberPw}
+		</if>
+	</select>
+	
+	<select id="selectFavee" parameterType="faveeVO" resultType="faveeVO">
+		SELECT memberId, memberPw, memberName, memberEmail, memberContact, restauName, restauAddr, memberAgree
+		FROM account_favee 
+		WHERE memberId = #{memberId} 
+		<if test="memberPw != null">
+			AND memberPw = #{memberPw}
+		</if>
+	</select>
+	
+	<!-- 개인정보수정하기 -->
+	<update id="updateInform" parameterType="reviseVO">
+		UPDATE account_member
+		<set>
+			<if test='newPw != null and newPw != ""'>memberPw = #{newPw},</if>
+			<if test="newEmail != null">memberEmail = #{newEmail},</if>
+			<if test="newPhone != null">memberContact = #{newPhone}</if>
+		</set>
+		WHERE memberId = #{newId}
+	</update>
+	
+	<!-- 1:1문의 게시글 가져오기 : 회원 -->
+	<select id="selectBbs" parameterType="accountbbsVO" resultType="accountbbsVO">
+		SELECT rowNum, memberId, bullet, title, content, status, createdate, isdelete
+		FROM account_bbs
+		WHERE isdelete = 'N'
+			<if test="memberId != null">AND memberId = #{memberId}</if>
+			<if test="bullet != null">AND bullet = #{bullet}</if>
+			<if test="status != null">AND status = #{status}</if>
+			<if test="rowNum != 0 or rowNum != ''">AND rowNum = #{rowNum}</if>
+	</select>
+	
+	<!-- 1:1문의 게시글 수정으로 가져오기 -->
+	<select id="selectBbs2" parameterType="int" resultType="accountbbsVO">
+		SELECT rowNum, memberId, bullet, title, content, status
+		FROM account_bbs
+		WHERE rowNum = #{rowNum}
+	</select>
+	
+	<!-- 1:1문의 게시글 추가 -->
+	<insert id="insertBbs" parameterType="accountbbsVO">
+		INSERT INTO account_bbs(rowNum, memberId, bullet, title, content)
+		VALUES(NULL, #{memberId}, #{bullet}, #{title}, #{content})
+	</insert>
+	
+	<!-- 1:1문의 게시글 수정하기 -->
+	<update id="updateBbs" parameterType="accountbbsVO">
+		UPDATE account_bbs
+		<set>
+			<if test="bullet != null">bullet = #{bullet},</if>
+			<if test="title != null">title = #{title},</if>
+			<if test="content != null">content = #{content},</if>
+			<if test="memberId != null">memberId = #{memberId}</if>
+		</set>
+		WHERE rowNum = #{rowNum}
+	</update>
+
+	<!-- 1:1문의 게시글 삭제 -->
+	<delete id="deleteBbs" parameterType="accountbbsVO">
+		UPDATE account_bbs
+		SET isdelete = 'Y', status = '문의삭제'
+		WHERE rowNum = #{rowNum} AND memberid = #{memberId}
+	</delete>
+
+</mapper>

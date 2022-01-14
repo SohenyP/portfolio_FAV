@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- https://mybatis.org/mybatis-3/ko/getting-started.html -->
+<!-- 매핑된 SQL 구문 살펴보기에서 가져옴 -->
+<mapper namespace="reservation">
+	
+	<!-- 예약 리스트 가져오기 -->
+	<select id="selectReservationList" parameterType="reservationVO" resultType="reservationVO">
+		SELECT rowNum, memberBid, memberName, restauName, restauAddr, reservationDate, personnel, status, memberOid, charge, reservationNum
+		FROM account_reservation
+		<where>
+			<if test="memberBid != null">memberBid = #{memberBid}</if>
+			<if test="memberOid != null">AND memberOid = #{memberOid}</if>
+			<if test="status != null">AND status = #{status}</if>
+			<if test="reservationDate != null and reservationDate2 != null">AND (reservationDate BETWEEN #{reservationDate} AND #{reservationDate2})</if>
+		</where>
+	</select>
+	<!-- 예약리스트 추가하기 -->
+	<insert id="insertReservationList" parameterType="reservationVO">
+		INSERT INTO account_reservation(memberBid, memberName, restauName, restauAddr, reservationDate, memberContact, personnel, status, memberOid, charge, reservationNum)
+		VALUES(#{memberBid}, #{memberName}, #{restauName}, #{restauAddr}, #{reservationDate}, #{memberContact}, #{personnel}, "결제대기", #{memberOid}, #{charge}, #{reservationNum})
+	</insert>
+	
+	<!-- 결제 완료후 status 변경 -->
+	<update id="updateStatus" parameterType="reservationVO">
+		UPDATE account_reservation 
+		SET status = #{status} 
+		WHERE reservationNum = #{reservationNum}
+	</update>
+	
+</mapper>

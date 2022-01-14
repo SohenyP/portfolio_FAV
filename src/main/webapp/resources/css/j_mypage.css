@@ -1,0 +1,443 @@
+@charset "UTF-8";
+
+/* 마이페이지 : 점주 */
+.mypage {
+	width: 65%;
+	height: 100vh;
+	margin-top: 250px;
+	display: flex;
+}
+
+/* 왼쪽 nav바 */
+.mypage>nav {
+	background-color: lightyellow;
+	flex: 5;
+}
+
+.mypage>nav>ul {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.mypage>nav>ul>li {
+	line-height: 5rem;
+	padding: 10px;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.mypage>nav>ul>li>ul>li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* 이미지 넣기 */
+.mypage>nav>ul>li>ul>li>figure {
+	width: 100px;
+	height: 100px;
+	border: 2px solid #333;
+	border-radius: 50%;
+	background-image: url("../media/logo/favicon.png");
+	/* 썸네일 없을 경우 대비 */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 150%;
+	overflow: hidden;
+}
+/* 마이페이지 */
+.mypage>.mypageMain {
+	flex: 15;
+}
+/* 마이페이지 내 각 파트 기본설정 */
+.mypage>.mypageMain>div {
+	background-color: #fff;
+	padding: 35px;
+	display: none;
+}
+
+.mypage>.mypageMain>div>h1 {
+	color: #323232;
+	font-size: 40px;
+}
+
+.mypage>.mypageMain>div>h1:after {
+	content: "";
+	display: block;
+	border: 1px solid black;
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.mypage>.mypageMain>div>h1>span {
+	font-size: 25px;
+}
+
+.mypage>.mypageMain>div>table tr>th {
+	font-size: 20px;
+}
+
+.mypage>.mypageMain>div>table tr>td {
+	font-family: "Noto_Sans_KR";
+	font-weight: 700;
+}
+/* 내 정보 myInform */
+.mypage>.mypageMain>.myInform {
+	display: block;
+}
+
+.mypage>.mypageMain>.myInform>table {
+	width: 100%;
+	border-spacing: 50px;
+}
+
+.mypage>.mypageMain>.myInform>table>tbody>tr>td {
+	width: 60%;
+}
+
+.mypage>.mypageMain>.myInform>.goToChangeInform {
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.mypage>.mypageMain>.myInform>.goToChangeInform>.btn {
+	background-color: #22c7a9;
+	font-size: 25px;
+	color: #fff;
+	padding: 10px 50px;
+}
+
+/* 내 식당 myRestaurent */
+.mypage>.mypageMain>.myRestaurent>table {
+	width: 100%;
+}
+/* .mypage>.mypageMain>.myRestaurent>table::-webkit-scrollbar {
+	height: 10px;
+}
+.mypage>.mypageMain>.myRestaurent>table::-webkit-scrollbar {
+	background: none;
+}
+.mypage>.mypageMain>.myRestaurent>table::-webkit-scrollbar {
+	background: #22c7a9;
+	border-radius: 50px 50px;
+} */
+.mypage>.mypageMain>.myRestaurent>table>thead>tr>th {
+	background-color: #22c7a9;
+	font-weight: 800;
+	color: #fff;
+}
+
+.mypage>.mypageMain>.myRestaurent>table>thead>tr>th {
+	text-shadow: 1px 1px 1px black;
+}
+
+.mypage>.mypageMain>.myRestaurent>table>thead>tr>th,
+.mypage>.mypageMain>.myRestaurent>table>tbody>tr>td {
+	border: 1px solid black;
+}
+.mypage>.mypageMain>.myRestaurent>table>tbody>tr>td:nth-child(1) {
+	width: 20%;
+}
+.mypage>.mypageMain>.myRestaurent>table>tbody>tr>td {
+	font-size: 15px;
+	text-align: center;
+	white-space: pre-line;
+}
+.mypage>.mypageMain>.myRestaurent>table>tbody>tr>td:nth-child(5) {
+	width: 8%;
+}
+.mypage>.mypageMain>.myRestaurent>table>tbody>tr>td>button {
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px 20px;
+	border: none;
+	outline: none;
+	background-color: #22c7a9;
+	color: #fff;
+	cursor: pointer;
+	width: 100%;
+}
+
+.mypage>.mypageMain>.myRestaurent>table>tbody>tr>td>button:hover {
+	background-color: #f0d061;
+	color: #22c7a9;
+}
+/* 오너 이미지 확인 모달 */
+#ownerImageModal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(50, 50, 50, .2);
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+#ownerImageModal>.ownerImageModalBox {
+	width: 40%;
+	height: 40%;
+	border-radius: 50px;
+	overflow: hidden;
+	box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.66);
+}
+
+#ownerImageModal>.ownerImageModalBox>img {
+	width: 100%;
+	height: 100%;
+}
+
+/* 내쿠폰, 예약리스트 테이블 기본설정 */
+.mypage>.mypageMain>.myCoupon>table,
+.mypage>.mypageMain>.myReceived>table {
+	width: 100%;
+}
+.mypage>.mypageMain>.myCoupon>table>thead>tr>th,
+.mypage>.mypageMain>.myReceived>table>thead>tr>th {
+	background-color: #22c7a9;
+	color: #fff;
+	text-shadow: 1px 1px 1px black;
+}
+.mypage>.mypageMain>.myReceived>table>thead>tr>th:nth-child(2) {
+	width: 80px;
+}
+.mypage>.mypageMain>.myCoupon>table>thead>tr>th,
+.mypage>.mypageMain>.myReceived>table>thead>tr>th {
+	border: 1px solid black;
+}
+.mypage>.mypageMain>.myCoupon>table>tbody>tr>td,
+.mypage>.mypageMain>.myReceived>table>tbody>tr>td {
+	border-bottom: .5px solid black;
+}
+.mypage>.mypageMain>.myReceived>table>tbody>tr>td.reserveNumTd {
+	font-size: 6px;
+}
+.mypage>.mypageMain>.myCoupon>table>tbody>tr>td,
+.mypage>.mypageMain>.myReceived>table>tbody>tr>td {
+	font-size: 13px;
+	font-weight: 600;
+	text-align: center;
+}
+/* 내 쿠폰 myRestaurent */
+.container footer {
+	top: 0;
+}
+
+/* 회원정보 수정페이지 */
+.mypage>.mypageMain>.myInform>form {
+	width: 100%;
+	height: 600px;
+	display: flex;
+	flex-direction:column;
+	align-items: center;
+}
+.mypage>.mypageMain>.myInform>form>table {
+	width: 100%;
+	margin: 0 auto;
+	border-spacing: 35px;
+}
+
+.mypage>.mypageMain>.myInform>form>table th {
+	width: 50%;
+	font-size: 20px;
+}
+.mypage>.mypageMain>.myInform>form>table td #newPw {
+	padding: 5px;
+}
+.mypage>.mypageMain>.myInform>form>table td #newPw::placeholder {
+	font-size: 15px;
+	font-family: "Noto_Sans_KR";
+}
+.mypage>.mypageMain>.myInform>form>table td {
+	font-family: "Noto_Sans_KR";
+	font-weight: 700;
+}
+.mypage>.mypageMain>.myInform>form>table tr #pwRule>li {
+	font-family: "Noto_Sans_KR";
+ 	font-weight: bold;
+    color: #b20000;
+    font-size: 15px;
+    line-height: 35px;
+}
+.mypage>.mypageMain>.myInform>form>table tr#pwRuleRow {
+	display: none;
+}
+.mypage>.mypageMain>.myInform>form>table tr #pwRule>li.invalid:before  {
+	content: "✖ ";
+	display: inline;
+}
+.mypage>.mypageMain>.myInform>form>table tr #pwRule>li.valid {
+	color: #22c7a9;
+}
+.mypage>.mypageMain>.myInform>form>table tr #pwRule>li.valid:before {
+	content: "✔ ";
+	display: inline;
+}
+.mypage>.mypageMain>.myInform>form>#updateInformBtn {
+	margin-top: 60px;
+	padding: 10px;
+    font-size: 25px;
+    color: #fff;
+    background-color: #22c7a9;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 문의하기 */
+
+.myQna #qnaBox {
+	width: 99%;
+}
+.myQna #qnaBox h1 {
+	color: #323232;
+    font-size: 40px;
+}
+.myQna #qnaBox>h1>span {
+    font-size: 25px;
+}
+.myQna #qnaBox h1:after {
+    content: "";
+    display: block;
+    border: 1px solid black;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.myQna #qnaBox #btnBox {
+	width: 100%;
+	text-align: right;
+}
+.myQna #qnaBox #btnBox button#writeQna,
+.myQna #qnaBox #btnBox button#writeQna1 {
+	padding: 5px;
+	font-size: 15px;
+	outline: none;
+	background: none;
+	border: 2px solid #22c7a9;
+	color: #22c7a9;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.myQna #qnaBox #btnBox button#writeQna:hover,
+.myQna #qnaBox #btnBox button#writeQna1:hover {
+	background-color: #22c7a9;
+	color: #fff;
+}
+
+.myQna #qnaBox .qnaList table {
+	width: 100%;
+	border: 0;
+	border-spacing: 0;
+	text-align: center;
+	padding: 1rem;
+}
+
+.myQna #qnaBox .qnaList table td {
+	font-size: 0.875em;
+	word-wrap: break-word;
+	border: 0;
+	font-family: "Nanum_Gothic";
+}
+
+.myQna #qnaBox .qnaList table thead th {
+	padding: 1rem;
+	line-height: 27px;
+	font-weight: normal;
+	background-color: #22c7a9;
+	color: #fff;
+}
+
+.myQna #qnaBox .qnaList table tbody th, 
+.myQna #qnaBox .qnaList table tbody td
+	{
+	padding: 18px 0;
+	line-height: 20px;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
+}
+
+.myQna #qnaBox .qnaList table tbody td {
+	padding: 0;
+}
+
+.myQna #qnaBox .qnaList table tbody tr td a.info {
+	width: 300px;
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-family: "Nanum_Gothic";
+	font-weight: bolder;
+}
+
+.myQna #qnaBox .qnaList table tbody th {
+	padding: 10px 30px;
+	font-weight: normal;
+}
+
+.myQna #qnaBox .qnaList table .on th, 
+.myQna #qnaBox .qnaList table .on td
+	{
+	background-color: #fcfcfc;
+	border-bottom: 0;
+}
+
+/* No */
+.myQna #qnaBox .qnaList table tbody td.num {
+	text-align: center;
+}
+
+.myQna #qnaBox .qnaList table .description {
+	display: none;
+}
+
+.myQna #qnaBox .qnaList table .on .description {
+	display: table-row;
+	margin: 0 auto;
+}
+
+.myQna #qnaBox .qnaList table .on .description td {
+	border-bottom: 1px solid #ddd;
+}
+
+.myQna #qnaBox .qnaList table .description td .answer {
+	padding: 50px 0;
+	overflow: hidden;
+	line-height: 22px;
+	color: #333;
+	text-align: center;
+}
+.myQna #qnaBox .qnaList table .description td #qnaBtn {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.myQna #qnaBox .qnaList table .description td #qnaBtn button {
+	width: 30px;
+	height: 30px;
+	outline: none;
+	background: none;
+	border: 2px solid #22c7a9;
+	color: #22c7a9;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.myQna #qnaBox .qnaList table .description td #qnaBtn .modifyQna:hover,
+.myQna #qnaBox .qnaList table .description td #qnaBtn .deleteQna:hover {
+	background-color: #22c7a9;
+	color: #fff;
+}
+
+.myQna #qnaBox .qnaList table .description td .answer .content {
+	font-family: "Nanum_Gothic";
+}
+
+
+

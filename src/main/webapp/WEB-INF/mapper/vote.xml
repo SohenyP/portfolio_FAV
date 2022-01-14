@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- https://mybatis.org/mybatis-3/ko/getting-started.html -->
+<!-- 매핑된 SQL 구문 살펴보기에서 가져옴 -->
+<mapper namespace="vote">
+
+		
+  	<!-- g_couponEvent3 투표 리스트 받아오기 -->
+  	<select id="selectCandidate" parameterType="int" resultType="canidateVO">
+  		SELECT candiNum, candidate, candiCnt, candiImg, candiIntro, candiAddr, candiMenu 
+  		FROM restaurent_candidate
+  		<where>
+  			<if test="candiNum != null">
+  				candiNum = #{candiNum}
+  			</if>
+  		</where>
+  	</select>
+  	
+  	<!-- 투표 집계 하기 -->
+  	<update id="updateVoteResult" parameterType="int">
+  	 	UPDATE restaurent_candidate
+  	 	SET candiCnt = candiCnt + 1
+  	 	WHERE candiNum = #{candiNum}
+  	</update>
+  	
+  	
+  	<!-- 투표하기 -->
+ 	<insert id="insertVote" parameterType="voteVO">
+  		INSERT INTO restaurent_vote(candiNum, candidate, memberId)
+  		VALUES(#{candiNum}, #{candidate}, #{memberId})
+  	</insert>
+  	
+  	<!-- 중복투표 체크 -->
+  	<select id="selectDoubleVote" parameterType="String" resultType="voteVO">
+  		SELECT candiNum, candidate, memberId
+  		FROM restaurent_vote
+  		WHERE memberId = #{memberId}
+  	</select>
+
+
+</mapper>

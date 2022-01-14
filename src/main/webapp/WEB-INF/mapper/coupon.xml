@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- https://mybatis.org/mybatis-3/ko/getting-started.html -->
+<!-- 매핑된 SQL 구문 살펴보기에서 가져옴 -->
+<mapper namespace="coupon">
+
+	
+	
+	<!-- 설정된 쿠폰 리스트 가져오기 -->
+	<select id="selectCouponList" parameterType="String" resultType="couponListVO">
+		SELECT rowNum, couponNum, couponName, couponDC, couponMax, couponExpire
+		FROM coupon_list 
+		WHERE rowNum = #{rowNum}
+	</select>
+	<!-- 쿠폰 받기 -->
+	<insert id="insertCouponList" parameterType="faverCouponVO">
+		INSERT INTO account_coupon(memberId, couponNum, couponName, couponDC, couponMax, couponExpire)
+		VALUES(#{memberId}, #{couponNum}, #{couponName}, #{couponDC}, #{couponMax}, #{couponExpire})
+	</insert>
+	
+	<!-- 유저 쿠폰 중복 체크  -->
+	<select id="selectCouponFaver" parameterType="faverCouponVO" resultType="faverCouponVO">
+		SELECT rowNum, memberId, couponNum, couponName, couponDC, couponMax, couponExpire, isExpire
+		FROM account_coupon
+		<where>
+			<if test="memberId != null">memberId = #{memberId}</if>
+			<if test="couponNum != null">AND couponNum = #{couponNum}</if>
+			<if test="isExpire!=null">AND isExpire=#{isExpire}</if>
+		</where>
+	</select>
+	
+	<!-- 쿠폰 상태 업데이트 -->
+	<update id="updateCouponExpire" parameterType="faverCouponVO">
+		UPDATE account_coupon 
+		SET isExpire = #{isExpire}
+		WHERE memberId = #{memberId} AND couponName = #{couponName}
+	</update>
+		
+		
+
+</mapper>

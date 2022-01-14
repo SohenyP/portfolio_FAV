@@ -1,0 +1,99 @@
+@charset "UTF-8";
+main {
+    flex-direction: column;
+}
+/* 쿠폰영역 */
+.eventCont {
+    background: url(../media/bg/asidebg4.png);
+}
+
+.eventTitle {
+    background-color: #c8c8c8;
+}
+
+.eventContent>form>button {
+    border: 2px solid #c8c8c8;
+}
+
+.eventContent>form>button:hover {
+    background-color: #c8c8c8;
+}
+
+.eventCoupon {
+    background: url(../media/coupon8.png) no-repeat center;
+}
+
+
+/* 뉴페이비리스트 */
+.newFavee-cont {
+    width: 85%;
+    padding: 5rem 1rem 10rem;
+}
+.newFavee-cont>h1 {
+    font-size: 3rem;
+    /* padding: 5rem 0; */
+    text-align: center;
+}
+.newFavee-cont>h1::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #bbbbbb;
+    margin: 30px auto;
+}
+.newFavee-cont #timer  {
+    width: 100%;
+    text-align: center;
+}
+.newFavee-cont #timer #count {
+    font-size: 3rem;
+}
+.newFavee-cont .newFaveeList {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+.newFavee-cont .newFaveeList article {
+    border: 6px double #bbbbbb;
+}
+.newFavee-cont .newFaveeList article>.restauImg {
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    border-bottom: 1px solid #bbbbbb;
+}
+.newFavee-cont .newFaveeList article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: .5s cubic-bezier(0.42, 0, 0.1, 0.96);
+}
+
+.newFavee-cont .newFaveeList article:hover img {
+    transform: scale(1.1);
+}
+
+.restauInform {
+    margin-left: 1rem;
+    padding: 2em 0;
+    line-height: 30px;
+    text-align: left;
+}
+
+.restauInform h1 {
+    font-size: 2.1rem;
+    text-decoration: underline;
+}
+
+.restauInform h2 {
+    line-height: 50px;
+    padding-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.restauInform p{
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: "Nanum_Gothic";
+}

@@ -1,0 +1,761 @@
+@charset "UTF-8";
+
+/* 초기화 */
+@import url("http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Raleway:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@font-face {
+  font-family: "DoHyeon-Regular";
+    src: url('../media/Do_Hyeon/DoHyeon-Regular.eot');
+    src: url('../media/Do_Hyeon/DoHyeon-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.woff2') format('woff2'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.woff') format('woff'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.ttf') format('truetype'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.svg#DoHyeon-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+ 	font-family: "Nanum_Gothic";
+    src: url('../media/Nanum_Gothic/NanumGothic.eot');
+    src: url('../media/Nanum_Gothic/NanumGothic.eot?#iefix') format('embedded-opentype'),
+        url('../media/Nanum_Gothic/NanumGothic.woff2') format('woff2'),
+        url('../media/Nanum_Gothic/NanumGothic.woff') format('woff'),
+        url('../media/Nanum_Gothic/NanumGothic.ttf') format('truetype'),
+        url('../media/Nanum_Gothic/NanumGothic.svg#NanumGothic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DoHyeon-Regular", sans-serif;
+  color: #323232;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  max-width: 3840px;
+  min-width: 480px;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #323232;
+}
+
+/* 데스크탑 */
+
+/* Home 몸통 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* 헤더 기본틀 */
+.container header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+  position: fixed;
+  background-color: #fff;
+  z-index: 100;
+  min-width: 480px; /*추가*/
+}
+/* 헤더 가운데 최상단 로고 사이즈 */
+.container header > a {
+  /* padding: 1rem; */
+  margin-bottom: 60px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.container header > a > img {
+  width: 400px;
+  height: 80px;
+  transition: 0.3s;
+}
+
+/* 헤더 네비, 검색, 유저 영역 설정 */
+.container header .navNsearch {
+  width: 65%; /*70%*/
+  display: flex;
+}
+
+/* 헤더 토탈 메뉴 영역 */
+.container header .totalmenu {
+  flex: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.container header .totalmenu i {
+  height: 100%;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.container header .totalmenu i:hover {
+  color: #22c7a9;
+}
+.container header .totalmenu i:hover > ul {
+  display: block;
+}
+.container header .totalmenu ul {
+  font-size: 20px;
+  font-weight: normal;
+  width: 280px;
+  z-index: 10;
+  position: absolute;
+  top: 88px;
+  left: -200px;
+  background-color: rgba(249, 250, 210, 0.8);
+  display: none;
+}
+.container header .totalmenu ul li {
+  padding: 19px;
+  display: flex;
+  justify-content: space-between;
+}
+.container header .totalmenu ul li:hover {
+  background-color: rgba(249, 250, 210, 0.9);
+  padding: 25px;
+  transition: 0.5s;
+}
+.container header .totalmenu ul li:hover > a {
+  color: #22c7a9;
+  font-size: 22px;
+  transition: 0.5s;
+}
+.container header .totalmenu ul li:hover img {
+  display: inline;
+}
+.container header .totalmenu ul li span img {
+  width: 25px;
+  height: 25px;
+  display: none;
+}
+/* 헤더 가운데 메인 메뉴 영역 */
+.container header .navNsearch .search-inner {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+}
+.container header .navNsearch .search-inner ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.container header .navNsearch .search-inner ul li {
+  flex: 1;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+.container header .navNsearch .search-inner ul li a {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.container header .navNsearch .search-inner ul li a:after {
+  content: "";
+  border-bottom: 2px solid;
+  padding: 0 10px;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+.container header .navNsearch .search-inner ul li a:hover:after {
+  transform: scaleX(1);
+  width: 5%;
+  color: #22c7a9;
+}
+.container header .navNsearch .search-inner ul li a:hover {
+  color: #22c7a9;
+}
+
+/* 헤더 우측 검색, 사용자 메뉴 */
+.container header .navNsearch .usernav {
+  flex: 2;
+  width: 100%;
+  height: 100%;
+}
+.container header .navNsearch .usernav > ul {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+/* 헤더 우측 검색바 */
+.container header .navNsearch .usernav > ul > li:nth-child(1) {
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search {
+  background-color: #22c7a9;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  /* 얘를 기준으로 relative주고, 나머지 전부 absolute로 위치 조절 */
+  position: relative;
+  transition: 0.5s;
+}
+/* 버튼 누를시 active 클래스 추가해서 width만 확장 */
+.container header .usernav > ul > li:nth-child(1) > #user-search.wide {
+  width: 168px;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  /* 가로줄 가운데 */
+  text-align: center;
+  /* 세로줄 가운데 */
+  line-height: 40px;
+  font-size: 1.2rem;
+  background-color: #22c7a9;
+  cursor: pointer;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .inputbox {
+  width: 100px;
+  position: absolute;
+  top: 8px;
+  left: 40px;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .inputbox input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  background-color: #22c7a9;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .inputbox input[type="text"]:focus {
+  background-color: #22c7a9;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(1) > #user-search .clear {
+  /* 위치가 이래도 가려지는건, search안에 있지만 사이즈가 50x50이라 가려짐. width확장되면 나타남 */
+  position: absolute;
+  right: 10px;
+  top: 25%;
+  cursor: pointer;
+}
+
+/* 헤더 우측 로그인, 회원가입 */
+.container header .navNsearch .usernav > ul > li:nth-child(2) {
+  padding: 2rem 2rem 1rem 2rem;
+  font-size: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2):hover > i {
+  color: #22c7a9;
+  transition: 0.5s ease-out;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2):hover > i > ul {
+  display: block;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i {
+  position: relative;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul {
+  position: absolute;
+  top: 54px;
+  /* left: -55px; */
+  left: -100px;
+  z-index: 10;
+  width: 300px;
+  font-size: 1.5rem;
+  text-align: center;
+  display: none;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li {
+  padding: 1rem 0.5rem;
+  width: 150px;
+  background-color: rgba(249, 250, 210, 0.8);
+  font-size: 20px;
+  font-weight: normal;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li:hover {
+  background-color: rgba(249, 250, 210, 0.9);
+  transition: 0.5s ease-out;
+}
+.container header .navNsearch .usernav > ul > li:nth-child(2) > i > ul > li:hover > a {
+  color: #22c7a9;
+  font-size: 22px;
+  padding: 1.5rem;
+  transition: 0.5s;
+}
+
+/* 어사이드 공지사항 슬라이더 */
+.container aside {
+  width: 100%;
+  position: relative;
+  top: 250px;
+  min-width: 475px;
+}
+.container aside .noti-inner {
+  background: url(../media/bg/noticebg.png) no-repeat center;
+  background-size: 115% 300%;
+  /* background-size: 105% 180%; */
+  background-position: 45% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 540px;
+  overflow: hidden;
+  position: relative;
+}
+.container aside .noti-inner .noti-wrap {
+  width: 40.5%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* margin: 0 auto; */
+}
+.container aside .noti-inner .noti-wrap .notice {
+  width: 100%;
+}
+.container aside .noti-inner .noti-wrap .notice a h1 {
+  font-size: 3.5em;
+}
+.container aside .noti-inner .noti-wrap .notice a p:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5rem;
+  font-family: "Nanum_Gothic";
+}
+.container aside .noti-inner .noti-wrap .notice a p:last-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Nanum_Gothic";
+}
+/* transform으로 슬라이드 효과주기 */
+.fadeInOut {
+  animation: fadeInOut 1s;
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.container aside .noti-inner button {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.container aside .noti-inner button span {
+  padding: 1rem;
+  color: #f0d061;
+}
+.container aside .noti-inner #next {
+  right: 0;
+}
+.container aside .noti-inner button:hover > span {
+  background-color: rgba(240, 208, 97, 0.3);
+  border-radius: 50px;
+  color: #22c7a9;
+  transition: 0.5s;
+}
+
+/* 메인 */
+.container main {
+  width: 100%;
+  position: relative;
+  top: 250px;
+  min-width: 480px;
+}
+.container main section {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+.container main section h1 {
+  font-size: 3rem;
+  padding: 3rem 0;
+}
+
+/* 지역별 식당 */
+.container main section:first-child {
+  width: 100%;
+  padding: 0 20%; /* 0 15%*/
+}
+.container main section:first-child>.articleWrap>article {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+  gap: 58px; /*80px*/
+  justify-content: center;
+  text-align: center;
+}
+.container main section:first-child>.articleWrap {
+  overflow: hidden;
+}
+.container main section:first-child>.articleWrap .cityRestSlidebox>form>button:last-child {
+  padding-right: 3rem;
+}
+.container main section:first-child>.articleWrap>article>form .city .cityImg img {
+  width: 100px;
+  height: 100px;
+}
+/* 이달의 식당 */
+.container main #sec2 { 
+  padding: 0 20%; /* 0 15%*/
+}
+.container main #sec2 .sec-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+.container main #sec2 .sec-wrap article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  opacity: 0;
+  height: 800px;
+}
+.container main #sec2 .sec-wrap article:not(:first-child) .res-photo {
+  display: flex;
+  flex-direction: row;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+.container main #sec2 .sec-wrap #art1 .res-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
+  gap: 1rem;
+}
+.container main #sec2 .sec-wrap #art1 .res-photo img {
+  width: 400px;
+  height: 280px;
+}
+.container main #sec2 .sec-wrap article .res-photo img {
+  width: 280px;
+  height: 400px;
+}
+.container main section:nth-child(2) .sec-wrap > article > .res-text {
+  min-width: 440px;
+}
+.container main section:nth-child(2) .sec-wrap > article > .res-text:nth-child(2) {
+  text-align: right;
+}
+.container main section:nth-child(2) .sec-wrap > article .res-text h2 {
+  font-size: 7rem;
+  line-height: 10rem;
+}
+.container main section:nth-child(2) .sec-wrap > article .res-text p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Nanum_Gothic";
+  line-height: 2.5rem;
+}
+.container main section:nth-child(2) .sec-wrap > article .res-text p:nth-child(2) {
+  margin-bottom: 2rem;
+}
+.container main section:nth-child(2) .sec-wrap > article .res-text > form input[type="submit"] {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 4rem;
+  padding: 5rem 0;
+  cursor: pointer;  
+}
+.container main section:nth-child(2) .sec-wrap > article .res-text > form input[type="submit"]:hover {
+  color: #22c7a9;
+  transition: 0.5s;
+}
+/* 이달의식당 마우스이벤트 */
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-in-bottom {
+  animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* 새로운 식당 찾기 */
+.container main section:nth-child(3) article {
+  width: 100%;
+  padding: 0 20%; /* 0 15%*/
+  margin: 0 auto;
+}
+.container main section:nth-child(3) article .together {
+  width: 60%;
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  background: url(../media/bg/bemyhost.png) no-repeat center;
+  border: none;
+  border-radius: 50px;
+  transition: 0.5s;
+}
+.container main section:nth-child(3) article .together img {
+  width: 100%;
+  height: 95%;
+  border-radius: 50px;
+}
+.container main section:nth-child(3) article .together input[type="submit"] {
+  font-size: 4rem;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+/* 축제 */
+.container main section:nth-child(4) {
+  padding: 0 20%; /* 0 15%*/
+}
+.container main section:nth-child(4) .festival {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.container main section:nth-child(4) .festival .festival-img1,
+.container main section:nth-child(4) .festival .festival-img2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 .5rem;
+}
+.container main section:nth-child(4) .festival .festival-img1 img,
+.container main section:nth-child(4) .festival .festival-img2 img {
+  width: 500px;
+  border-radius: 5% 5%;
+  border: 1px solid #dddddd;
+}
+.container main section:nth-child(4) .festival h2 {
+  font-size: 4rem;
+}
+.container main section:nth-child(4) .festival p a {
+  font-size: 2rem;
+}
+.container main section:nth-child(4) .festival .domestic,
+.container main section:nth-child(4) .festival .foreign {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem 2rem;
+}
+.dome,
+.fore {
+  display: none;
+}
+
+/* 푸터 */
+.container footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1.9rem;
+  position: relative;
+  top: 250px;
+}
+
+.container footer .f-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container footer #wrap1 {
+  background-color: #f1f1f1;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.container footer #wrap1 > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: left;
+  width: 70%;
+  margin: 3rem 0;
+}
+.container footer #wrap1 > ul > li {
+  width: 100%;
+}
+.container footer #wrap1 > ul > li > h4::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  width: 90%;
+  margin: 0.5rem 0;
+}
+
+.container footer #wrap1 ul li ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 0.95rem;
+}
+.container footer #wrap1 ul li ul li {
+  padding: 0.5rem;
+}
+.container footer #wrap1 ul li ul li a {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.8rem;
+}
+.container footer #wrap1 ul li ul li a:hover {
+  text-decoration: underline;
+}
+.container footer #wrap2 {
+  width: 100%;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+}
+.container footer #wrap2 .wrap-inner {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.container footer #wrap2 ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  /* flex-wrap: wrap; */
+}
+.container footer #wrap2 ul li,
+.container footer #wrap2 ul li a {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+.container footer #wrap2 .rights li:not(:nth-child(5)):after {
+  content: "";
+  display: inline;
+  border-right: 1px solid #cccccc;
+  margin: 0 2rem;
+  text-align: center;
+}
+.container footer #wrap2 .sns li {
+  margin: 0 0.5rem;
+}
+.container footer #wrap3 {
+  width: 100%;
+  margin-top: 3rem;
+}
+.container footer #wrap3 .info {
+  width: 66%;
+  padding-right: 1rem;
+}
+.container footer #wrap3 .info img {
+  width: 300px;
+  height: 65px;
+}
+.container footer #wrap3 .info p {
+  color: #cccccc;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.container footer #wrap3 .info p i {
+  color: #cccccc;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.container footer #wrap3 .contact .phone::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #cccccc;
+  margin: 1rem 0;
+}
+
+/* 모바일 바 */
+.mobile-bar {
+  border: 0.1em solid #ddd;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: none;
+  padding: 0.5em 0;
+  justify-content: center;
+}
+.mobile-bar ul {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 0;
+  padding: 0 1em;
+}
+.mobile-bar ul li {
+  margin: 0 auto;
+  padding: 0 2em;
+  color: #a3a3a3;
+}
+.mobile-bar label {
+  cursor: pointer;
+  font-size: 0.6em;
+}
+.mobile-bar label i {
+  font-size: 2.3em;
+}
+.mobile-bar input {
+  display: none;
+}
+.mobile-bar input:checked ~ label {
+  color: #222222;
+}
+.mobile-bar input:checked ~ label > i {
+  color: #22c7a9;
+}
+

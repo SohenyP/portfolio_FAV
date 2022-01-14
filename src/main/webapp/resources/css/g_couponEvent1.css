@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.eventCont {
+	background: url(../media/bg/asidebg0.png);
+}
+
+.eventTitle {
+	background-color: #dcad54;
+}
+
+.eventContent>form>button {
+	border: 2px solid #dcad54;
+}
+
+.eventContent>form>button:hover {
+	background-color: #dcad54;
+}
+
+.eventCoupon {
+	background: url(../media/coupon4.png) no-repeat center;
+}
+
+.eventNotice::before {
+	border: 1px solid #bbbbbb;
+}

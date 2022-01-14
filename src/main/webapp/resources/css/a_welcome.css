@@ -1,0 +1,603 @@
+@charset "UTF-8";
+/* 초기화 */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Raleway:wght@500&display=swap");
+@font-face {
+  font-family: "DoHyeon-Regular";
+    src: url('../media/Do_Hyeon/DoHyeon-Regular.eot');
+    src: url('../media/Do_Hyeon/DoHyeon-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.woff2') format('woff2'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.woff') format('woff'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.ttf') format('truetype'),
+        url('../media/Do_Hyeon/DoHyeon-Regular.svg#DoHyeon-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DoHyeon-Regular";
+}
+ul li {
+  list-style-type: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+/* welcome */
+/* welcome 몸통 */
+#containerWelcome {
+  height: 100%;
+  width: 100%;
+  min-width: 480px;
+}
+
+#containerWelcome a,
+#containerWelcome a:visited {
+  color: #666666;
+  opacity: 0.5;
+  font-size: 30px;
+}
+
+#containerWelcome a:active,
+#containerWelcome a:hover {
+  opacity: 1;
+  color: #22c7a9;
+  text-shadow: 0px 4px 0px rgba(255, 255, 255, 0.82);
+}
+
+/* welcome 헤더*/
+#containerWelcome header {
+  width: 95%;
+  z-index: 20;
+}
+#containerWelcome header nav {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 20;
+}
+
+#containerWelcome header nav span {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+}
+#containerWelcome header nav span a {
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* welcome 헤더 페이지 이동버튼*/
+#containerWelcome aside {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 20;
+}
+
+#containerWelcome aside ul li {
+  list-style-type: none;
+  padding: 0.5rem 0;
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#containerWelcome aside ul li a {
+  font-size: 1rem;
+  transition: 0.5s;
+  margin-left: 0.2rem;
+}
+
+#containerWelcome aside ul li a:active,
+#containerWelcome aside ul li a:focus {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+#containerWelcome aside ul li span {
+  opacity: 0;
+  color: #22c7a9;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: 0.5s;
+  text-shadow: 0px 4px 0px rgba(255, 255, 255, 0.82);
+}
+#containerWelcome aside ul li a:hover {
+  color: #22c7a9;
+}
+#containerWelcome aside ul li a:hover ~ span {
+  opacity: 1;
+}
+#containerWelcome header i {
+  font-size: 40px; 
+  height: 50px; 
+  width: 50px; 
+  position:fixed; 
+  bottom:0; 
+  left:50%; 
+  color:#323232; 
+  z-index: 1;
+}
+
+/* welcome 채식별 페이지 기본설정*/
+#containerWelcome .part {
+  position: relative;
+  /* min-width: 50%; */
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* welcome 메인 기본설정*/
+#containerWelcome #part0 {
+  background: url(../media/bg/headerbg.png) no-repeat center;
+  background-size: 100% 100%;
+  height: 100vh;
+}
+
+/* welcome 채식 페이지별 배경설정*/
+#containerWelcome #part1 {
+  background: url(../media/bg/flexBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part2 {
+  background: url(../media/bg/polloBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part3 {
+  background: url(../media/bg/pescoBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part4 {
+  background: url(../media/bg/lactoovoBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part5 {
+  background: url(../media/bg/ovoBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part6 {
+  background: url(../media/bg/lactoBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part7 {
+  background: url(../media/bg/veganBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part8 {
+  background: url(../media/bg/fruitBG.png) no-repeat center;
+  background-size: cover;
+}
+
+#containerWelcome #part9 {
+  background-color: #f0d061;
+  z-index: 3;
+}
+
+/* welcome 채식 페이지별 내부설정*/
+#containerWelcome .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* welcome 채식 페이지별 가능 음식*/
+#containerWelcome #food1 {
+  background: url(../media/flex.png) no-repeat fixed center 70%;
+  background-size: 1400px 189px;
+  height: 100%;
+  width: 100%;
+}
+#containerWelcome #food2 {
+  background: url(../media/polo.png) no-repeat fixed center 70%;
+  background-size: 1280px 202px;
+  height: 100%;
+  width: 100%;
+}
+#containerWelcome #food3 {
+  background: url(../media/pesco.png) no-repeat fixed center 70%;
+  background-size: 1060px 202px;
+  height: 100%;
+  width: 100%;
+}
+#containerWelcome #food4 {
+  background: url(../media/lacto-ovo.png) no-repeat fixed center 70%;
+  background-size: 845px 202px;
+  height: 100%;
+  width: 100%;
+}
+#containerWelcome #food5 {
+  background: url(../media/ovo.png) no-repeat fixed center 70%;
+  background-size: 615px 202px;
+  height: 100%;
+  width: 100%;
+}
+#containerWelcome #food6 {
+  background: url(../media/lacto.png) no-repeat fixed center 70%;
+  background-size: 615px 202px;
+  height: 100%;
+  width: 100%;
+}
+#containerWelcome #food7 {
+  background: url(../media/vegan.png) no-repeat fixed center 70%;
+  background-size: 390px 202px;
+  height: 100%;
+  width: 100%;
+}
+#containerWelcome #food8 {
+  background: url(../media/fruit.png) no-repeat fixed center 70%;
+  background-size: 175px 202px;
+  height: 100%;
+  width: 100%;
+}
+
+/* welcome Home진입 전 페이지*/
+#containerWelcome #beforeHome h1 {
+  display: none;
+  color: #22c7a9;
+  font-size: 5rem;
+  font-weight: normal;
+  font-family: "DoHyeon-Regular", sans-serif;
+}
+
+#containerWelcome #beforeHome h1 a {
+  color: #22c7a9;
+  font-weight: bold;
+  font-size: 5rem;
+  font-weight: normal;
+  font-family: "DoHyeon-Regular", sans-serif;
+  opacity: 1;
+}
+#containerWelcome #beforeHome h1 a:hover {
+  font-size: 6rem;
+  color: #1b9f87;
+  transition: 0.5s ease-in-out;
+}
+
+#containerWelcome .fade-in-bottom {
+  animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 풀페이지 */
+#forwheel {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.forwheel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1600px) {
+  /* welcome 채식 페이지별 배경설정*/
+  #containerWelcome #part1 {
+    background: url(../media/bg/flexBG1600.png) no-repeat center;
+  }
+
+  #containerWelcome #part2 {
+    background: url(../media/bg/polloBG1600.png) no-repeat center;
+  }
+
+  #containerWelcome #part3 {
+    background: url(../media/bg/pescoBG1600.png) no-repeat center;
+  }
+
+  #containerWelcome #part4 {
+    background: url(../media/bg/lactoovoBG1600.png) no-repeat center;
+  }
+
+  #containerWelcome #part5 {
+    background: url(../media/bg/ovoBG1600.png) no-repeat center;
+  }
+
+  #containerWelcome #part6 {
+    background: url(../media/bg/lactoBG1600.png) no-repeat center;
+  }
+
+  #containerWelcome #part7 {
+    background: url(../media/bg/veganBG1600.png) no-repeat center;
+  }
+
+  #containerWelcome #part8 {
+    background: url(../media/bg/fruitBG1600.png) no-repeat center;
+  }
+
+  /* welcome 채식 페이지별 가능 음식 축소*/
+  #containerWelcome #food1 {
+    background-size: 1200px 162px;
+  }
+  #containerWelcome #food2 {
+    background-size: 1027px 162px;
+  }
+  #containerWelcome #food3 {
+    background-size: 850px 162px;
+  }
+  #containerWelcome #food4 {
+    background-size: 678px 162px;
+  }
+  #containerWelcome #food5 {
+    background-size: 493px 162px;
+  }
+  #containerWelcome #food6 {
+    background-size: 493px 162px;
+  }
+  #containerWelcome #food7 {
+    background-size: 313px 162px;
+  }
+  #containerWelcome #food8 {
+    background-size: 140px 162px;
+  }
+  /* 진입전 페이지 폰트조절 */
+  #containerWelcome #beforeHome h1 {
+    font-size: 4rem;
+    white-space: pre-line;
+  }
+
+  #containerWelcome #beforeHome h1 a {
+    font-size: 4rem;
+  }
+  #containerWelcome #beforeHome h1 a:hover {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 1220px) {
+  #containerWelcome #part0 {
+    background: url(../media/bg/headerbg1220.png) no-repeat center;
+    background-size: 100% 100%;
+  }
+  /* welcome 채식 페이지별 배경설정*/
+  #containerWelcome #part1 {
+    background: url(../media/bg/flexBG1220.png) no-repeat center;
+  }
+
+  #containerWelcome #part2 {
+    background: url(../media/bg/polloBG1220.png) no-repeat center;
+  }
+
+  #containerWelcome #part3 {
+    background: url(../media/bg/pescoBG1220.png) no-repeat center;
+  }
+
+  #containerWelcome #part4 {
+    background: url(../media/bg/lactoovoBG1220.png) no-repeat center;
+  }
+
+  #containerWelcome #part5 {
+    background: url(../media/bg/ovoBG1220.png) no-repeat center;
+  }
+
+  #containerWelcome #part6 {
+    background: url(../media/bg/lactoBG1220.png) no-repeat center;
+  }
+
+  #containerWelcome #part7 {
+    background: url(../media/bg/veganBG1220.png) no-repeat center;
+  }
+
+  #containerWelcome #part8 {
+    background: url(../media/bg/fruitBG1220.png) no-repeat center;
+  }
+  #containerWelcome #food1 {
+    background-size: 906px 122px;
+  }
+  #containerWelcome #food2 {
+    background-size: 773px 122px;
+  }
+  #containerWelcome #food3 {
+    background-size: 640px 122px;
+  }
+  #containerWelcome #food4 {
+    background-size: 510px 122px;
+  }
+  #containerWelcome #food5 {
+    background-size: 371px 122px;
+  }
+  #containerWelcome #food6 {
+    background-size: 371px 122px;
+  }
+  #containerWelcome #food7 {
+    background-size: 236px 122px;
+  }
+  #containerWelcome #food8 {
+    background-size: 106px 122px;
+  }
+}
+
+@media (max-width: 1024px) {
+   /*  #containerWelcome #part0 {
+      background: url(../media/bg/headerbg1024.png) no-repeat center;
+      background-size: 100% 100%;
+    } */
+  /* welcome 채식 페이지별 배경설정*/
+  #containerWelcome #part1 {
+    background: url(../media/bg/flexBG1024.png) no-repeat center;
+  }
+
+  #containerWelcome #part2 {
+    background: url(../media/bg/polloBG1024.png) no-repeat center;
+  }
+
+  #containerWelcome #part3 {
+    background: url(../media/bg/pescoBG1024.png) no-repeat center;
+  }
+
+  #containerWelcome #part4 {
+    background: url(../media/bg/lactoovoBG1024.png) no-repeat center;
+  }
+
+  #containerWelcome #part5 {
+    background: url(../media/bg/ovoBG1024.png) no-repeat center;
+  }
+
+  #containerWelcome #part6 {
+    background: url(../media/bg/lactoBG1024.png) no-repeat center;
+  }
+
+  #containerWelcome #part7 {
+    background: url(../media/bg/veganBG1024.png) no-repeat center;
+  }
+  #containerWelcome #part8 {
+    background: url(../media/bg/fruitBG1024.png) no-repeat center;
+  }
+  #containerWelcome #food1 {
+    background-size: 631px 85px;
+  }
+  #containerWelcome #food2 {
+    background-size: 539px 85px;
+  }
+  #containerWelcome #food3 {
+    background-size: 446px 85px;
+  }
+  #containerWelcome #food4 {
+    background-size: 356px 85px;
+  }
+  #containerWelcome #food5 {
+    background-size: 259px 85px;
+  }
+  #containerWelcome #food6 {
+    background-size: 259px 85px;
+  }
+  #containerWelcome #food7 {
+    background-size: 164px 85px;
+  }
+  #containerWelcome #food8 {
+    background-size: 74px 85px;
+  }
+  #containerWelcome #beforeHome h1 {
+    font-size: 3rem;
+  }
+
+  #containerWelcome #beforeHome h1 a {
+    font-size: 3rem;
+  }
+  #containerWelcome #beforeHome h1 a:hover {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+    #containerWelcome #part0 {
+      background: url(../media/bg/headerbg700.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+  /* welcome 채식 페이지별 배경설정*/
+  #containerWelcome #part1 {
+    background: url(../media/bg/flexBG700.png) no-repeat center;
+  }
+
+  #containerWelcome #part2 {
+    background: url(../media/bg/polloBG700.png) no-repeat center;
+  }
+
+  #containerWelcome #part3 {
+    background: url(../media/bg/pescoBG700.png) no-repeat center;
+  }
+
+  #containerWelcome #part4 {
+    background: url(../media/bg/lactoovoBG700.png) no-repeat center;
+  }
+
+  #containerWelcome #part5 {
+    background: url(../media/bg/ovoBG700.png) no-repeat center;
+  }
+
+  #containerWelcome #part6 {
+    background: url(../media/bg/lactoBG700.png) no-repeat center;
+  }
+
+  #containerWelcome #part7 {
+    background: url(../media/bg/veganBG700.png) no-repeat center;
+  }
+  #containerWelcome #part8 {
+    background: url(../media/bg/fruitBG700.png) no-repeat center;
+  }
+  #containerWelcome #food1 {
+    background-size: 408px 55px;
+  }
+  #containerWelcome #food2 {
+    background-size: 349px 55px;
+  }
+  #containerWelcome #food3 {
+    background-size: 289px 55px;
+  }
+  #containerWelcome #food4 {
+    background-size: 230px 55px;
+  }
+  #containerWelcome #food5 {
+    background-size: 167px 55px;
+  }
+  #containerWelcome #food6 {
+    background-size: 167px 55px;
+  }
+  #containerWelcome #food7 {
+    background-size: 106px 55px;
+  }
+  #containerWelcome #food8 {
+    background-size: 48px 55px;
+  }
+  #containerWelcome #beforeHome h1 {
+    font-size: 3rem;
+    white-space: pre-line;
+  }
+
+  #containerWelcome #beforeHome h1 a {
+    font-size: 3rem;
+  }
+  #containerWelcome #beforeHome h1 a:hover {
+    font-size: 3.5rem;
+  }
+  #containerWelcome #beforeHome h1 {
+    font-size: 2rem;
+  }
+
+  #containerWelcome #beforeHome h1 a {
+    font-size: 2rem;
+  }
+  #containerWelcome #beforeHome h1 a:hover {
+    font-size: 2.5rem;
+  }
+}

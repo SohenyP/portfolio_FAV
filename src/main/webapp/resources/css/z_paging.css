@@ -1,0 +1,1156 @@
+@charset "UTF-8";
+
+/* Home, Header, Footer */
+/* 데스크탑 반응형 */
+@media ( max-width : 1460px) {
+	/* 공지 글씨 , 배경 축소 */
+	.container aside .noti-inner {
+		background-size: 110% 280%;
+	}
+	.container aside .noti-inner .noti-wrap {
+		height: 460px;
+	}
+	.container aside .noti-inner .noti-wrap .notice a h1
+		{
+		font-size: 2.5rem;
+	}
+	.container aside .noti-inner .noti-wrap .notice a p:nth-child(2)
+		{
+		font-size: 18px;
+	}
+	.container aside .noti-inner .noti-wrap .notice a p:last-child
+		{
+		font-size: 16px;
+	}
+
+	/* 이달의 식당 각 섹션 축소 */
+	.container main #sec2 .sec-wrap article {
+		margin-bottom: 4rem;
+		height: 700px;
+	}
+	/* 이달의 식당 텍스트 축소 */
+	.container main section:nth-child(2) .sec-wrap>article .res-text h2
+		{
+		font-size: 5rem;
+		line-height: 8rem;
+	}
+	.container main section:nth-child(2) .sec-wrap>article .res-text p
+		{
+		font-size: 1.2rem;
+		font-weight: bold;
+		font-family: "Nanum_Gothic";
+		line-height: 2rem;
+	}
+	.container main section:nth-child(2) .sec-wrap>article .res-text p:nth-child(2)
+		{
+		margin-bottom: 2rem;
+	}
+	.container main section:nth-child(2) .sec-wrap>article .res-text>form input[type="submit"]
+		{
+		font-size: 3.5rem;
+		padding: 4rem 0;
+	}
+	/* 이달의 식당 그림축소 */
+	.container main #sec2 .sec-wrap article:not(:first-child) .res-photo
+		{
+		padding: 0 1.8rem;
+	}
+	.container main #sec2 .sec-wrap #art1 .res-photo {
+		padding: 0 1.8rem;
+	}
+	.container main #sec2 .sec-wrap #art1 .res-photo img
+		{
+		width: 300px;
+		height: 200px;
+	}
+	.container main #sec2 .sec-wrap article .res-photo img
+		{
+		width: 200px;
+		height: 300px;
+	}
+
+	/* 예약하기 */
+	#reserveMain {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.received-restau {
+		text-align: center;
+		margin: 100px 0;
+	}
+	#backimg {
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	main .makeReserve-cont .reserve-form {
+		justify-content: center;
+		padding: 0;
+	}
+	/* 이벤트5 */
+	.newFavee-cont .newFaveeList article {
+		width: 100%;
+		height: 580px;
+	}
+	.newFavee-cont .newFaveeList article>.restauImg {
+		width: 100%;
+		height: 350px;
+	}
+}
+
+@media ( max-width : 1265px) {
+	/* 이달의 식당 섹션 축소 */
+	.container main #sec2 .sec-wrap article {
+		margin-bottom: 3rem;
+		height: 650px;
+	}
+	/* 이달의 식당 이미지 축소 */
+	.container main #sec2 .sec-wrap #art1 .res-photo img
+		{
+		width: 320px;
+		height: 200px;
+	}
+	.container main #sec2 .sec-wrap article .res-photo img
+		{
+		width: 230px;
+		height: 300px;
+	}
+	/* 새로운 식당찾기 축소 */
+	.container main section:nth-child(3) article {
+		width: 100%;
+	}
+	.container main section:nth-child(3) article .together
+		{
+		width: 83%;
+	}
+	.container main section:nth-child(3) article .together input[type="submit"]
+		{
+		font-size: 3rem;
+		width: 95%;
+		height: 95%;
+	}
+}
+
+@media ( max-width : 1220px) {
+	/* 토탈메뉴 지우기 */
+	.container header .totalmenu {
+		display: none;
+	}
+	/* 메뉴 컬럼으로 쌓기 */
+	.container header .navNsearch {
+		width: 100%;
+		flex-direction: column-reverse;
+		padding-bottom: .5rem;
+	}
+	.container header .navNsearch .usernav>ul {
+		justify-content: flex-end;
+	}
+
+	/* aside 공지사항 배경 조절 */
+	.container aside .noti-inner {
+		background-size: 105% 250%;
+	}
+	.container aside .noti-inner .noti-wrap .notice a h1
+		{
+		font-size: 2rem;
+		white-space: pre-line;
+	}
+	.container aside .noti-inner button span {
+		font-size: 1.2rem;
+		padding: .5rem;
+		margin: 1rem;
+	}
+	.container aside .noti-inner .noti-wrap .notice a p:nth-child(2)
+		{
+		font-size: 14px;
+		white-space: pre-line;
+	}
+	.container aside .noti-inner .noti-wrap .notice a p:last-child
+		{
+		font-size: 15px;
+		white-space: pre-line;
+	}
+	/* 헤더 페이브/식당찾기/이벤트 글씨 축소 */
+	.container header .navNsearch .search-inner ul li
+		{
+		font-size: 18.5px;
+	}
+	.container header .navNsearch .search-inner ul li a
+		{
+		padding: 0;
+	}
+	/* 공지 높이 축소 */
+	.container aside .noti-inner {
+		height: 400px;
+	}
+	.container aside .noti-inner .noti-wrap {
+		height: 360px;
+	}
+	/* 지역별 식당 사이즈 변경 및 스크롤 디자인 */
+	.container main section:first-child {
+		width: 100%;
+		overflow: hidden;
+		padding: 0;
+	}
+	.container main section:first-child h1 {
+		padding: 3rem 20%;
+	}
+	.container main section:first-child>.articleWrap {
+		width: 100%;
+		margin: 0 auto;
+		overflow: hidden;
+	}
+	.container main section:first-child>.articleWrap>article {
+		grid-template: repeat(1, 1fr)/repeat(10, 1fr);
+		gap: 60px;
+		padding-left: 30px;
+		justify-content: space-between;
+		transition: transform .5s;
+		overflow-x: auto;
+	}
+	.container main section:first-child>.articleWrap>article>form .city .cityImg img {
+		width: 180px;
+		height: 180px;
+	}
+	.container main section:first-child>.articleWrap>article::-webkit-scrollbar {
+		height: 10px;
+	}
+	.container main section:first-child>.articleWrap>article::-webkit-scrollbar-track {
+		background: none;
+	}
+	.container main section:first-child>.articleWrap>article::-webkit-scrollbar-thumb {
+		background: #22c7a9;
+		border-radius: 50px 50px;
+	}
+	.container main section:first-child>.articleWrap>article::-webkit-scrollbar-thumb:hover {
+		background: #22c7a9;
+	}
+	.container main section:first-child .sec1Btnwrap #left,
+		.container main section:first-child .sec1Btnwrap #right {
+		display: inline-block;
+	}
+	/* 이달의 식당 각 섹션 축소 및 플렉스 방향 컬럼으로*/
+	.container main #sec2 .sec-wrap {
+		justify-content: center;
+		align-items: center;
+	}
+	.container main #sec2 .sec-wrap article {
+		margin-bottom: 5rem;
+		flex-direction: column;
+		justify-content: space-evenly;
+		width: 520px;
+	}
+	.container main #sec2 .sec-wrap #art1 {
+		height: 600px;
+		width: 520px;
+	}
+	.container main #sec2 .sec-wrap article:nth-child(2)
+		{
+		flex-direction: column-reverse;
+	}
+	/* 이달의 식당 텍스트 축소 */
+	.container main section:nth-child(2) .sec-wrap>article .res-text
+		{
+		width: 100%;
+	}
+	.container main section:nth-child(2) .sec-wrap>article .res-text h2
+		{
+		font-size: 4rem;
+		line-height: 5rem;
+	}
+	.container main section:nth-child(2) .sec-wrap>article .res-text p
+		{
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+	.container main section:nth-child(2) .sec-wrap>article .res-text p:nth-child(2)
+		{
+		margin-bottom: 1.5rem;
+	}
+	.container main section:nth-child(2) .sec-wrap>article .res-text>form input[type="submit"]
+		{
+		font-size: 3rem;
+		padding: 3rem 0;
+	}
+	/* 이달의 식당 그림축소 */
+	.container main #sec2 .sec-wrap article:not(:first-child) .res-photo
+		{
+		padding: 0 0;
+		gap: .7rem;
+	}
+	.container main #sec2 .sec-wrap #art1 .res-photo:nth-child(1)
+		{
+		flex-direction: row;
+		gap: .7rem;
+	}
+	.container main #sec2 .sec-wrap #art1 .res-photo img
+		{
+		width: 250px;
+		height: 220px;
+	}
+	.container main #sec2 .sec-wrap article .res-photo img
+		{
+		width: 250px;
+		height: 300px;
+	}
+	/* 이달의 축제 축소 */
+	.container main section:nth-child(4) .festival .festival-img1 img,
+		.container main section:nth-child(4) .festival .festival-img2 img
+		{
+		width: 100%;
+		height: 100%;
+	}
+	.container main section:nth-child(4) .festival h2
+		{
+		font-size: 3rem;
+	}
+	.container main section:nth-child(4) .festival p a
+		{
+		font-size: 1.5rem;
+	}
+	/* footer 조절 */
+	.container footer #wrap2 .wrap-inner {
+		width: 100%;
+		flex-direction: column-reverse;
+	}
+	.container footer #wrap3 .info {
+		white-space: pre-line;
+		font-size: 12px;
+	}
+	/* 2.데탑 반응 로그인  : 노니드 */
+	/* 3.데탑 반응 회원가입  : 노니드 */
+	/* 4.데탑 반응 페이브 소개  */
+	.brandTitle h1 {
+		font-size: 8rem;
+	}
+	.brandTitle p {
+		font-size: 1.5rem;
+	}
+	/* 5. 데탑 반응  식당찾기 */
+	.containerForRestaurent header .navNsearch .search-inner ul li
+		{
+		font-size: 18.5px;
+		font-weight: bold;
+	}
+	.containerForRestaurent header .navNsearch .search-inner ul li a
+		{
+		padding: 0;
+	}
+	.restauCont {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	.restauList {
+		flex: 1;
+		min-width: 100%;
+		margin: 2.5rem auto;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.restauMap {
+		flex: 1.5;
+	}
+	/* 모달 */
+	#modalCont-sort .title {
+		font-size: 1rem;
+	}
+	#modalCont-sort .city .city-choice {
+		display: grid;
+		grid-template: repeat(2, 1fr)/repeat(5, .5fr);
+	}
+	/* 6. 데탑 반응 쿠폰이벤트 */
+	.container .couponCont {
+		grid-template: repeat(5, 1fr)/1fr;
+		width: 100%;
+	}
+	.container .couponCont>a>.event {
+		width: 600px;
+	}
+	/* 데탑 반응 이벤트 쿠폰 1~5 공통부*/
+	.container .eventCont {
+		width: 630px;
+		height: 100%;
+	}
+	.eventTitle {
+		padding: 1rem;
+	}
+	.eventTitle h1 {
+		font-size: 1.4rem;
+	}
+	.eventTitle h3 {
+		font-size: .9rem;
+	}
+	.eventTitle img {
+		width: 200px;
+	}
+	.eventContent {
+		width: 95%;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+	.eventCoupon {
+		background-size: 400px 300px;
+	}
+	.eventCoupon h1 {
+		font-size: 1.3rem;
+	}
+	.eventCoupon p {
+		font-size: 1rem;
+	}
+	.eventContent>form>button {
+		width: 200px;
+		font-size: 1.5rem;
+	}
+
+	/* 데탑 반응 이벤트3 내달의식당 */
+	.eventRestauList {
+		width: 70%;
+	}
+	.eventRestauList>h1 {
+		font-size: 2.5rem;
+		padding: 3rem 0;
+	}
+	.eventRestauList .ListContent article>.restauImg {
+		width: 100%;
+		height: 250px;
+	}
+	.restauInform {
+		line-height: 25px;
+	}
+	.restauInform h2 {
+		padding-bottom: 3rem;
+		font-size: 1.1rem;
+	}
+	.restauInform p:not(:last-child) {
+		font-size: .9rem;
+	}
+	.restauInform p:nth-child(4) {
+		display: none;
+	}
+	.restauInform input[type="radio"]+label {
+		padding-left: 50px;
+		font-size: 1.5rem;
+	}
+	.restauInform input[type="radio"]+label:before {
+		font-size: 1.5rem;
+		width: 30px;
+		height: 30px;
+	}
+	.restauInform input[type="radio"]:checked+label:after
+		{
+		font-size: 1.5rem;
+		width: 30px;
+		height: 30px;
+	}
+	.voteResult {
+		padding-top: 1rem;
+		font-size: 1.8rem;
+	}
+	.eventRestauList .ListContent button#voteBtn {
+		width: 25%;
+		padding: 15px;
+		font-size: 25px;
+	}
+	/* 이벤트5 */
+	.newFavee-cont .newFaveeList article {
+		width: 100%;
+		height: 450px;
+	}
+	.newFavee-cont .newFaveeList article>.restauImg {
+		width: 100%;
+		height: 250px;
+	}
+	.restauInform h1 {
+		font-size: 1.5rem;
+	}
+	.restauInform h2 {
+		font-size: .9rem;
+	}
+	/* 마이페이지 */
+	/* 개인정보 수정 전 비밀번호 확인 */
+	.mypage {
+		padding-top: 30px;
+	}
+	.mypage>nav>ul>li {
+		line-height: 4rem;
+		font-size: 16px;
+	}
+	.mypage>nav>ul>li>ul>li>figure {
+		width: 80px;
+		height: 80px;
+	}
+	.mypage>.mypageMain>.myinformChangeBefore>h1 {
+		font-size: 28px;
+	}
+	.mypage>.mypageMain>.myinformChangeBefore>h1>p {
+		font-size: 20px;
+	}
+	.mypage>.mypageMain>.myinformChangeBefore>table {
+		width: 100%;
+	}
+	.mypage>.mypageMain>.myinformChangeBefore>table tr>th {
+		font-size: 16px;
+	}
+	.mypage>.mypageMain>.myinformChangeBefore>table>tbody>tr>td>input[type="password"] {
+		width: 170px;
+	    font-size: 13px;
+	}
+	.mypage>.mypageMain>.myinformChangeBefore>table>tbody>tr>td>input[type="password"]::placeholder {
+	    font-size: 13px;
+	}
+	
+	/* 마이페이지 */
+	/* 공통부 */
+	
+	.mypage>.mypageMain>div {
+    	padding: 10px;
+	}
+	
+	.mypage>.mypageMain>div>h1 {
+		font-size: 28px;
+	}
+	.mypage>.mypageMain>div>h1>p {
+		font-size: 20px;
+	}
+	.mypage>.mypageMain>div>table {
+		width: 100%;    
+	}
+	.mypage>.mypageMain>div>table tr>th {
+		font-size: 13px;
+		
+	}
+	.mypage>.mypageMain>div>table tr>td {
+		font-size: 13px;
+	}
+	
+	/* 일반회원 예약내역 */
+	
+	.mypage>.mypageMain>.myReceived>table>tbody>tr>td {
+		font-size: 11px;
+	}
+	
+	/* myInform 내정보 */
+	.mypage>.mypageMain>.myInform>table {
+	    border-spacing: 20px;
+	}
+	/* myRestaurent 내 식당 */
+	.mypage>.mypageMain>.myRestaurent>table>thead>tr>th {
+		font-weight: 400;
+		font-size: 15px;
+	}
+
+	/* .mypage>.mypageMain>.myRestaurent>table>tbody>tr>td {
+		font-size: 11px;
+	} */
+	
+}
+
+/* 태블릿 */
+@media ( max-width : 790px) {
+	/* 각 파트 제목 사이즈 줄이기 */
+	.container main section h1 {
+		font-size: 2.5rem;
+		padding: 3rem 0;
+	}
+	.container aside .noti-inner .noti-wrap .notice a h1
+		{
+		font-size: 1.5rem;
+	}
+	.container aside .noti-inner .noti-wrap .notice a p:nth-child(2)
+		{
+		font-size: 12.5px;
+	}
+	/* 지역별 식당 아이콘 키우기 */
+	.container main section:first-child>.articleWrap>article
+		{
+		gap: 80px;
+		margin: 0 4rem;
+		padding-left: 0;
+	}
+	.container main section:first-child>.articleWrap>article>form .city .cityImg img
+		{
+		width: 280px;
+		height: 280px;
+	}
+	/* 이달의 페이브 식당명 축소 */
+	.container main section:nth-child(2) .sec-wrap>article>form .res-text h2
+		{
+		font-size: 1.8rem;
+		line-height: 5rem;
+	}
+	.container main section:nth-child(2) .sec-wrap>article>form .res-text>form input[type="submit"]
+		{
+		font-size: 2rem;
+		padding: 1rem 0;
+	}
+	/* 이달의 페이브 하단 마진 축소 */
+	.container main section:nth-child(2) {
+		margin-bottom: 0;
+	}
+	/* 새로운 식당 찾기 */
+	.container main section:nth-child(3) article .together
+		{
+		width: 100%;
+	}
+	.container main section:nth-child(3) article .together input[type="submit"]
+		{
+		font-size: 2rem;
+	}
+	/* 축제 */
+	.container main section:nth-child(4) .festival h2
+		{
+		font-size: 2rem;
+	}
+	.container main section:nth-child(4) .festival p a
+		{
+		font-size: 1rem;
+	}
+	.container main section:nth-child(4) .festival .domestic,
+		.container main section:nth-child(4) .festival .foreign
+		{
+		left: 0;
+	}
+	.container footer #wrap2 .wrap-inner .rights {
+		display: grid;
+		grid-template: repeat(2, .1fr)/repeat(4, .3fr);
+		text-align: center;
+	}
+	.container footer #wrap2 .wrap-inner .rights li {
+		line-height: 30px;
+	}
+	.container footer #wrap2 .wrap-inner .rights li:first-child
+		{
+		grid-column-end: span 4;
+	}
+	.container footer #wrap2 .rights li:not(:nth-child(5)):after
+		{
+		border-right: none;
+		margin: 0 auto;
+		line-height: 30px;
+	}
+	.container footer #wrap2 .wrap-inner>.sns>li {
+		text-align: center;
+	}
+
+	/* 2.태블릿 로그인 : 노니드*/
+	/* 3. 태블릿 회원가입 */
+	main .makeAccount-cont h1 {
+		margin-bottom: 1.5rem;
+	}
+	main .makeAccount-cont .account-form form>p {
+		margin: 0 auto;
+		width: 100%;
+		padding-bottom: .5rem;
+		margin-bottom: 1rem;
+	}
+	main .makeAccount-cont .account-form form table {
+		display: flex;
+		justify-content: center;
+		width: 99%;
+		margin: 0 auto;
+	}
+	main .makeAccount-cont .account-form form table tbody
+		{
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+	}
+	main .makeAccount-cont .account-form form table tbody tr th
+		{
+		display: flex;
+		line-height: 50px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr:nth-child(10)
+		{
+		flex-direction: column;
+	}
+	main .makeAccount-cont .account-form form table tbody tr:nth-child(10) th
+		{
+		padding: 1rem 0;
+	}
+	main .makeAccount-cont .account-form form table tbody tr th
+		{
+		font-size: 16px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr th span
+		{
+		padding: 0;
+	}
+	main .makeAccount-cont .account-form form table tbody tr#pwPart2 td #wrong
+		{
+		/* font-size: 1rem; */
+		white-space: pre-line;
+	}
+	main .makeAccount-cont .account-form form table tbody tr td input
+		{
+		width: 250px;    
+		padding: 10px 5px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr td input::placeholder
+		{
+		font-size: 13px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr#birthTr td .newBirth input
+		{
+		width: 80px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr#birthTr td .newBirth {
+		width: 260px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"]+label:before
+		{
+		font-size: 1.3rem;
+		width: 25px;
+		height: 25px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"]:checked+label:after
+		{
+		font-size: 1.4rem;
+		width: 25px;
+		height: 25px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"]+label .label-text,
+		main .makeAccount-cont .account-form form table tbody tr:last-child td div input[type="checkbox"]+label .mandy
+		{
+		font-size: .83rem;
+	}
+	/* 버튼들 사이즈 줄이기 */
+	main .makeAccount-cont .account-form form table tbody tr:not(tr#agreementTr) td button {
+		width: 80px;
+		font-size: 14px;
+	}
+	main .makeAccount-cont .account-form form #join,
+	main .makeAccount-cont .account-form form #revise {
+		width: 80%;
+		font-size: 2rem;
+	}
+	main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #address,
+		main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #detailAddress
+		{
+		width: 260px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr#addressTr .findAddress #postcode
+		{
+		width: 130px;
+	}
+	main .makeAccount-cont .account-form form table tbody tr:last-child td div button
+		{
+		font-size: 9px;
+	}
+	/* 4.태블릿 페이브 소개  */
+	.brandTitle h1 {
+		font-size: 4rem;
+	}
+	.brandTitle p {
+		font-size: 1rem;
+	}
+	/* 5. 태블릿 식당찾기 */
+	.restauMap {
+		flex: 0;
+	}
+	.restauList article .restauInform p {
+		font-size: .8rem;
+	}
+
+	/* 예약하기 */
+	#backimg {
+		height: 300px;
+	}
+	/* 태블릿 쿠폰이벤트 */
+	.container .couponCont>a>.event {
+		width: 300px;
+	}
+	.container .couponCont>a>.event>h1 {
+		display: none;
+	}
+	/* 이벤트 쿠폰 1~5 공통부*/
+	.container .eventCont {
+		width: 300px;
+		height: 100%;
+	}
+	.eventTitle {
+		flex-direction: column-reverse;
+		align-items: center;
+		text-align: center;
+		width: 100%;
+		padding: .5rem;
+	}
+	.eventTitle .eventTitletext {
+		display: flex;
+	}
+	.eventTitle .eventTitletext h1 {
+		font-size: 1.1rem;
+		font-weight: bold;
+		margin: auto 0;
+		text-align: center;
+	}
+	.eventTitle .eventTitletext h3 {
+		display: none;
+	}
+	.eventTitle img {
+		width: 230px;
+	}
+	.eventContent {
+		padding: .2rem;
+	}
+	.eventCoupon {
+		background-size: 200px 250px;
+		padding: 2.5rem;
+	}
+	.eventCoupon h1 {
+		font-size: 1rem;
+		white-space: pre-line;
+	}
+	.eventCoupon p {
+		font-size: .8rem;
+		white-space: pre-line;
+	}
+	.eventContent>form>button {
+		width: 150px;
+		font-size: 1.2rem;
+	}
+	/* 태블릿 이벤트3 내달의식당 */
+	.eventRestauList .ListContent {
+		gap: 2rem;
+		justify-items: center;
+	}
+	.eventRestauList .ListContent article {
+		height: 380px;
+		width: 190px;
+	}
+	.restauInform {
+		margin: 0;
+		padding: .1rem .2rem;
+	}
+	.restauInform>h1 {
+		font-size: 1.3rem;
+	}
+	.restauInform>h2 {
+		display: none;
+	}
+	.eventRestauList .ListContent button#voteBtn {
+		padding: 10px;
+		font-size: 20px;
+	}
+	/* 이벤트 4 게시판 */
+	.boardBox .board_contents .faq_area h1 {
+		font-size: 2rem;
+		padding: 1rem 0;
+	}
+	.boardBox .board_contents .faq_area h1::after {
+		width: 90%;
+		margin: 20px auto;
+	}
+	.boardBox .board_contents .faq_area .writebtnBox {
+		width: 97%;
+	}
+	.board_contents .faq_area table th,
+		.board_contents .faq_area table tbody td {
+		font-size: 12px;
+	}
+	.board_contents .faq_area table th:nth-child(4),
+		.board_contents .faq_area table tbody td:nth-child(4)
+		{
+		display: none;
+	}
+	.board_contents .faq_area table tbody tr td a.info
+		{
+		width: 100px;
+		font-size: 12px;
+	}
+	.board_contents .faq_area table .description td .answer
+		{
+		font-size: 12px;
+	}
+	
+	#writerBox #writer .contentBox #writerTitle,
+	#modifyBox #modifier .contentBox #modifyTitle {
+		font-size: 18px;
+	}
+
+	#writerBox #writer .contentBox #writerTtitle::placeholder {
+		font-size: 18px;
+	}
+	#writerBox #writer .contentBox #writerContent::placeholder {
+		font-size: 15px;
+	}
+	#writerBox #writer .contentBox #writerContent,
+	#modifyBox #modifier .contentBox #modifyContent {
+	font-size: 13px;
+	
+	}
+	#writerBox #writer .btnBox #submitPost,
+	#writerBox #writer .btnBox #backBoard,
+	#modifyBox #modifier .btnBox #modifyPost,
+	#modifyBox #modifier .btnBox #backBoard2 {
+	width: 100px;
+	height: 40px;
+	font-size: 15px;
+	}
+	/* 이벤트5 */
+	.newFavee-cont>h1 {
+		font-size: 2rem;
+	}
+	.newFavee-cont #timer #count {
+		font-size: 1.9rem;
+	}
+	.newFavee-cont .newFaveeList {
+		grid-template-columns: repeat(1, .5fr);
+		justify-content: center;
+	}
+	.newFavee-cont .newFaveeList article {
+		width: 100%;
+		height: 360px;
+	}
+	.newFavee-cont .newFaveeList article>.restauImg {
+		width: 100%;
+		height: 320px;
+	}
+	.newFavee-cont>h1::after {
+		width: 80%;
+	}
+	.newFavee-cont .newFaveeList article>.restauImg {
+		width: 100%;
+		height: 250px;
+	}
+	
+	/* 마이페이지 */
+	/* 개인정보 수정 전 비밀번호 확인 */
+	.mypage {
+		flex:0;
+		width: 100%;
+		flex-direction: column;
+	}
+	.mypage>nav>ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0;
+	}
+	.mypage>nav>ul>li {
+		display:flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.mypage>nav>ul>li>ul>li>figure {
+		width: 50px;
+		height: 50px;
+	}
+	/* 점주 마이페이지 공통부 */
+	
+	/* myRestaurent 내 식당 */
+	.mypage>.mypageMain>.myRestaurent>table>tbody>tr>td {
+		font-size: 13px;
+	}
+	.mypage>.mypageMain>div {
+    	padding: 10px;
+	}
+	
+}
+
+/* 모바일 */
+@media ( max-width : 550px) {
+	/* 1.모바일 HOME */
+	/* 유저메뉴 숨기고, 모바일 바 나타내기 */
+	.container header .navNsearch .usernav {
+		display: none;
+	}
+	.container header .navNsearch .search-inner {
+		padding: .5rem;
+	}
+	/* 모바일 바 */
+	.mobile-bar {
+		display: inline-flex;
+	}
+	/* 섹션별 제목 가운데정렬 */
+	.container main section h1 {
+		text-align: center;
+	}
+	.container main section:nth-child(2) .sec-wrap>article>.res-text:nth-child(2),
+		.container main section:nth-child(2) .sec-wrap>article .res-text
+		{
+		text-align: center;
+	}
+	/* 공지 글씨 , 배경 축소 */
+	.container aside .noti-inner {
+		background-size: 110% 200%;
+	}
+	.container aside {
+		top: 150px;
+	}
+	.container aside .noti-inner {
+		height: 400px;
+	}
+	.container aside .noti-inner .noti-wrap {
+		height: 300px;
+		width: 240px;
+		position: relative;
+		top: 30px;
+	}
+	.container aside .noti-inner .noti-wrap .notice a h1 {
+		font-size: 1.35rem;
+	}
+	/* 지역별 식당 아이콘 키우기 */
+	.container main section:first-child>.articleWrap {
+		display: flex;
+		justify-content: center;
+	}
+	.container main section:first-child>.articleWrap>article
+		{
+		gap: 100px;
+	}
+	.container main section:first-child>.articleWrap>article>form .city .cityImg img
+		{
+		width: 380px;
+		height: 380px;
+	}
+	/* 이달의 식당 섹션 축소 */
+	.container main #sec2 .sec-wrap article {
+		margin-bottom: 5rem;
+		flex-direction: column;
+		justify-content: space-evenly;
+		width: 450px;
+	}
+	.container main #sec2 .sec-wrap #art1 {
+		height: 600px;
+		width: 450px;
+	}
+	/* 이달의 식당 이미지 축소 */
+	.container main #sec2 .sec-wrap #art1 .res-photo {
+		gap: .2rem;
+	}
+	.container main #sec2 .sec-wrap article:not(:first-child) .res-photo
+		{
+		gap: .2rem;
+	}
+	.container main #sec2 .sec-wrap #art1 .res-photo img
+		{
+		width: 215px;
+		height: 180px;
+	}
+	.container main #sec2 .sec-wrap article .res-photo img
+		{
+		width: 215px;
+		height: 280px;
+	}
+	/* 축제 정렬 */
+	.container main section:nth-child(4) .festival {
+		flex-direction: column;
+	}
+	.container main section:nth-child(4) .festival .festival-img1 img,
+		.container main section:nth-child(4) .festival .festival-img2 img
+		{
+		margin-bottom: 2rem;
+	}
+	/* footer */
+	.container footer #wrap1 ul {
+		flex-direction: column;
+	}
+	.container footer #wrap1 ul li {
+		line-height: 30px;
+	}
+	.container footer #wrap3 {
+		flex-direction: column-reverse;
+	}
+	.container footer #wrap3 .contact {
+		display: flex;
+		width: 100%;
+		justify-content: space-evenly;
+		margin-bottom: 1rem;
+	}
+	.container footer #wrap3 .contact .phone::after {
+		border-bottom: none;
+	}
+	.container footer #wrap3 .info p {
+		font-size: 13px;
+	}
+
+	/* 2.모바일 로그인 : 노니드*/
+	main .login-cont {
+		width: 300px;
+	}
+	/* 3. 모바일 회원가입: 노니드 */
+	/* 4.모바일 페이브 소개  */
+	.videoCont {
+		top: 200px;
+	}
+	/* 예약하기 */
+	#reserveMain {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.received-restau {
+		text-align: center;
+	}
+	#backimg {
+		height: 250px;
+	}
+	#reserveMain .makeReserve-cont .reserve-form {
+		justify-content: center;
+	}
+	#caution-remark {
+		font-size: 11px;
+	}
+	#cationList li {
+		font-size: 13px;
+	}
+	main .makeReserve-cont .reserve-form form button {
+		width: 100%;
+		font-size: 1.5rem;
+	}
+	/* 5. 모바일 식당찾기 */
+	.containerForRestaurent header .totalmenu {
+		flex: 1;
+	}
+	.containerForRestaurent header .navNsearch .usernav
+		{
+		display: none;
+	}
+	.containerForRestaurent header .navNsearch .search-inner
+		{
+		padding: 0.5rem;
+	}
+	#modalCont-sort .city .city-choice {
+		display: grid;
+		grid-template: repeat(5, 1fr)/repeat(2, .5fr);
+	}
+	.restauList {
+		padding: 1rem .3rem 1rem 1rem;
+	}
+	.restauList article .restauInform {
+		margin-left: 1rem;
+	}
+	/* 모바일 이벤트3 내달의식당 */
+	.eventRestauList>h1 {
+		font-size: 2rem;
+	}
+	.eventRestauList .ListContent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+	.eventRestauList .ListContent article {
+		width: 300px;
+	}
+	.eventRestauList .ListContent button#voteBtn {
+		padding: 10px;
+		font-size: 18px;
+	}
+	/* 마이페이지 */
+	/* 개인정보 수정 전 비밀번호 확인 */
+	.mypage {
+		margin-top: 180px;
+	}
+	.mypage>.mypageMain>.myinformChangeBefore>.buttonCase>button {
+		font-size: 20px;
+		padding: 8px 15px;
+	}
+
+}

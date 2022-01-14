@@ -1,0 +1,160 @@
+@charset "UTF-8";
+main {
+    flex-direction: column;
+}
+
+.eventCont {
+    background: url(../media/bg/asidebg2.png);
+}
+.eventTitle {
+    background-color: #fd9b9a;
+}
+.eventContent>form>button {
+    border: 2px solid #fd9b9a;
+}
+.eventContent>form>button:hover {
+    background-color: #fd9b9a;
+}
+.eventCoupon {
+    background: url(../media/coupon3.png) no-repeat center;
+}
+
+
+/* 내달의 식당 참가 리스트 */
+.eventRestauList {
+	margin-bottom: 10rem;
+}
+.eventRestauList>h1 {
+    font-size: 3rem;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.eventRestauList>h1::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid #bbbbbb;
+    margin: 30px auto;
+}
+
+.eventRestauList .ListContent {
+    display: grid;
+    grid-template: repeat(3, .5fr)/ repeat(2, .5fr);
+    gap: 5rem;
+}
+
+
+.eventRestauList .ListContent article {
+    border: 6px double #bbbbbb;
+    height: 100%;
+}
+
+.eventRestauList .ListContent article>.restauImg {
+    overflow: hidden;
+    width: 440px;
+    height: 400px;
+    margin: 0 auto;
+    border-bottom: 1px solid #bbbbbb;
+}
+.eventRestauList .ListContent article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: .5s cubic-bezier(0.42, 0, 0.1, 0.96);
+}
+.eventRestauList .ListContent article:hover img {
+    transform: scale(1.1);
+}
+.restauInform {
+    margin-left: 1rem;
+    padding: 2em 0;
+    line-height: 30px;
+    text-align: left;
+}
+
+.restauInform h1 {
+    font-size: 3rem;
+    text-decoration: underline;
+}
+
+.restauInform h2 {
+    line-height: 50px;
+    padding-bottom: 3rem;
+}
+
+.restauInform p:not(:last-child) {
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: "Nanum_Gothic";
+}
+
+.restauInform .restChoice {
+    display: none;
+}
+
+.restauInform .restChoice+label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 60px;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+.restauInform .restChoice+label:before {
+    content: "√";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    width: 35px;
+    height: 35px;
+    border: 5px solid #bbbbbb;
+    border-radius: 50px;
+    color: #bbbbbb;
+}
+
+.restauInform .restChoice:checked+label:after {
+    content: "√";
+    position: absolute;
+    left: 0;
+    top: -10px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    width: 35px;
+    height: 35px;
+    border: 5px solid #22c7a9;
+    border-radius: 50px;
+    color: #22c7a9;
+}
+
+.voteResult {
+    color: #22c7a9;
+    text-shadow: #e0e0e0 1px 1px 0;
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+.eventRestauList .ListContent button#voteBtn {
+    grid-column-end: span 2;    
+    margin: 10px auto;
+    width: 30%;
+    padding: 20px;
+    font-size: 30px;
+    outline: none;
+    background: none;
+    border: 2px solid #22c7a9;
+    color: #22c7a9;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.eventRestauList .ListContent #voteBtn:hover {
+    background-color: #22c7a9;
+    color: #fff;
+}

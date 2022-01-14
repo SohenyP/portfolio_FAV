@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- https://mybatis.org/mybatis-3/ko/getting-started.html -->
+<!-- 매핑된 SQL 구문 살펴보기에서 가져옴 -->
+<mapper namespace="couponbbs">
+
+	
+	
+	<!-- 레시피 게시판 들고오기 -->
+	<select id="selectCouponBbs" parameterType="couponbbsVO" resultType="couponbbsVO">
+		SELECT num, title, content, memberId, createdate, isdelete, bulletPoint
+		FROM coupon_bbs
+		<where>
+			<if test="memberId != null">memberId = #{memberId}</if>
+			<if test="isdelete != null">AND isdelete = #{isdelete}</if>
+			<if test="bulletPoint != null">AND bulletPoint = #{bulletPoint}</if>
+		</where>
+		ORDER BY num DESC
+		LIMIT #{start}, #{count}
+	</select>
+	
+	<!-- 레시피 게시판 토탈 카운트 -->
+	<select id="selectCouponBbsCount" resultType="int">
+		SELECT COUNT(*) 
+		FROM coupon_bbs
+		WHERE isdelete = 'N'
+	</select>
+	
+	<!-- 레시피 게시판 게시글 추가 -->
+	<insert id="insertBbs" parameterType="couponbbsVO">
+		INSERT INTO coupon_bbs(num, title, content, memberId, bulletPoint)
+		VALUES(NULL, #{title}, #{content}, #{memberId}, #{bulletPoint}) 
+	</insert>
+	
+	<!-- 레시피 게시판 게시글 수정  -->
+	<update id="updateBbs" parameterType="couponbbsVO">
+		UPDATE coupon_bbs
+		<set>
+			<if test="title != null">title = #{title}</if>
+			<if test="title != null">, content = #{content}</if>
+			<if test="title != null">, bulletPoint = #{bulletPoint}</if>
+		</set>
+		WHERE num = #{num} AND memberId = #{memberId}
+	</update>
+	
+	<!-- 레시피 게시판 게시글 삭제 -->
+	<delete id="deleteBbs" parameterType="couponbbsVO">
+		DELETE FROM coupon_bbs WHERE num = #{num}
+	</delete>
+	
+		
+
+</mapper>

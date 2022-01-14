@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- alias 설정 -->
+<configuration>
+	<typeAliases>
+		<typeAlias type="project.pack.vo.festival_VO" alias="festivalVO"/>
+		<typeAlias type="project.pack.vo.restaurent_listVO" alias="restaurentVO"/>
+		<typeAlias type="project.pack.vo.account_memberVO" alias="memberVO"/>
+		<typeAlias type="project.pack.vo.account_faverVO" alias="faverVO"/>
+		<typeAlias type="project.pack.vo.account_faveeVO" alias="faveeVO"/>
+		<typeAlias type="project.pack.vo.account_couponVO" alias="faverCouponVO"/>
+		<typeAlias type="project.pack.vo.account_reservationVO" alias="reservationVO"/>
+		<typeAlias type="project.pack.vo.account_bbsVO" alias="accountbbsVO"/>
+		<typeAlias type="project.pack.vo.revision_VO" alias="reviseVO"/>
+		<typeAlias type="project.pack.vo.coupon_listVO" alias="couponListVO"/>
+		<typeAlias type="project.pack.vo.coupon_bbsVO" alias="couponbbsVO"/>
+		<typeAlias type="project.pack.vo.restaurent_canidateVO" alias="canidateVO"/>
+		<typeAlias type="project.pack.vo.restaurent_voteVO" alias="voteVO"/>
+		<typeAlias type="project.pack.vo.adminVO" alias="adminVO"/>
+	</typeAliases>
+</configuration>
