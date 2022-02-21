@@ -32,31 +32,55 @@
 			</div>
 		</nav>
 		<main>
-		<%-- 	<h1>관리자 관리</h1>
-			<div class="manageOfAdmin">
+			<h1>축제 관리</h1>
+			<div class="manageOfFestival">
+			<h3>국내</h3>
 				<table>
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th>관리자 아이디</th>
-							<th>관리자 비밀번호</th>
-							<th>관리자 이름</th>
-							<th>관리자 이메일</th>
+							<th>id</th>
+							<th>city</th>
+							<th>site</th>
+							<th>title</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="admin" items="${aministrator}">
+						<c:forEach var="" items="">
 							<tr>
-								<td>${admin.rowNum}</td>
-								<td>${admin.adminId}</td>
-								<td>${admin.adminPw}</td>
-								<td>${admin.adminName}</td>
-								<td>${admin.adminEmail}</td>
+								<td>No.</td>
+								<td>id</td>
+								<td>city</td>
+								<td>site</td>
+								<td>title</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-			</div> --%>
+			<h3>국외</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>id</th>
+							<th>city</th>
+							<th>site</th>
+							<th>title</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="" items="">
+							<tr>
+								<td>No.</td>
+								<td>id</td>
+								<td>city</td>
+								<td>site</td>
+								<td>title</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div> 
 		</main>
 	</div>
 </body>

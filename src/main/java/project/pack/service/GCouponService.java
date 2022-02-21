@@ -274,7 +274,7 @@ public class GCouponService {
 	
 	//쿠폰 4 : 게시글 가져가기 및 페이징 
 	public void selectCouponBbs(Model model, int num) {
-		//페이지당 보여줄 게시글 숫자
+		//총 게시글 수
 		int count = sqlSessionTemplate.selectOne("couponbbs.selectCouponBbsCount");
 		//페이지 범위
 		int total = (count/5)+((count%5==0)? 0:1);

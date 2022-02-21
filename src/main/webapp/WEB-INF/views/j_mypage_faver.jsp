@@ -408,7 +408,7 @@
 						 */
 						name : $name,
 						//결제창에서 보여질 이름
-						amount : 100,
+						amount : $charge,
 						//$charge,
 						//가격
 						buyer_email : '${sessionScope.account.memberEmail}',

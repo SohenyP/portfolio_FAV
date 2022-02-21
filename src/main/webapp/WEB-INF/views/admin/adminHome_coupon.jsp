@@ -32,28 +32,30 @@
 			</div>
 		</nav>
 		<main>
-			<h1>관리자 관리</h1>
-			<div class="manageOfAdmin">
+			<h1>쿠폰 관리</h1>
+			<div class="manageOfCoupon">
 				<table>
 					<thead>
 						<tr>
 							<th>No.</th>
-							<th>관리자 아이디</th>
-							<th>관리자 비밀번호</th>
-							<th>관리자 이름</th>
-							<th>관리자 이메일</th>
+							<th>쿠폰 번호</th>
+							<th>쿠폰 이름</th>
+							<th>할인율</th>
+							<th>최대 할인액</th>
+							<th>유효기간</th>
 						</tr>
 					</thead>
 					<tbody>
-						<%-- <c:forEach var="admin" items="${aministrator}">
+					<c:forEach var="coupon" items="">
 							<tr>
-								<td>${admin.rowNum}</td>
-								<td>${admin.adminId}</td>
-								<td>${admin.adminPw}</td>
-								<td>${admin.adminName}</td>
-								<td>${admin.adminEmail}</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
-						</c:forEach> --%>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>

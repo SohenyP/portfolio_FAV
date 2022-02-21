@@ -17,7 +17,7 @@ public class BHomeService {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 
-	//축제 가져오기 : 국내
+	//축제 가져오기 : 국내 / 해외
 	public void getFastivalDome(Model model, String table1, String table2) {
 		try {
 			
@@ -31,7 +31,7 @@ public class BHomeService {
 		
 	}
 	
-	//축제 가져오기 : 해외
+	//식당 리스트 가져오기
 	public void getRestauList(Model model) {
 		try {
 			model.addAttribute("restaurentList", sqlSessionTemplate.selectList("restaurent.selectRestaurent"));
