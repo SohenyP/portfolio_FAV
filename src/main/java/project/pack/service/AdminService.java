@@ -27,7 +27,7 @@ public class AdminService {
 			result = "";
 		}
 		else if(vo1 == null) {
-			result = "���̵� �Ǵ� ��й�ȣ Ȯ��";
+			result = "아이디와 비밀번호를 확인해주세요";
 		}
 		
 		model.addAttribute("alertMSG", result);

@@ -150,6 +150,16 @@
 		justify-content: flex-end;
 	}
 
+	/* 헤더 페이브/식당찾기/이벤트 글씨 축소 */
+	.container header .navNsearch .search-inner ul li
+		{
+		font-size: 18.5px;
+	}
+	.container header .navNsearch .search-inner ul li a
+		{
+		padding: 0;
+	}
+	
 	/* aside 공지사항 배경 조절 */
 	.container aside .noti-inner {
 		background-size: 105% 250%;
@@ -173,15 +183,6 @@
 		{
 		font-size: 15px;
 		white-space: pre-line;
-	}
-	/* 헤더 페이브/식당찾기/이벤트 글씨 축소 */
-	.container header .navNsearch .search-inner ul li
-		{
-		font-size: 18.5px;
-	}
-	.container header .navNsearch .search-inner ul li a
-		{
-		padding: 0;
 	}
 	/* 공지 높이 축소 */
 	.container aside .noti-inner {
@@ -472,21 +473,18 @@
 		font-size: .9rem;
 	}
 	/* 마이페이지 */
-	/* 개인정보 수정 전 비밀번호 확인 */
 	.mypage {
-		padding-top: 30px;
+		padding-top: 280px;
+		width: 80%;
 	}
-	.mypage>nav>ul>li {
-		line-height: 4rem;
-		font-size: 16px;
-	}
+	/* 개인정보 수정 전 비밀번호 확인 */
 	.mypage>nav>ul>li>ul>li>figure {
 		width: 80px;
 		height: 80px;
 	}
 	.mypage>.mypageMain>.myinformChangeBefore>h1 {
 		font-size: 28px;
-	}
+	} 
 	.mypage>.mypageMain>.myinformChangeBefore>h1>p {
 		font-size: 20px;
 	}
@@ -926,6 +924,9 @@
 		width: 100%;
 		flex-direction: column;
 	}
+	.mypage>nav {
+		flex: 0;
+	}
 	.mypage>nav>ul {
 		display: flex;
 		flex-direction: row;
@@ -965,7 +966,7 @@
 	}
 	/* 모바일 바 */
 	.mobile-bar {
-		display: inline-flex;
+		display: inline-flex !important;
 	}
 	/* 섹션별 제목 가운데정렬 */
 	.container main section h1 {
@@ -1146,7 +1147,7 @@
 	/* 마이페이지 */
 	/* 개인정보 수정 전 비밀번호 확인 */
 	.mypage {
-		margin-top: 180px;
+		padding-top: 210px;
 	}
 	.mypage>.mypageMain>.myinformChangeBefore>.buttonCase>button {
 		font-size: 20px;

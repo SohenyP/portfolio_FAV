@@ -99,8 +99,6 @@
 				
 					
 				<div class="restauMap">
-					<%-- <input type="hidden" name="restaurentList" id="restaurentList" value="${restaurentList}">
-					<input type="hidden" name="n" id="n" value="${n}"> --%>
 					<script type="text/javascript">
 					//지도 및 마커 
 					function initMap() {
@@ -364,37 +362,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="mobile-bar">
-		<ul>
-			<li>
-				<input type="radio" name="mobile-btn" id="tohome" value="tohome">
-				<label for="tohome"> 
-					<a href="home">
-						<i class="fas fa-home"></i><br> 
-						<span>홈으로</span></a>
-				</label>
-			</li>
-
-			<li>
-				<input type="radio" name="mobile-btn" id="look" value="look">
-				<label for="look"> 
-					<a href="welcome">
-						<i class="fas fa-bars"></i><br> 
-						<span>둘러보기</span>
-					</a>
-				</label>
-			</li>
-			<li>
-				<input type="radio" name="mobile-btn" id="login" value="login">
-				<label for="login"> 
-					<a href="login">
-						<i class="fas fa-user"></i><br> 
-						<span>마이페이지</span>
-					</a>
-				</label>
-			</li>
-		</ul>
-	</div>
+	
+	<jsp:include page="/WEB-INF/views/layout/mobileBar.jsp"/>
 
 	<script type="text/javascript" src="js/f_restaurent.js"></script>
 	<script type="text/javascript" src="js/z_script.js"></script>
