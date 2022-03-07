@@ -9,7 +9,7 @@
 	
 	<!-- 예약 리스트 가져오기 -->
 	<select id="selectReservationList" parameterType="reservationVO" resultType="reservationVO">
-		SELECT rowNum, memberBid, memberName, restauName, restauAddr, reservationDate, personnel, status, memberOid, charge, reservationNum
+		SELECT rowNum, memberBid, memberName, restauName, restauAddr, reservationDate, reservationTime, personnel, status, memberOid, charge, reservationNum
 		FROM account_reservation
 		<where>
 			<if test="memberBid != null">memberBid = #{memberBid}</if>
@@ -18,10 +18,11 @@
 			<if test="reservationDate != null and reservationDate2 != null">AND (reservationDate BETWEEN #{reservationDate} AND #{reservationDate2})</if>
 		</where>
 	</select>
+	
 	<!-- 예약리스트 추가하기 -->
 	<insert id="insertReservationList" parameterType="reservationVO">
-		INSERT INTO account_reservation(memberBid, memberName, restauName, restauAddr, reservationDate, memberContact, personnel, status, memberOid, charge, reservationNum)
-		VALUES(#{memberBid}, #{memberName}, #{restauName}, #{restauAddr}, #{reservationDate}, #{memberContact}, #{personnel}, "결제대기", #{memberOid}, #{charge}, #{reservationNum})
+		INSERT INTO account_reservation(memberBid, memberName, restauName, restauAddr, reservationDate, reservationTime, memberContact, personnel, status, memberOid, charge, reservationNum)
+		VALUES(#{memberBid}, #{memberName}, #{restauName}, #{restauAddr}, #{reservationDate}, #{reservationTime}, #{memberContact}, #{personnel}, "결제대기", #{memberOid}, #{charge}, #{reservationNum})
 	</insert>
 	
 	<!-- 결제 완료후 status 변경 -->

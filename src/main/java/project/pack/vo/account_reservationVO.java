@@ -8,6 +8,7 @@ public class account_reservationVO {
 	private String restauAddr;
 	private String reservationDate;
 	private String reservationDate2;
+	private String reservationTime;
 	private String memberContact;
 	private String personnel;
 	private String status;
@@ -82,6 +83,13 @@ public class account_reservationVO {
 
 	public void setReservationDate2(String reservationDate2) {
 		this.reservationDate2 = reservationDate2;
+	}
+	public String getReservationTime() {
+		return reservationTime;
+	}
+
+	public void setReservationTime(String reservationTime) {
+		this.reservationTime = reservationTime;
 	}
 
 	public String getMemberContact() {

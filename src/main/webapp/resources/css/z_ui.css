@@ -1562,15 +1562,33 @@ main {
 #reserveMain .makeReserve-cont .reserve-form form table tbody tr td input,
 #reserveMain .makeReserve-cont .reserve-form form table tbody tr td #selectedCP,
 #reserveMain .makeReserve-cont .reserve-form form table tbody tr td #selectedCP option {
-  width: 300px;
+  width: 340px;
   padding: .5rem 1rem;
-  margin-right: .5rem;
   border: 1px solid #bbbbbb;
   border-radius: 5px;
   outline: none;
   font-size: 1rem;
   font-weight: normal;  
   font-family: 'Noto Sans KR', sans-serif;
+}
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr td input#reservationDate {
+	width: 59%;
+}
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr td select#reservationTime {
+	width: 39%;
+	padding: .5rem 1rem;
+  	border: 1px solid #bbbbbb;
+ 	border-radius: 5px;
+  	outline: none;
+  	font-size: 1rem;
+  	font-weight: normal;  
+  	font-family: 'Noto Sans KR', sans-serif;
+}
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr td input#reservedDate{
+	width: 199px;
+}
+#reserveMain .makeReserve-cont .reserve-form form table tbody tr td input#reservedTime {
+	width: 140px;
 }
 #reserveMain .makeReserve-cont .reserve-form form table {
   /* border-collapse: collapse; */

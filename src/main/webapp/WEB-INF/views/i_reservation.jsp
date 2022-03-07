@@ -48,7 +48,22 @@
                                 <tr>
                                     <!-- JS로 현재시간보다 하루 이후로 설정 -->
                                     <th>날짜 / 시간<span>*</span></th>
-                                    <td><form:input path="reservationDate" type="datetime-local" name="reservationDate" id="reservationDate" required="required"/></td>
+                                    <td>
+                                    	<form:input path="reservationDate" type="date" name="reservationDate" id="reservationDate" required="required"/>
+                                    	<form:select path="reservationTime">
+                                    		<form:option value="10">오전 10:00</form:option>
+                                    		<form:option value="11">오전 11:00</form:option>
+                                    		<form:option value="12">오후 12:00</form:option>
+                                    		<form:option value="13">오후 01:00</form:option>
+                                    		<form:option value="14">오후 02:00</form:option>
+                                    		<form:option value="15">오후 03:00</form:option>
+                                    		<form:option value="16">오후 04:00</form:option>
+                                    		<form:option value="17">오후 05:00</form:option>
+                                    		<form:option value="18">오후 06:00</form:option>
+                                    		<form:option value="19">오후 07:00</form:option>
+                                    		<form:option value="20">오후 08:00</form:option>
+                                    	</form:select>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>인원<span>*</span></th>
@@ -61,16 +76,17 @@
                                             onKeyup="this.value=this.value.replace(/[^0-9]/g,'');" value="${sessionScope.account.memberContact}"/>
                                     </td>
                                 </tr>
+                                <tr></tr>
                                 <tr>
                                 	<th>예약금(₩/원)<span>*</span></th>
                                     <td>
-                                        <form:input path="charge" type="text" name="charge" id="charge" value="" readonly="readonly"/><br /><br />
+                                        <form:input path="charge" type="text" name="charge" id="charge" value="" readonly="true"/><br /><br />
                                         <input type="hidden" name="couponName" id="couponName" value=""/>
-                                        <select id="selectedCP" name="selectedCP" onchange="checkTotal()">
+                                        <select id="selectedCP" name="selectedCP" onchange="checkTotal()" required="required">
                                         	<optgroup label="나의 쿠폰">
-                                        		<option value="0" disabled="disabled" selected="selected">쿠폰을 선택하세요</option>
+                                        		<option value="" disabled="disabled" selected="selected">쿠폰을 선택하세요</option>
                                        	 		<c:forEach var="myCp" items="${myCoupon}">
-                                        		<option value="${myCp.couponDC}">${myCp.couponName}</option>
+                                        		<option value="${myCp.couponDC}-${myCp.couponMax}">${myCp.couponName}</option>
                                        			</c:forEach>
                                        			<option value="0">선택안함</option>
                                         	</optgroup>

@@ -133,16 +133,14 @@
 								<c:choose>
 									<c:when test='${rsv.status == "결제완료"}'>
 										<td>${rsv.status}</td>
+										<input type="hidden"  name="restauName${i}" class="restauName" value="${rsv.restauName}" />
+										<input type="hidden"  name="charge${i}" class="charge" value="${rsv.charge}" />
 									</c:when>
 									<c:otherwise>
 										<td>
 											<button type="button" class="payment" onclick="payment(${i})">결제하기</button>
-											<input type="hidden" name="memberName${i}" id="memberName${i}" value="${rsv.memberName}" />
-											<input type="hidden"  name="restauName${i}" id="restauName${i}" value="${rsv.restauName}" />
-											<input type="hidden"  name="reservationDate${i}" id="reservationDate${i}" value="${rsv.reservationDate}" />
-											<input type="hidden"  name="personnel${i}" id="personnel${i}" value="${rsv.personnel}" />
-											<input type="hidden"  name="charge${i}" id="charge${i}" value="${rsv.charge}" />
-											<input type="hidden"  name="reservationNum${i}" id="reservationNum${i}" value="${rsv.reservationNum}" />
+											<input type="hidden"  name="restauName${i}" class="restauName" value="${rsv.restauName}" />
+											<input type="hidden"  name="charge${i}" class="charge" value="${rsv.charge}" />
 										</td>
 									</c:otherwise>
 								</c:choose>
@@ -177,7 +175,7 @@
 										<tr>
 											<td id="no">${r}</td>
 											<td id="bullet${r}">${qna.bullet}</td>
-											<td><a href="" title="expand the area" class="info" id="info">${qna.title}</a>
+											<td><a href="" title="클릭시 확장됩니다." class="info" id="info">${qna.title}</a>
 											</td>
 											<td scope="row">${qna.createdate}</td>
 											<!-- 자바스크립트로 아이디는 3글자 빼고 마스킹 처리 예정 -->
@@ -214,11 +212,11 @@
 	<script type="text/javascript">
 		
 	function payment(i) {
+		console.log(i);
 		
-		let $name = $(`#restauName${i}`).val();
-		let $charge = $(`#charge${i}`).val();
-		let $memberName = $(`#memberName${i}`).val();
-		let $reservationNum = $(`#reservationNum${i}`).val();
+		let $name = $(`.restauName`).eq(i-1).val();
+		let $charge = $(`.charge`).eq(i-1).val();
+		console.log($charge);
 
 				var IMP = window.IMP; // 생략가능
 				IMP.init('imp23364357');
@@ -257,7 +255,7 @@
 						//$charge,
 						//가격
 						buyer_email : '${sessionScope.account.memberEmail}',
-						buyer_name : $memberName,
+						buyer_name :  '${isFaver.memberName}',
 						buyer_tel : '${sessionScope.account.memberContact}',
 						buyer_addr : '',
 						buyer_postcode : '',

@@ -43,7 +43,10 @@
                                 <tr>
                                     <!-- JS로 현재시간보다 하루 이후로 설정하기 -->
                                     <th>날짜 / 시간</th>
-                                    <td><input type="text" name="reserveDate" id="reserveDate" value="${param.reservationDate}" readonly="readonly"></td>
+                                    <td>
+                                    	<input type="text" name="reservedDate" id="reservedDate" value="${param.reservationDate}" readonly="readonly">
+                                    	<input type="text" name="reservedTime" id="reservedTime" value="${(param.reservationTime < 12)? '오전 '+= param.reservationTime-12+=':00':'오후 '+=param.reservationTime-12+=':00'}" readonly="readonly">
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>인원</th>
@@ -55,15 +58,17 @@
                                         <input type="text" name="memberContact" id="memberContact" value="${param.memberContact}" readonly="readonly">
                                     </td>
                                 </tr> 
+                                <tr></tr>
                                 <tr>
                                 	<th>예약금(₩/원)</th>
                                     <td>
                                         <input type="text" name="charge" id="charge" value="${param.charge}" readonly="readonly"/><br /><br />
-                                        <c:if test="${param.couponName != null}">
+                                        <c:if test="${param.couponName != ''}">
                                       		<input type="text" name="selectedCP" id="selectedCP" value="${param.couponName}" readonly="readonly">
                                         </c:if>
                                     </td>
                                 </tr>
+                                <tr></tr>
                                 <tr>
                                 	<th>예약번호</th>
                                     <td>
@@ -126,7 +131,7 @@
 			*/
 			name: '${param.restauName}',
 			//결제창에서 보여질 이름
-			amount: 100,
+			amount: ${param.charge},
 			//가격
 			buyer_email: '${sessionScope.account.memberEmail}',
 			buyer_name: '${param.memberName}',
