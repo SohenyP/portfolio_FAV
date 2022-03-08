@@ -1,13 +1,21 @@
 package project.pack.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import project.pack.service.AdminService;
 import project.pack.vo.adminVO;
@@ -79,28 +87,38 @@ public class AdminController {
 	}
 	
 	//관리자 추가
-	@GetMapping("/adminPlus")
-	public String adminPlus(adminVO vo) {
+	@PostMapping("/adminPlus")
+	public ResponseEntity<adminVO> adminPlus(@RequestBody adminVO vo) {
+		
+		/* 전송 테스트용
+		 * System.out.println("아디 : "+vo.getAdminId());
+		 * System.out.println("비번 : "+vo.getAdminPw());
+		 * System.out.println("이름 : "+vo.getAdminName());
+		 * System.out.println("이멜 : "+vo.getAdminEmail());
+		 * System.out.println("권한 : "+vo.getAssigned());
+		 */
 		
 		service.insertAdminList(vo);
 		
-		return "";
+		ResponseEntity<adminVO> ett = new ResponseEntity<adminVO>(vo, HttpStatus.OK);
+		
+		return ett;
 	}
 	
 	//관리자 수정
 	@GetMapping("/adminRevise")
 	public String adminRevise(adminVO vo) {
 		
+		
 		return "";
 	}
 	
-	//관리자 삭제
-	@GetMapping("/adminMinus")
-	public String adminMinus(adminVO vo) {
+	//관리자 리셋
+	@PostMapping("/adminReset")
+	public @ResponseBody void adminReset(@RequestParam(value="chk[]") List<String> chk ) {
 		
-		service.deleteAdminList(vo);
-		
-		return "redirect:/manageAdmin";
+		System.out.println("배열 : "+chk);
+		//service.deleteAdminList(vo);
 	}
 	
 	

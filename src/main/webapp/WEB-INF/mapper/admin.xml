@@ -23,11 +23,11 @@
 		VALUES(NULL, #{adminId}, #{adminPw}, #{adminName}, #{adminEmail}, #{assigned})
 	</insert>
 	
-	<!-- 관리자 제거 -->
+	<!-- 관리자 리셋 -->
 	<delete id="deleteAdmin" parameterType="adminVO">
 		UPDATE account_admin
 		SET adminPw = "사용가능", adminName = "사용가능", adminEmail = "사용가능", assigned = 'N'
-		WHERE adminId = #{adminId}
+		WHERE rowNum = #{rowNum}
 	</delete>
 
 </mapper>

@@ -8,6 +8,8 @@
 <meta charset="UTF-8">
 <title>FAV 관리자 메인페이지</title>
 <link rel="stylesheet" href="css/admin.css">
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
 
@@ -34,10 +36,11 @@
 		<main>
 			<h1>관리자 관리</h1>
 			<div class="manageOfAdmin">
-				<a href="adminPlus">관리자 추가</a>
+				
 				<table>
 					<thead>
 						<tr>
+							<th>√</th>
 							<th>No.</th>
 							<th>관리자 아이디</th>
 							<th>관리자 비밀번호</th>
@@ -49,7 +52,8 @@
 					<tbody>
 						<c:forEach var="admin" items="${administrator}">
 							<tr>
-								<td>${admin.rowNum}</td>
+								<td><input type="checkbox" name="chkbox" id="" class="chkbox" value="${admin.rowNum}"/></td>
+								<td class="rowNum">${admin.rowNum}</td>
 								<td>${admin.adminId}</td>
 								<td>${admin.adminPw}</td>
 								<td>${admin.adminName}</td>
@@ -66,12 +70,14 @@
 						</c:forEach>
 					</tbody>
 				</table>
-				<form:form modelAttribute="adminVO" action="adminMinus" method="get">
-					<form:input path="adminId" name="adminId" id="adminId" placeholder="제거할 관리자 아이디 입력"/>
-					<form:button type="submit">관리자 제거</form:button>
-				</form:form>
+					
+				<button type="submit" id="resetAdmin">관리자 리셋</button>
+				<button type="button" id="plusAdmin">관리자 추가</button>		
+				<button type="button" id="revAdmin">관리자 수정</button>		
 			</div>
 		</main>
 	</div>
+	
+	<script type="text/javascript" src="./js/admin_admin.js"></script>
 </body>
 </html>

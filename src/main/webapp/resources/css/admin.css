@@ -3,6 +3,8 @@
 html {
 	padding: 0;
 	margin: 0;
+	height: 100vh;
+	width: 100%;
 }
 body {
 	width: 100%;
@@ -60,18 +62,15 @@ body {
 
 /* 메인홈 */
 .homeContainer {
-	width: 100%;
-	height: 100vh;
+	height: 120vh;
 	display: flex;
 }
 .homeContainer nav {
 	background-color: rgba(34,199,169,.3);
 	flex: 2;
-	height: 100%;
 }
 .homeContainer nav .menu {
 	margin: auto;
-	height: 100%;
 	padding: 30px;
 }
 .homeContainer nav .menu .logo {
