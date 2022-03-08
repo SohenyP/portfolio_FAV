@@ -50,8 +50,8 @@ public class AdminService {
 	}
 	
 	//관리자 수정
-	public void deleteAdminList(adminVO vo) {
+	public void deleteAdminList(int chk) {
 		
-		sqlSessionTemplate.update("admin.deleteAdmin", vo);
+		sqlSessionTemplate.update("admin.deleteAdmin", chk);
 	}
 }

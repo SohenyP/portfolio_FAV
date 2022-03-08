@@ -24,7 +24,7 @@
 	</insert>
 	
 	<!-- 관리자 리셋 -->
-	<delete id="deleteAdmin" parameterType="adminVO">
+	<delete id="deleteAdmin" parameterType="int">
 		UPDATE account_admin
 		SET adminPw = "사용가능", adminName = "사용가능", adminEmail = "사용가능", assigned = 'N'
 		WHERE rowNum = #{rowNum}

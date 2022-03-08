@@ -115,10 +115,14 @@ public class AdminController {
 	
 	//관리자 리셋
 	@PostMapping("/adminReset")
-	public @ResponseBody void adminReset(@RequestParam(value="chk[]") List<String> chk ) {
+	public @ResponseBody void adminReset(@RequestParam(value="chk[]") List<Integer> chk ) {
 		
 		System.out.println("배열 : "+chk);
-		//service.deleteAdminList(vo);
+		
+		for (Integer integer : chk) {
+			service.deleteAdminList(integer);
+		}
+		
 	}
 	
 	

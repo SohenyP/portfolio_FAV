@@ -74,6 +74,7 @@
 				<button type="submit" id="resetAdmin">관리자 리셋</button>
 				<button type="button" id="plusAdmin">관리자 추가</button>		
 				<button type="button" id="revAdmin">관리자 수정</button>		
+				<button type="button" id="reviseAdmin" style="display: none;">관리자 수정완료</button>		
 			</div>
 		</main>
 	</div>
