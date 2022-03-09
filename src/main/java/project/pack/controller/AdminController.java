@@ -106,11 +106,16 @@ public class AdminController {
 	}
 	
 	//관리자 수정
-	@GetMapping("/adminRevise")
-	public String adminRevise(adminVO vo) {
+	@PostMapping("/adminRevise")
+	public ResponseEntity<List<adminVO>> adminRevise(@RequestBody List<adminVO> vo) throws Exception {
 		
+		for (adminVO adminVO : vo) {
+			service.updateAdminList(adminVO);
+		}
 		
-		return "";
+		ResponseEntity<List<adminVO>> ett = new ResponseEntity<List<adminVO>>(vo, HttpStatus.OK);
+	
+		return ett;
 	}
 	
 	//관리자 리셋

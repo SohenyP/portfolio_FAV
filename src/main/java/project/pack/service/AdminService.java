@@ -49,7 +49,14 @@ public class AdminService {
 		sqlSessionTemplate.insert("admin.insertAdmin", vo);
 	}
 	
-	//관리자 수정
+	
+	//관리자 추가
+	public void updateAdminList(adminVO vo) {
+		
+		sqlSessionTemplate.update("admin.updateAdmin", vo);
+	}
+	
+	//관리자 리셋
 	public void deleteAdminList(int chk) {
 		
 		sqlSessionTemplate.update("admin.deleteAdmin", chk);

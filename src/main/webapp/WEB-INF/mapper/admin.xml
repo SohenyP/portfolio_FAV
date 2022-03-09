@@ -29,5 +29,12 @@
 		SET adminPw = "사용가능", adminName = "사용가능", adminEmail = "사용가능", assigned = 'N'
 		WHERE rowNum = #{rowNum}
 	</delete>
+	
+	<!-- 관리자 수정 -->
+	<delete id="updateAdmin" parameterType="adminVO">
+		UPDATE account_admin
+		SET adminId = #{adminId}, adminPw = #{adminPw}, adminName = #{adminName}, adminEmail = #{adminEmail}, assigned = #{assigned}
+		WHERE rowNum = #{rowNum}
+	</delete>
 
 </mapper>
