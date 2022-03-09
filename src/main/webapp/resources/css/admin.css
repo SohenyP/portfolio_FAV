@@ -117,5 +117,44 @@ body {
 .homeContainer main {
 	flex: 10;	
 	height: 100%;
-	margin: 10px;
+	margin: 20px;
+}
+
+.homeContainer main>h1:after {
+	content: "";
+	display: block;
+	border-bottom: 2px solid #323232;
+	margin-top: 10px;
+}
+.homeContainer > main > .manageOfAdmin > table {
+	width: 100%;
+	margin: 20px 0;
+	border-collapse: collapse;
+}
+.homeContainer > main > .manageOfAdmin > table thead {
+	background-color: rgba(34,199,169,.3);
+}
+.homeContainer > main > .manageOfAdmin > table th{
+	border: 2px solid #323232;
+}
+.homeContainer > main > .manageOfAdmin > table td{
+	border: 1px solid #323232;
+	padding: .5rem 0;
+}
+.homeContainer > main > .manageOfAdmin > table>tbody>tr {
+	border: 1px solid #323232;
+}
+.homeContainer > main > .manageOfAdmin > table>tbody>tr:not(:last-child) {
+	border-bottom: 3px double #323232;
+}
+.homeContainer > main > .manageOfAdmin > table > tbody > tr > td {
+	text-align: center;
+}
+.homeContainer > main > .manageOfAdmin > button {
+	background-color: rgba(34,199,169,.3);
+	margin-right: 10px;
+	padding: 8px 12px;
+	font-size: 17px;
+	font-weight: bold;
+	cursor: pointer;
 }

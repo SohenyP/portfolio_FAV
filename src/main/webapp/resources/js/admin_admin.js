@@ -38,16 +38,18 @@ function adminPlus() {
 		for (let i = 0; i < 4; i++) {
 			const td = document.createElement("td");
 			const ipt = document.createElement("input");
-			ipt.setAttribute("type", "text");
-			ipt.setAttribute("id", "inform" + i);
-			ipt.style.width = "100px";
+			
+			makeInput(ipt, i);
 
 			td.append(ipt);
 			tr.append(td);
 		}
 
 		//관리자 권한 설정 select 만들기
-		setSelect(tr);
+
+		const td2 = document.createElement("td");
+		setSelect(td2);
+		tr.append(td2);
 		tbody.append(tr);
 
 		//추가 버튼 (+버튼)
@@ -89,11 +91,15 @@ function adminPlus() {
 } adminPlus();
 
 //관리자 권한 설정 select 만들기
-function setSelect(tr) {
-	const td2 = document.createElement("td");
+function setSelect(td) {
 	const select = document.createElement("select");
 	select.setAttribute("id", "auth");
 	select.setAttribute("class", "auth");
+	select.style.border = "none";
+	select.style.borderBottom = "1px dotted #323232";
+	select.style.outline = "none";
+	select.style.textAlign = "center";
+	select.style.fontSize = "17px";
 	const option1 = document.createElement("option");
 	option1.value = "N";
 	option1.innerText = "권한없음";
@@ -103,10 +109,21 @@ function setSelect(tr) {
 
 	select.append(option1);
 	select.append(option2);
-	td2.append(select);
-	tr.append(td2);
-}
 
+	td.append(select);
+}
+//정보 입력용 input 설정
+function makeInput(ipt, i) {
+	ipt.setAttribute("type", "text");
+	ipt.setAttribute("id", "inform" + i);
+	ipt.setAttribute("class", "inform" + i);
+	ipt.style.width = "60%";
+	ipt.style.border = "none";
+	ipt.style.borderBottom = "1px dotted #323232";
+	ipt.style.outline = "none";
+	ipt.style.textAlign = "center";
+	ipt.style.fontSize = "17px";
+}
 //관리자 리셋
 function adminReset() {
 	let rowNum = document.getElementsByName("chkbox");
@@ -165,14 +182,14 @@ function adminRevise() {
 	btn.addEventListener("click", function() {
 
 		for (let i = 0; i < rowNum.length; i++) {
-			
+
 			if (rowNum[i].checked) {
-				
+
 				check++;
 				console.log("체크1 : " + check);
-				
+
 				if (check > 0) {
-					
+
 					btn.style.display = "none";
 					resetBtn.setAttribute("disabled", "disabled");
 					plusBtn.setAttribute("disabled", "disabled");
@@ -185,11 +202,10 @@ function adminRevise() {
 					for (let j = 2; j < cnt - 1; j++) {
 						let child = rowNum[i].parentNode.parentNode.children[j];
 						let oriText = child.innerHTML;
+						
 						const ipt = document.createElement("input");
-						ipt.setAttribute("type", "text");
-						ipt.setAttribute("class", "inform" + j + j);
+						makeInput(ipt, j);
 						ipt.setAttribute("value", oriText);
-						ipt.style.width = "100px";
 
 						child.firstChild.textContent = "";
 
@@ -210,18 +226,18 @@ function adminRevise() {
 			alert("수정할 관리자를 선택해주세요.");
 		}
 		//만들어진 배열 ajax로 controller에 전달하기
-		let chkCnt = document.querySelectorAll(".inform22").length;
+		let chkCnt = document.querySelectorAll(".inform2").length;
 
 		reviseBtn.addEventListener("click", function() {
 			if (check > 0) {
 				for (let k = 0; k < chkCnt; k++) {
 					let jsonObj = new Object();
 
-					jsonObj.rowNum = document.querySelectorAll(".inform22")[k].parentElement.previousElementSibling.textContent;
-					jsonObj.adminId = document.querySelectorAll(".inform22")[k].value;
-					jsonObj.adminPw = document.querySelectorAll(".inform33")[k].value
-					jsonObj.adminName = document.querySelectorAll(".inform44")[k].value;
-					jsonObj.adminEmail = document.querySelectorAll(".inform55")[k].value;
+					jsonObj.rowNum = document.querySelectorAll(".inform2")[k].parentElement.previousElementSibling.textContent;
+					jsonObj.adminId = document.querySelectorAll(".inform2")[k].value;
+					jsonObj.adminPw = document.querySelectorAll(".inform3")[k].value
+					jsonObj.adminName = document.querySelectorAll(".inform4")[k].value;
+					jsonObj.adminEmail = document.querySelectorAll(".inform5")[k].value;
 					jsonObj.assigned = document.querySelectorAll(".auth")[k].value;
 
 					jsonObj = JSON.stringify(jsonObj);
