@@ -16,39 +16,47 @@
 		<jsp:include page="/WEB-INF/views/admin/adminNav.jsp"></jsp:include>
 		
 		<main>
-		<%-- 	<h1>회원 관리</h1>
+			<h1>관리자 관리</h1>
 			<div class="manageOfAdmin">
+			
+				<button type="submit" id="resetAdmin">회원 삭제</button>	
+				
 				<table>
 					<thead>
 						<tr>
+							<th>√</th>
 							<th>No.</th>
-							<th>회원 아이디</th>
-							<th>회원 비밀번호</th>
-							<th>회원 이름</th>
-							<th>회원 이메일</th>
-							<th>회원권한</th>
-							<th>선택</th>
+							<th>관리자 아이디</th>
+							<th>관리자 비밀번호</th>
+							<th>관리자 이름</th>
+							<th>관리자 이메일</th>
+							<th>관리 권한</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="mem" items="${member}">
+						<c:forEach var="admin" items="${administrator}">
 							<tr>
-								<td>${mem.rowNum}</td>
-								<td>${mem.memberId}</td>
-								<td>${mem.memberPw}</td>
-								<td>${mem.memberName}</td>
-								<td>${mem.memberEmail}</td>
-								<td>
-									<form action="delete">
-										<form:radiobutton path="rowNum" />
-									</form>
-								</td>
+								<td><input type="checkbox" name="chkbox" id="" class="chkbox" value="${admin.rowNum}"/></td>
+								<td class="rowNum">${admin.rowNum}</td>
+								<td>${admin.adminId}</td>
+								<td>${admin.adminPw}</td>
+								<td>${admin.adminName}</td>
+								<td>${admin.adminEmail}</td>
+								<c:choose>
+									<c:when test="${admin.assigned == 'Y'}">
+										<td style="color: blue">권한있음</td>
+									</c:when>
+									<c:otherwise>
+										<td style="color: red">권한없음</td>
+									</c:otherwise>
+								</c:choose>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-				<button type="submit">회원 제거</button>
-			</div> --%>
+					
+				
+			</div>
 		</main>
 	</div>
 </body>

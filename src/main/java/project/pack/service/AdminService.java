@@ -50,7 +50,7 @@ public class AdminService {
 	}
 	
 	
-	//관리자 추가
+	//관리자 수정
 	public void updateAdminList(adminVO vo) {
 		
 		sqlSessionTemplate.update("admin.updateAdmin", vo);
