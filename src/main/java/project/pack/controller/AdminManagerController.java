@@ -17,7 +17,7 @@ import project.pack.service.AdminService;
 import project.pack.vo.adminVO;
 
 @Controller
-public class AdminManageController {
+public class AdminManagerController {
 
 	@Autowired
 	AdminService service;
