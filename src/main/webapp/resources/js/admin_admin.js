@@ -3,41 +3,54 @@
  */
 function managePerson() {
 
-
+	//관리자 관리
 	let plusBtn = document.getElementById("plusAdmin");
-	let reviseBtn = document.getElementById("revAdmin");
+	let revBtn = document.getElementById("revAdmin");
+	let reviseBtn = document.getElementById("reviseAdmin");
 	let resetBtn = document.getElementById("resetAdmin");
+	//회원 관리
+	let mplusBtn = document.getElementById("plusMem");
+	let mrevBtn = document.getElementById("revMem");
+	let mreviseBtn = document.getElementById("reviseMem");
+	let mresetBtn = document.getElementById("resetMem");
+
 	let tbody = document.querySelector("tbody");
 	let rowNum = document.querySelectorAll(".rowNum");
-	let tbody = document.querySelector("tbody");
-	
-	adminReset(resetBtn, rowNum);
+	let checkBox = document.querySelectorAll(".chkbox");
+
+	if (plusBtn) {
+		reset(resetBtn, checkBox, "adminReset");
+		plus(plusBtn, revBtn, resetBtn, tbody, rowNum);
+		revise(revBtn, reviseBtn, resetBtn, plusBtn, checkBox);
+	}
+	else if (mplusBtn) {
+		reset(mresetBtn, checkBox, "memReset");
+		plus(mplusBtn, mrevBtn, mresetBtn, tbody, rowNum);
+		revise(mrevBtn, mreviseBtn, mresetBtn, mplusBtn, checkBox);
+	}
+
 
 	//관리자 리셋
-	function adminReset(btn, rowNum) {
-		//let rowNum = document.getElementsByName("chkbox");
-		//let btn = document.getElementById("resetAdmin");
+	function reset(resetBtn, checkBox, url) {
 		let arr = new Array();
 		let checkedCnt = 0;
 
 		//리셋버튼 클릭시 배열로 rowNum 받아가기
-		btn.addEventListener("click", function() {
-			for (let i = 0; i < rowNum.length; i++) {
-				if (rowNum[i].checked) {
+		resetBtn.addEventListener("click", function() {
+			for (let i = 0; i < checkBox.length; i++) {
+				if (checkBox[i].checked) {
 					checkedCnt++;
 					if (checkedCnt > 0) {
-						arr.push(rowNum[i].value);
+						arr.push(checkBox[i].value);
 					}
 				}
-
 			}
 
 			console.log(checkedCnt);
-
 			//만들어진 배열 ajax로 controller에 전달하기
 			if (checkedCnt > 0) {
 				$.ajax({
-					url: "adminReset",
+					url: url,
 					type: "POST",
 					data: {
 						chk: arr
@@ -56,19 +69,15 @@ function managePerson() {
 	}
 
 	//관리자 리스트 추가
-	function adminPlus() {
-		/*let plusBtn = document.getElementById("plusAdmin");
-		let reviseBtn = document.getElementById("revAdmin");
-		let resetBtn = document.getElementById("resetAdmin");
-		let tbody = document.querySelector("tbody");
-		let rowNum = document.querySelectorAll(".rowNum");*/
+	function plus(plusBtn, revBtn, resetBtn, tbody, rowNum) {
 		let rowCnt = rowNum.length;
 
 		//관리자 추가 클릭시 추가 양식 등장!
 		plusBtn.addEventListener("click", function() {
-			plusBtn.setAttribute("disabled", "disabled");
-			resetBtn.setAttribute("disabled", "disabled");
-			reviseBtn.setAttribute("disabled", "disabled");
+
+			btnDisabled(plusBtn);
+			btnDisabled(resetBtn);
+			btnDisabled(revBtn);
 
 			const tr = document.createElement("tr");
 
@@ -141,78 +150,38 @@ function managePerson() {
 				}
 			});
 		});
-	} adminPlus();
-
-	//관리자 권한 설정 select 만들기
-	function setSelect(td) {
-		const select = document.createElement("select");
-		select.setAttribute("id", "auth");
-		select.setAttribute("class", "auth");
-		select.style.border = "none";
-		select.style.borderBottom = "1px dotted #323232";
-		select.style.outline = "none";
-		select.style.textAlign = "center";
-		select.style.fontSize = "17px";
-		const option1 = document.createElement("option");
-		option1.value = "N";
-		option1.innerText = "권한없음";
-		const option2 = document.createElement("option");
-		option2.value = "Y";
-		option2.innerText = "권한있음";
-
-		select.append(option1);
-		select.append(option2);
-
-		td.append(select);
-	}
-	//정보 입력용 input 설정
-	function makeInput(ipt, i) {
-		ipt.setAttribute("type", "text");
-		ipt.setAttribute("id", "inform" + i);
-		ipt.setAttribute("class", "inform" + i);
-		ipt.style.width = "60%";
-		ipt.style.border = "none";
-		ipt.style.borderBottom = "1px dotted #323232";
-		ipt.style.outline = "none";
-		ipt.style.textAlign = "center";
-		ipt.style.fontSize = "17px";
 	}
 
 
 	//관리자 정보 수정
-	function adminRevise() {
-		let rowNum = document.getElementsByName("chkbox");
-		let btn = document.getElementById("revAdmin");
-		let reviseBtn = document.getElementById("reviseAdmin");
-		let resetBtn = document.getElementById("resetAdmin");
-		let plusBtn = document.getElementById("plusAdmin");
+	function revise(revBtn, reviseBtn, resetBtn, plusBtn, checkBox) {
 		let arr = new Array();
 		//하나라도 checked된 checkbox있는지 체크 목적!
 		let check = 0;
 
 		//수정 버튼 클릭시 배열로 rowNum 받아가기
-		btn.addEventListener("click", function() {
+		revBtn.addEventListener("click", function() {
 
-			for (let i = 0; i < rowNum.length; i++) {
+			for (let i = 0; i < checkBox.length; i++) {
 
-				if (rowNum[i].checked) {
+				if (checkBox[i].checked) {
 
 					check++;
 					console.log("체크1 : " + check);
 
 					if (check > 0) {
 
-						btn.style.display = "none";
+						revBtn.style.display = "none";
 						resetBtn.setAttribute("disabled", "disabled");
 						plusBtn.setAttribute("disabled", "disabled");
 						reviseBtn.style.display = "inline";
 
-						let cnt = rowNum[i].parentNode.parentNode.childElementCount;
+						let cnt = checkBox[i].parentNode.parentNode.childElementCount;
 
 						console.log(cnt);
 
 						for (let j = 2; j < cnt - 1; j++) {
-							let child = rowNum[i].parentNode.parentNode.children[j];
+							let child = checkBox[i].parentNode.parentNode.children[j];
 							let oriText = child.innerHTML;
 
 							const ipt = document.createElement("input");
@@ -221,10 +190,10 @@ function managePerson() {
 
 							child.firstChild.textContent = "";
 
-							rowNum[i].parentNode.parentNode.children[j].append(ipt);
+							checkBox[i].parentNode.parentNode.children[j].append(ipt);
 						}
 
-						let auth = rowNum[i].parentNode.parentNode.children[cnt - 1];
+						let auth = checkBox[i].parentNode.parentNode.children[cnt - 1];
 						auth.textContent = "";
 						setSelect(auth);
 
@@ -273,8 +242,48 @@ function managePerson() {
 				}
 			});
 		});
+	}
 
-	} adminRevise();
+
+	//관리자 권한 설정 select 만들기
+	function setSelect(td) {
+		const select = document.createElement("select");
+		select.setAttribute("id", "auth");
+		select.setAttribute("class", "auth");
+		select.style.border = "none";
+		select.style.borderBottom = "1px dotted #323232";
+		select.style.outline = "none";
+		select.style.textAlign = "center";
+		select.style.fontSize = "17px";
+		const option1 = document.createElement("option");
+		option1.value = "N";
+		option1.innerText = "권한없음";
+		const option2 = document.createElement("option");
+		option2.value = "Y";
+		option2.innerText = "권한있음";
+
+		select.append(option1);
+		select.append(option2);
+
+		td.append(select);
+	}
+	//정보 입력용 input 설정
+	function makeInput(ipt, i) {
+		ipt.setAttribute("type", "text");
+		ipt.setAttribute("id", "inform" + i);
+		ipt.setAttribute("class", "inform" + i);
+		ipt.style.width = "60%";
+		ipt.style.border = "none";
+		ipt.style.borderBottom = "1px dotted #323232";
+		ipt.style.outline = "none";
+		ipt.style.textAlign = "center";
+		ipt.style.fontSize = "17px";
+	}
+
+	//버튼 무력화!
+	function btnDisabled(btn) {
+		btn.setAttribute("disabled", "disabled");
+	}
 
 
-}
+} managePerson();

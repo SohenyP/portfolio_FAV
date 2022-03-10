@@ -31,8 +31,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="insertUser" parameterType="memberVO">
-		INSERT INTO account_member(memberId, memberPw, memberName, memberEmail, memberContact, memberAgree)
-		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberEmail}, #{memberContact}, #{memberAgree})
+		INSERT INTO account_member(memberId, memberPw, memberName, memberEmail, memberContact, memberAgree, memberType)
+		VALUES(#{memberId}, #{memberPw}, #{memberName}, #{memberEmail}, #{memberContact}, #{memberAgree}, #{memberType})
 	</insert>
 	
   	<insert id="insertFaver" parameterType="faverVO">

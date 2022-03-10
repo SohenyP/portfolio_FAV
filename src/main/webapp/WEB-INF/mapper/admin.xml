@@ -36,5 +36,32 @@
 		SET adminId = #{adminId}, adminPw = #{adminPw}, adminName = #{adminName}, adminEmail = #{adminEmail}, assigned = #{assigned}
 		WHERE rowNum = #{rowNum}
 	</delete>
+	
+	
+	<!-- 회원 정보 -->
+	<select id="selectMem" parameterType="memberVO" resultType="memberVO">
+		SELECT rowNum, memberId, memberPw, memberName, memberEmail, memberAgree, memberType
+		FROM account_member
+		<where>
+			<if test="adminId != null">memberId = #{memberId}</if>
+			<if test="adminPw != null">AND memberPw = #{memberPw}</if>
+		</where>
+	</select>
+	
+	<!-- 회원 삭제 -->
+	<delete id="deleteMem" parameterType="int">
+		UPDATE account_admin
+		SET memberPw = "null", memberName = "사용가능", memberEmail = "사용가능"
+		WHERE rowNum = #{rowNum}
+	</delete>
+	
+	<!-- 회원 수정 -->
+	<delete id="updateMem" parameterType="memberVO">
+		UPDATE account_admin
+		SET memberId = #{adminImemberIdd}, memberPw = #{memberPw}, memberName = #{memberName}, memberEmail = #{memberEmail}, memberType = #{memberType}
+		WHERE rowNum = #{rowNum}
+	</delete>
+	
+	
 
 </mapper>

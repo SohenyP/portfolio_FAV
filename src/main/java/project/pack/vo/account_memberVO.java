@@ -2,29 +2,42 @@ package project.pack.vo;
 
 public class account_memberVO {
 
-	
+	String rowNum;
 	String memberId;
 	String memberPw;
 	String memberName;
 	String memberEmail;
 	String memberContact;
 	String memberAgree;
+	String memberType;
 	String joinDate;
 	
 	public account_memberVO() {
 		// TODO Auto-generated constructor stub
 	}
+	
 
-
-	public account_memberVO(String memberId, String memberPw, String memberName, String memberEmail,
-			String memberContact, String memberAgree, String joinDate) {
+	public account_memberVO(String rowNum, String memberId, String memberPw, String memberName, String memberEmail,
+			String memberContact, String memberAgree, String memberType, String joinDate) {
+		super();
+		this.rowNum = rowNum;
 		this.memberId = memberId;
 		this.memberPw = memberPw;
 		this.memberName = memberName;
 		this.memberEmail = memberEmail;
 		this.memberContact = memberContact;
 		this.memberAgree = memberAgree;
+		this.memberType = memberType;
 		this.joinDate = joinDate;
+	}
+
+	
+	public String getRowNum() {
+		return rowNum;
+	}
+
+	public void setRowNum(String rowNum) {
+		this.rowNum = rowNum;
 	}
 
 
@@ -74,6 +87,14 @@ public class account_memberVO {
 
 	public void setMemberAgree(String memberAgree) {
 		this.memberAgree = memberAgree;
+	}
+	public String getMemberType() {
+		return memberType;
+	}
+
+
+	public void setMemberType(String memberType) {
+		this.memberType = memberType;
 	}
 
 

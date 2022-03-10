@@ -61,4 +61,10 @@ public class AdminService {
 		
 		sqlSessionTemplate.update("admin.deleteAdmin", chk);
 	}
+	
+	
+	//회원 정보 리스트 추출
+	public void selectMemList(Model model) {
+		model.addAttribute("member", sqlSessionTemplate.selectList("admin.selectMem"));
+	}
 }

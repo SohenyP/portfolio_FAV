@@ -126,28 +126,41 @@ body {
 	border-bottom: 2px solid #323232;
 	margin-top: 10px;
 }
-.homeContainer > main > .manageOfAdmin > table {
+.homeContainer > main > .manageOfAdmin > .tableCont {
+	height: 1050px;
+    overflow-y: auto;
+}
+.homeContainer > main > .manageOfAdmin > .tableCont > table {
 	width: 100%;
 	margin: 20px 0;
 	border-collapse: collapse;
 }
-.homeContainer > main > .manageOfAdmin > table thead {
-	background-color: rgba(34,199,169,.3);
+.homeContainer > main > .manageOfAdmin > .tableCont > table thead {
+	position: sticky;
+	border: 2px solid #323232;
+	top: 0;
 }
-.homeContainer > main > .manageOfAdmin > table th{
+.homeContainer > main > .manageOfAdmin > .tableCont > table thead tr,
+.homeContainer > main > .manageOfAdmin > .tableCont > table thead th {
+	background-color: rgba(34,199,169, .9);
+	border: 2px solid #fff;
+}
+.homeContainer > main > .manageOfAdmin > .tableCont > table tbody {
+	width: 100%;
+}
+.homeContainer > main > .manageOfAdmin > .tableCont > table th{
 	border: 2px solid #323232;
 }
-.homeContainer > main > .manageOfAdmin > table td{
-	border: 1px solid #323232;
+.homeContainer > main > .manageOfAdmin > .tableCont > table td{
 	padding: .5rem 0;
 }
-.homeContainer > main > .manageOfAdmin > table>tbody>tr {
-	border: 1px solid #323232;
+.homeContainer > main > .manageOfAdmin > .tableCont > table>tbody>tr {
+	border: 1px solid #323232; 
 }
-.homeContainer > main > .manageOfAdmin > table>tbody>tr:not(:last-child) {
+.homeContainer > main > .manageOfAdmin > .tableCont > table>tbody>tr:not(:last-child) {
 	border-bottom: 3px double #323232;
 }
-.homeContainer > main > .manageOfAdmin > table > tbody > tr > td {
+.homeContainer > main > .manageOfAdmin > .tableCont > table > tbody > tr > td {
 	text-align: center;
 }
 .homeContainer > main > .manageOfAdmin > button {

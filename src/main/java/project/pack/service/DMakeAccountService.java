@@ -116,10 +116,12 @@ public class DMakeAccountService {
 			vo3.setMemberAgree(memberAgree);
 			
 			if(restauName == null) {
+				vo1.setMemberType("user");
 				sqlSessionTemplate.insert("account.insertUser", vo1);
 				sqlSessionTemplate.insert("account.insertFaver", vo2);
 			}
 			else if(!(restauName == null)) {
+				vo1.setMemberType("owner");
 				sqlSessionTemplate.insert("account.insertUser", vo1);
 				sqlSessionTemplate.insert("account.insertFavee", vo3);
 			}
