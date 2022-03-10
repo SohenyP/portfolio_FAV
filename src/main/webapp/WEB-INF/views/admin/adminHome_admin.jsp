@@ -37,7 +37,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="admin" items="${administrator}">
+						<%-- <c:forEach var="admin" items="${administrator}">
 							<tr>
 								<td><input type="checkbox" name="chkbox" id="" class="chkbox" value="${admin.rowNum}"/></td>
 								<td class="rowNum">${admin.rowNum}</td>
@@ -54,7 +54,7 @@
 									</c:otherwise>
 								</c:choose>
 							</tr>
-						</c:forEach>
+						</c:forEach> --%>
 					</tbody>
 				</table>
 					

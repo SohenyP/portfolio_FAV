@@ -16,21 +16,25 @@
 		<jsp:include page="/WEB-INF/views/admin/adminNav.jsp"></jsp:include>
 		
 		<main>
-			<h1>관리자 관리</h1>
+			<h1>회원 관리</h1>
 			<div class="manageOfAdmin">
 			
-				<button type="submit" id="resetAdmin">회원 삭제</button>	
+				<button type="submit" id="resetAdmin">회원 리셋</button>
+				<button type="button" id="plusAdmin">회원 추가</button>		
+				<button type="button" id="revAdmin">회원 수정</button>		
+				<button type="button" id="reviseAdmin" style="display: none;">회원 수정완료</button>		
+				
 				
 				<table>
 					<thead>
 						<tr>
 							<th>√</th>
 							<th>No.</th>
-							<th>관리자 아이디</th>
-							<th>관리자 비밀번호</th>
-							<th>관리자 이름</th>
-							<th>관리자 이메일</th>
-							<th>관리 권한</th>
+							<th>회원 아이디</th>
+							<th>회원 비밀번호</th>
+							<th>회원 이름</th>
+							<th>회원 이메일</th>
+							<th>회원 권한</th>
 						</tr>
 					</thead>
 					<tbody>
