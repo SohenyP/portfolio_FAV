@@ -157,9 +157,6 @@ body {
 .homeContainer > main > .manageOfAdmin > .tableCont > table>tbody>tr {
 	border: 1px solid #323232; 
 }
-.homeContainer > main > .manageOfAdmin > .tableCont > table>tbody>tr:not(:last-child) {
-	border-bottom: 3px double #323232;
-}
 .homeContainer > main > .manageOfAdmin > .tableCont > table > tbody > tr > td {
 	text-align: center;
 }

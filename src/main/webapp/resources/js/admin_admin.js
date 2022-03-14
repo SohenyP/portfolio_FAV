@@ -9,7 +9,6 @@ function managePerson() {
 	let reviseBtn = document.getElementById("reviseAdmin");
 	let resetBtn = document.getElementById("resetAdmin");
 	//회원 관리
-	let mplusBtn = document.getElementById("plusMem");
 	let mrevBtn = document.getElementById("revMem");
 	let mreviseBtn = document.getElementById("reviseMem");
 	let mresetBtn = document.getElementById("resetMem");
@@ -20,13 +19,12 @@ function managePerson() {
 
 	if (plusBtn) {
 		reset(resetBtn, checkBox, "adminReset");
-		plus(plusBtn, revBtn, resetBtn, tbody, rowNum);
-		revise(revBtn, reviseBtn, resetBtn, plusBtn, checkBox);
+		plus(plusBtn, revBtn, resetBtn, tbody, rowNum, "adminPlus");
+		revise(revBtn, reviseBtn, resetBtn, plusBtn, checkBox, "권한없음", "권한있음",  "adminRevise");
 	}
-	else if (mplusBtn) {
+	else if (mrevBtn) {
 		reset(mresetBtn, checkBox, "memReset");
-		plus(mplusBtn, mrevBtn, mresetBtn, tbody, rowNum);
-		revise(mrevBtn, mreviseBtn, mresetBtn, mplusBtn, checkBox);
+		revise(mrevBtn, mreviseBtn, mresetBtn, "", checkBox, "비동의", "동의", "memRevise");
 	}
 
 
@@ -69,7 +67,7 @@ function managePerson() {
 	}
 
 	//관리자 리스트 추가
-	function plus(plusBtn, revBtn, resetBtn, tbody, rowNum) {
+	function plus(plusBtn, revBtn, resetBtn, tbody, rowNum, url) {
 		let rowCnt = rowNum.length;
 
 		//관리자 추가 클릭시 추가 양식 등장!
@@ -134,7 +132,7 @@ function managePerson() {
 					console.log(newAdmin);
 
 					$.ajax({
-						url: "adminPlus",
+						url: url,
 						type: "POST",
 						data: JSON.stringify(newAdmin),
 						contentType: "application/json; charset=utf-8",
@@ -154,31 +152,34 @@ function managePerson() {
 
 
 	//관리자 정보 수정
-	function revise(revBtn, reviseBtn, resetBtn, plusBtn, checkBox) {
+	function revise(revBtn, reviseBtn, resetBtn, plusBtn, checkBox, opt1, opt2, url) {
 		let arr = new Array();
 		//하나라도 checked된 checkbox있는지 체크 목적!
 		let check = 0;
 
 		//수정 버튼 클릭시 배열로 rowNum 받아가기
 		revBtn.addEventListener("click", function() {
-
+			console.log("checkBox.length : "+checkBox.length);
+			
 			for (let i = 0; i < checkBox.length; i++) {
-
+				console.log("i : "+i);
+				console.log("checkBox[i] "+checkBox[i]);
 				if (checkBox[i].checked) {
-
 					check++;
 					console.log("체크1 : " + check);
 
 					if (check > 0) {
-
+						
+						btnDisabled(resetBtn);
+						if(plusBtn != "") {
+							btnDisabled(plusBtn);
+						}
 						revBtn.style.display = "none";
-						resetBtn.setAttribute("disabled", "disabled");
-						plusBtn.setAttribute("disabled", "disabled");
 						reviseBtn.style.display = "inline";
 
 						let cnt = checkBox[i].parentNode.parentNode.childElementCount;
 
-						console.log(cnt);
+						console.log("cnt : "+cnt);
 
 						for (let j = 2; j < cnt - 1; j++) {
 							let child = checkBox[i].parentNode.parentNode.children[j];
@@ -195,7 +196,7 @@ function managePerson() {
 
 						let auth = checkBox[i].parentNode.parentNode.children[cnt - 1];
 						auth.textContent = "";
-						setSelect(auth);
+						setSelect(auth, opt1, opt2);
 
 					}
 
@@ -227,7 +228,7 @@ function managePerson() {
 					console.log(arr);
 
 					$.ajax({
-						url: "adminRevise",
+						url: url,
 						type: "POST",
 						data: JSON.stringify(arr),
 						dataType: "json",
@@ -246,7 +247,7 @@ function managePerson() {
 
 
 	//관리자 권한 설정 select 만들기
-	function setSelect(td) {
+	function setSelect(td, opt1, opt2) {
 		const select = document.createElement("select");
 		select.setAttribute("id", "auth");
 		select.setAttribute("class", "auth");
@@ -257,10 +258,10 @@ function managePerson() {
 		select.style.fontSize = "17px";
 		const option1 = document.createElement("option");
 		option1.value = "N";
-		option1.innerText = "권한없음";
+		option1.innerText = opt1;
 		const option2 = document.createElement("option");
 		option2.value = "Y";
-		option2.innerText = "권한있음";
+		option2.innerText = opt2;
 
 		select.append(option1);
 		select.append(option2);

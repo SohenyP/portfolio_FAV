@@ -20,10 +20,8 @@
 			<div class="manageOfAdmin">
 
 				<button type="submit" id="resetMem">회원 리셋</button>
-				<button type="button" id="plusMem">회원 추가</button>
 				<button type="button" id="revMem">회원 수정</button>
-				<button type="button" id="reviseMem" style="display: none;">회원
-					수정완료</button>
+				<button type="button" id="reviseMem" style="display: none;">회원 수정완료</button>
 				<input type="text" id="searchMem" placeholder="회원 정보를 입력해주세요">
 
 				<div class="tableCont">
@@ -43,8 +41,7 @@
 						<tbody>
 							<c:forEach var="mem" items="${member}">
 								<tr>
-									<td><input type="checkbox" name="chkbox" id=""
-										class="chkbox" value="${admin.rowNum}" /></td>
+									<td><input type="checkbox" name="chkbox" id="" class="chkbox" value="${mem.rowNum}" /></td>
 									<td class="rowNum">${mem.rowNum}</td>
 									<td>${mem.memberType}</td>
 									<td>${mem.memberId}</td>
