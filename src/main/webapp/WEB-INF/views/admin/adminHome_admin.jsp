@@ -30,20 +30,30 @@
 						<thead>
 							<tr>
 								<th>√</th>
-								<th>No.</th>
-								<th>관리자 아이디</th>
-								<th>관리자 비밀번호</th>
-								<th>관리자 이름</th>
-								<th>관리자 이메일</th>
-								<th>관리 권한</th>
+								<th onclick="sortTable(1)">No.</th>
+								<th onclick="sortTable(2)">관리자 아이디</th>
+								<th onclick="sortTable(3)">관리자 비밀번호</th>
+								<th onclick="sortTable(4)">관리자 이름</th>
+								<th onclick="sortTable(5)">관리자 이메일</th>
+								<th onclick="sortTable(6)">관리 권한</th>
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach var="admin" items="${administrator}">
+							<c:forEach var="admin" items="${administrator}" begin="0" end="0">
 								<tr>
-									<td><input type="checkbox" name="chkbox" id=""
-										class="chkbox" value="${admin.rowNum}" /></td>
-									<td class="rowNum">${admin.rowNum}</td>
+									<td> <input type="checkbox" disabled="disabled"> </td>
+									<td>01</td>
+									<td>${admin.adminId}</td>
+									<td>${admin.adminPw}</td>
+									<td>${admin.adminName}</td>
+									<td>${admin.adminEmail}</td>
+									<td style="color: blue">권한있음</td>
+								</tr>
+							</c:forEach>
+							<c:forEach var="admin" items="${administrator}" begin="1">
+								<tr>
+									<td><input type="checkbox" name="chkbox" id="" class="chkbox inform1" value="${admin.rowNum}" /></td>
+									<td class="rowNum">${(admin.rowNum < 10)? '0'+=admin.rowNum:admin.rowNum}</td>
 									<td>${admin.adminId}</td>
 									<td>${admin.adminPw}</td>
 									<td>${admin.adminName}</td>

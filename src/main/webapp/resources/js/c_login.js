@@ -70,8 +70,7 @@ loginModal();
 //로그인 실패시 알림창 띄우기
 function isItUser() {
 	let user = document.querySelector("#isItUser");
-
-
+	
 	if (user != null) {
 		let userchk = user.value;
 		if (userchk == "NID") {
@@ -79,6 +78,12 @@ function isItUser() {
 		}
 		else if (userchk == "NPW") {
 			alert("비밀번호가 다릅니다.");
+		}
+		else if (userchk == "NMB") {
+			alert("탈퇴한 회원입니다.");
+		}
+		else if (userchk == "BLC") {
+			alert("관리자에 의해 차단된 계정입니다.");
 		}
 	}
 

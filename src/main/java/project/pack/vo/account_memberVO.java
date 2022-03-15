@@ -3,13 +3,13 @@ package project.pack.vo;
 public class account_memberVO {
 
 	String rowNum;
+	String memberType;
 	String memberId;
 	String memberPw;
 	String memberName;
 	String memberEmail;
 	String memberContact;
 	String memberAgree;
-	String memberType;
 	String joinDate;
 	
 	public account_memberVO() {
@@ -17,17 +17,17 @@ public class account_memberVO {
 	}
 	
 
-	public account_memberVO(String rowNum, String memberId, String memberPw, String memberName, String memberEmail,
-			String memberContact, String memberAgree, String memberType, String joinDate) {
+	public account_memberVO(String rowNum, String memberType, String memberId, String memberPw, String memberName, String memberEmail,
+			String memberContact, String memberAgree, String joinDate) {
 		super();
 		this.rowNum = rowNum;
+		this.memberType = memberType;
 		this.memberId = memberId;
 		this.memberPw = memberPw;
 		this.memberName = memberName;
 		this.memberEmail = memberEmail;
 		this.memberContact = memberContact;
 		this.memberAgree = memberAgree;
-		this.memberType = memberType;
 		this.joinDate = joinDate;
 	}
 
@@ -39,7 +39,12 @@ public class account_memberVO {
 	public void setRowNum(String rowNum) {
 		this.rowNum = rowNum;
 	}
-
+	public String getMemberType() {
+		return memberType;
+	}
+	public void setMemberType(String memberType) {
+		this.memberType = memberType;
+	}
 
 	public String getMemberId() {
 		return memberId;
@@ -88,15 +93,7 @@ public class account_memberVO {
 	public void setMemberAgree(String memberAgree) {
 		this.memberAgree = memberAgree;
 	}
-	public String getMemberType() {
-		return memberType;
-	}
-
-
-	public void setMemberType(String memberType) {
-		this.memberType = memberType;
-	}
-
+	
 
 	public String getJoinDate() {
 		return joinDate;

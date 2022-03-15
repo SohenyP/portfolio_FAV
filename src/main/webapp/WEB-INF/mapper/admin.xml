@@ -31,16 +31,16 @@
 	</delete>
 	
 	<!-- 관리자 수정 -->
-	<delete id="updateAdmin" parameterType="adminVO">
+	<update id="updateAdmin" parameterType="adminVO">
 		UPDATE account_admin
 		SET adminId = #{adminId}, adminPw = #{adminPw}, adminName = #{adminName}, adminEmail = #{adminEmail}, assigned = #{assigned}
 		WHERE rowNum = #{rowNum}
-	</delete>
+	</update>
 	
 	
 	<!-- 회원 정보 -->
 	<select id="selectMem" parameterType="memberVO" resultType="memberVO">
-		SELECT rowNum, memberId, memberPw, memberName, memberEmail, memberAgree, memberType
+		SELECT rowNum, memberId, memberPw, memberName, memberEmail, memberContact, memberAgree, memberType
 		FROM account_member
 		<where>
 			<if test="adminId != null">memberId = #{memberId}</if>
@@ -48,20 +48,19 @@
 		</where>
 	</select>
 	
-	<!-- 회원 삭제 -->
-	<delete id="deleteMem" parameterType="int">
-		UPDATE account_admin
-		SET memberPw = "null", memberName = "사용가능", memberEmail = "사용가능"
-		WHERE rowNum = #{rowNum}
-	</delete>
-	
 	<!-- 회원 수정 -->
-	<delete id="updateMem" parameterType="memberVO">
-		UPDATE account_admin
-		SET memberId = #{adminImemberIdd}, memberPw = #{memberPw}, memberName = #{memberName}, memberEmail = #{memberEmail}, memberType = #{memberType}
+	<update id="updateMem" parameterType="memberVO">
+		UPDATE account_member
+		SET memberType = #{memberType}, memberId = #{memberId}, memberPw = #{memberPw}, memberName = #{memberName}, memberEmail = #{memberEmail}, memberContact = #{memberContact}, memberAgree = #{memberAgree}
+		WHERE rowNum = #{rowNum}
+	</update>
+	
+	<!-- 회원 차단 -->
+	<delete id="deleteMem" parameterType="int">
+		UPDATE account_member
+		SET memberType = "blocked"
 		WHERE rowNum = #{rowNum}
 	</delete>
-	
 	
 
 </mapper>

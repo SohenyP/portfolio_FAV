@@ -9,7 +9,7 @@
 
 	<!-- c_login 로그인, 아이디찾기, 비번찾기 활용 -->
 	<select id="selectMember" parameterType="memberVO" resultType="memberVO">
-		SELECT memberId, memberPw, memberName, memberEmail, memberContact, memberAgree, joinDate 
+		SELECT memberId, memberPw, memberName, memberEmail, memberContact, memberAgree, memberType, joinDate 
 		FROM account_member
 		<where>
 			<if test="memberId!=null">
@@ -48,7 +48,9 @@
   		
 	<!-- 회원탈퇴 -->
 	<delete id="deleteMember" parameterType="String">
-		UPDATE account_member SET memberPw = NULL WHERE memberId = #{memberId}
+		UPDATE account_member 
+		SET memberPw = NULL 
+		WHERE memberId = #{memberId}
 	</delete>
 	
 

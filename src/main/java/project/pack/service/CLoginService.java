@@ -38,14 +38,27 @@ public class CLoginService {
 				String savedId = savedInform.getMemberId();
 				String savedPw = savedInform.getMemberPw();
 				
+				//로그인 성공
 				if (writtenId.equals(savedId) && writtenPw.equals(savedPw)) {
 					session.setAttribute("account", savedInform);
 					System.out.println(session.getAttribute("account"));
 					path = "b_home";
 					
-				} else if (writtenId.equals(savedId) && !(writtenPw.equals(savedPw))) {
+				} 
+				//비밀번호 불일치
+				else if (writtenId.equals(savedId) && !(writtenPw.equals(savedPw))) {
 					path = "c_login";
 					isItUser = "NPW";
+				}
+				//탈퇴한 회원
+				else if (writtenId.equals(savedId) && (writtenPw.equals(null))) {
+					path = "c_login";
+					isItUser = "NMB";
+				}
+				//차단된 회원 : memberType이 blocked
+				else if (writtenId.equals(savedId) && writtenPw.equals(savedPw) && memberVO.getMemberType().equals("blocked")) {
+					path = "c_login";
+					isItUser = "BLC";
 				}
 			}
 
