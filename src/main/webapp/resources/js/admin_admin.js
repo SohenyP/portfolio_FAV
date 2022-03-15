@@ -358,12 +358,31 @@ function sortTable(n) {
 //회원 검색
 function search() {
 
-	$("#searchMem").on('change keyup paste', function() {
+	//JQ.ver
+	/*$("#searchMem").on('change keyup paste', function() {
 		var currentVal = $.trim($(this).val());
 		console.log(currentVal);
 		$('table > tbody > tr').hide();
 		var temp = $('table tbody tr td:contains("' + currentVal + '")');
 		$(temp).parent().show();
+	});*/
+
+	//JS.ver
+	const ipt = document.querySelector("#searchMem");
+	let trs = document.querySelectorAll("table tbody tr");
+
+	ipt.addEventListener("keyup", function() {
+		let text = ipt.value;
+		for (let tr of trs) {
+			tr.style.display = "none";
+		}
+
+		let show = document.querySelectorAll("table tbody tr td");
+		for (let j = 0; j < show.length; j++) {
+			if (show[j].textContent.includes(text)) {
+				show[j].parentElement.style.display = "";
+			}
+		}
 	});
-	
+
 } search();

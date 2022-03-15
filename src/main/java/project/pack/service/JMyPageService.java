@@ -122,6 +122,7 @@ public class JMyPageService {
 				
 				//회원 1:1문의글 가져오기
 				account_bbsVO getAskList = new account_bbsVO();
+				getAskList.setIsdelete("N");
 				getAskList.setMemberId(vo.getMemberId());
 				getQnaBbs(getAskList, model);
 				

@@ -77,5 +77,11 @@ public class AdminService {
 
 		sqlSessionTemplate.update("admin.deleteMem", chk);
 	}
+	
+	//문의 리스트 추출
+	public void selectAskList(Model model) {
+		model.addAttribute("ask", sqlSessionTemplate.selectList("admin.selectAsk"));
+		
+	}
 
 }

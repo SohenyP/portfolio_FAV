@@ -88,11 +88,13 @@
 	<select id="selectBbs" parameterType="accountbbsVO" resultType="accountbbsVO">
 		SELECT rowNum, memberId, bullet, title, content, status, createdate, isdelete
 		FROM account_bbs
-		WHERE isdelete = 'N'
+		<where>
+			<if test="isdelete != null">isdelete = #{isdelete}</if>
 			<if test="memberId != null">AND memberId = #{memberId}</if>
 			<if test="bullet != null">AND bullet = #{bullet}</if>
 			<if test="status != null">AND status = #{status}</if>
 			<if test="rowNum != 0 or rowNum != ''">AND rowNum = #{rowNum}</if>
+		</where>
 	</select>
 	
 	<!-- 1:1문의 게시글 수정으로 가져오기 -->

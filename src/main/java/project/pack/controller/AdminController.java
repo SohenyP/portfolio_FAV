@@ -148,7 +148,10 @@ public class AdminController {
 
 	// 문의 관리 이동
 	@GetMapping("/manageAsk")
-	public String manageAsk() {
+	public String manageAsk(Model model) {
+		
+		service.selectAskList(model);
+		
 		return "admin/adminHome_ask";
 	}
 

@@ -62,5 +62,19 @@
 		WHERE rowNum = #{rowNum}
 	</delete>
 	
+	<!-- 문의 게시글 가져오기 -->
+	<select id="selectAsk" parameterType="accountbbsVO" resultType="accountbbsVO">
+		SELECT rowNum, memberId, bullet, title, content, status, createdate, isdelete
+		FROM account_bbs
+		<where>
+			<if test="isdelete != null">isdelete = #{isdelete}</if>
+			<if test="memberId != null">AND memberId = #{memberId}</if>
+			<if test="bullet != null">AND bullet = #{bullet}</if>
+			<if test="status != null">AND status = #{status}</if>
+		</where>
+	</select>
+	
+	
+	
 
 </mapper>
