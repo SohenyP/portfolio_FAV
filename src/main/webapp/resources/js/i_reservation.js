@@ -79,7 +79,7 @@ function setDateTime() {
 	//날짜 및 시간 설정
 	if (reserveDate) {
 		
-		if(hour >= 7 && hour <= 18) {
+		if(hour >= 7 && hour < 18) {
 			console.log("당일예약가능");
 			setTime();
 			setDate(now, nowMax);
@@ -88,7 +88,10 @@ function setDateTime() {
 		else {
 			console.log("당일예약불가");
 			setDate(tommorrow, tmrMax);
-			blockTime(hour);
+			//다음날 부터 예약 가능할 때는 아침 7부터 예약 가능
+			if(hour < 8) {
+				blockTime(hour);
+			}
 		}
 		
 	}

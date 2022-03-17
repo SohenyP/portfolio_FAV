@@ -48,7 +48,7 @@
 								</ul>
 								<ul id="afterLogin" class="userMenu">
 									<li><a href="myPage">마이페이지</a></li>
-									<li><a href="logout?path=restaurent">로그아웃</a></li>
+									<li><a href="logout?path=restaurent" id="logout">로그아웃</a></li>
 								</ul>
 						</i></li>
 					</ul>
@@ -263,7 +263,8 @@
 							let n = params.get("n"); */
 							let n = `${n}`;
 							console.log(n);
-
+							
+							//필터로 타고 들어오기
 							function filter() {
 								//지역명 버튼의 지역명과 같은 name을 가진 배열 인덱스 넘버 찾기
 								const findCity = locationsName.findIndex((location) => location.name == filterBtns[i].innerText);
@@ -291,7 +292,7 @@
 								}
 							}
 
-
+							//Home에서 지역 타고 들어오기
 							function filter1(n) {
 								//지역명 버튼의 지역명과 같은 name을 가진 배열 인덱스 넘버 찾기
 								const findCity = locationsName.findIndex((location) => location.name == n);
@@ -337,25 +338,25 @@
 						<p>도시</p>
 						<div class="city-choice">
 							<input type="radio" name="city" id="city1" value="city1"> 
-							<label for="style1" class="cityName">서울</label> 
+							<label for="city1" class="cityName">서울</label> 
 							<input type="radio" name="city" id="city2" value="city2"> 
-							<label for="style2" class="cityName">경기</label> 
+							<label for="city2" class="cityName">경기</label> 
 							<input type="radio" name="city" id="city3" value="city3"> 
-							<label for="style3" class="cityName">청주</label> 
+							<label for="city3" class="cityName">청주</label> 
 							<input type="radio" name="city" id="city4" value="city4"> 
-							<label for="style4" class="cityName">대전</label> 
+							<label for="city4" class="cityName">대전</label> 
 							<input type="radio" name="city" id="city5" value="city5"> 
-							<label for="style5" class="cityName">강원</label> 
+							<label for="city5" class="cityName">강원</label> 
 							<input type="radio" name="city" id="city6" value="city6"> 
-							<label for="style6" class="cityName">전주</label>
+							<label for="city6" class="cityName">전주</label>
 							<input type="radio" name="city" id="city7" value="city7"> 
-							<label for="style7" class="cityName">제주</label> 
+							<label for="city7" class="cityName">제주</label> 
 							<input type="radio" name="city" id="city8" value="city8"> 
-							<label for="style8" class="cityName">포항</label> 
+							<label for="city8" class="cityName">포항</label> 
 							<input type="radio" name="city" id="city9" value="city9"> 
-							<label for="style9" class="cityName">부산</label> 
+							<label for="city9" class="cityName">부산</label> 
 							<input type="radio" name="city" id="city10" value="city10"> 
-							<label for="style10" class="cityName">여수</label>
+							<label for="city10" class="cityName">여수</label>
 						</div>
 				</div>
 				<button id="restaurentModalBtn">확인</button>

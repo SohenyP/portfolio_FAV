@@ -52,7 +52,7 @@
 								</ul>
 								<ul id="afterLogin" class="userMenu">
 									<li><a href="myPage">마이페이지</a></li>
-									<li><a href="logout?path=home">로그아웃</a></li>
+									<li><a href="logout?path=home" id="logout">로그아웃</a></li>
 								</ul>
 						</i></li>
 					</ul>

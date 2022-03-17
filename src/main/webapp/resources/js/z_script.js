@@ -125,7 +125,15 @@ function userMenu() {
 } userMenu();
 
 
-
+//로그아웃 후 이동 path 설정
+function setPath() {
+	const logout = document.querySelector("#logout");
+	let path = location.pathname;
+	let goTo = path.split('/')[2];
+	
+	logout.href = "logout?path="+goTo;
+	
+}setPath();
 
 
 

@@ -64,6 +64,7 @@ public class CLoginService {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			//예외페이지 만들기
 		}
 
 		model.addAttribute("isItUser", isItUser);

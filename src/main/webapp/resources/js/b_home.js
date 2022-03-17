@@ -140,6 +140,7 @@ function festivalRandom() {
 	if (img1 && img2) {
 		// 난수 추출
 		function numberRandom() {
+			//Math.round(Math.random() * ((max-min+1)+min))
 			let num = Math.round(Math.random() * 2 + 1);
 			return num;
 		}
