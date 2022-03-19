@@ -17,8 +17,7 @@
 ## 📢Introduction
 > - 한국 채식비건협회에 따르면 국내 채식 선호 인구는 약 250만 명([첨부1](#첨부1))
 > - 국내 대형유통가 중심 채식 열풍까지 불어 성장 가능성 있는 시장으로 평가 ([첨부1](#첨부1))
-> - 네덜란드 웨트레흐트대 '코페르니쿠스 지속가능발전연구소' 보고서에 따르면 소 1kg 육류 생산시 단계별 최대 2227톤(MtCO2) 발생
-> - 극단적 채식은 영양소 불균형을 초래
+> - '코페르니쿠스 지속가능발전연구소' 보고서, 소 1kg 육류 생산시 단계별 최대 2227톤(MtCO2) 발생 ([첨부2](#첨부2))
 #
 ## 🎯Goal
 > - #### 채식 시도 증가로 온실가스 절감 효과 기대
@@ -298,7 +297,4 @@
 [250만 비건 인구 잡아라...쏟아지는 비건 식품들](https://www.mk.co.kr/news/business/view/2021/12/1222746/)
         
 #### 첨부2        
-<img src="https://user-images.githubusercontent.com/88533162/158519441-372c7ae9-0ca5-4d53-9047-6b2a394193c4.png" style="width: 300px; height: 250px;">
-        
-#### 첨부3
-<img src="https://user-images.githubusercontent.com/88533162/158519623-c8f37cb2-9d31-4fda-b4b4-468719d90670.png" style="width: 300px; height: 250px;">
+[지구를 위한 작은 움직임의 시작…‘간헐적 채식’](https://thepublic.kr/news/newsview.php?ncode=1065576144791731)
