@@ -126,21 +126,7 @@
 								<td>${rsv.restauName}</td>
 								<td>${rsv.reservationDate}</td>
 								<td>${rsv.personnel}명</td>
-								<c:choose>
-									<c:when test='${rsv.status == "결제완료"}'>
-										<td>${rsv.status}</td>
-									</c:when>
-									<c:otherwise>
-										<td>
-											<input type="hidden" name="memberName${i}" id="memberName${i}" value="${rsv.memberName}" />
-											<input type="hidden"  name="restauName${i}" id="restauName${i}" value="${rsv.restauName}" />
-											<input type="hidden"  name="reservationDate${i}" id="reservationDate${i}" value="${rsv.reservationDate}" />
-											<input type="hidden"  name="personnel${i}" id="personnel${i}" value="${rsv.personnel}" />
-											<input type="hidden"  name="charge${i}" id="charge${i}" value="${rsv.charge}" />
-											<input type="hidden"  name="reservationNum${i}" id="reservationNum${i}" value="${rsv.reservationNum}" />
-										</td>
-									</c:otherwise>
-								</c:choose>
+								<td>${rsv.status}</td>
 							</tr>
 						</c:forEach>
 						</tbody>

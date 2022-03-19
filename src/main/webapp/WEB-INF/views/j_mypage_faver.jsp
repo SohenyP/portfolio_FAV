@@ -127,19 +127,17 @@
 								<td>${i}</td>
 								<td class="reserveNumTd">${rsv.reservationNum}</td>
 								<td>${rsv.memberName}</td>
-								<td>${rsv.restauName}</td>
+								<td class="restauName">${rsv.restauName}</td>
 								<td>${rsv.reservationDate}</td>
 								<td>${rsv.personnel}명</td>
 								<c:choose>
 									<c:when test='${rsv.status == "결제완료"}'>
 										<td>${rsv.status}</td>
-										<input type="hidden"  name="restauName${i}" class="restauName" value="${rsv.restauName}" />
 										<input type="hidden"  name="charge${i}" class="charge" value="${rsv.charge}" />
 									</c:when>
 									<c:otherwise>
 										<td>
 											<button type="button" class="payment" onclick="payment(${i})">결제하기</button>
-											<input type="hidden"  name="restauName${i}" class="restauName" value="${rsv.restauName}" />
 											<input type="hidden"  name="charge${i}" class="charge" value="${rsv.charge}" />
 										</td>
 									</c:otherwise>
@@ -212,11 +210,14 @@
 	<script type="text/javascript">
 		
 	function payment(i) {
-		console.log(i);
 		
-		let $name = $(`.restauName`).eq(i-1).val();
+		let $name = $(`.restauName`).eq(i-1).text();
 		let $charge = $(`.charge`).eq(i-1).val();
+		let $reservationNum = $(`.reserveNumTd`).eq(i-1).text();
+		console.log(i);
+		console.log($name);
 		console.log($charge);
+		console.log($reservationNum);
 
 				var IMP = window.IMP; // 생략가능
 				IMP.init('imp23364357');
@@ -272,8 +273,6 @@
 							var msg = '결제가 완료되었습니다!';
 							//msg += '고유ID : ' + rsp.imp_uid+'<br />'; 
 							//msg += '상점 거래ID : ' + rsp.merchant_uid+'<br />';
-							msg += '결제 금액 : ' + rsp.paid_amount+'<br />';
-							msg += '결 승인번호 : ' + rsp.apply_num+'<br />';
 
 						location.href = "${pageContext.request.contextPath}/paymentDone?status=결제완료&reservationNum="+$reservationNum;
 

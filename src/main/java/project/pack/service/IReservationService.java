@@ -115,6 +115,8 @@ public class IReservationService {
 	
 	//결제 상태 변경
 	public void updateStatus(String status, String reservationNum, account_reservationVO vo) {
+		System.out.println("num : "+reservationNum);
+		System.out.println("status : "+status);
 		
 		vo.setReservationNum(reservationNum);
 		vo.setStatus(status);

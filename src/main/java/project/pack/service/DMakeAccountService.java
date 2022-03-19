@@ -115,18 +115,17 @@ public class DMakeAccountService {
 			vo3.setRestauAddr(restauAddr);
 			vo3.setMemberAgree(memberAgree);
 			
-			if(restauName == null) {
+			if(restauName.equals("")) {
 				vo1.setMemberType("user");
 				sqlSessionTemplate.insert("account.insertUser", vo1);
 				sqlSessionTemplate.insert("account.insertFaver", vo2);
 			}
-			else if(!(restauName == null)) {
+			else if(!(restauName.equals(""))) {
 				vo1.setMemberType("owner");
 				sqlSessionTemplate.insert("account.insertUser", vo1);
 				sqlSessionTemplate.insert("account.insertFavee", vo3);
 			}
 
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();

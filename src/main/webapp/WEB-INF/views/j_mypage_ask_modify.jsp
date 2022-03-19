@@ -66,15 +66,6 @@
 				<!-- 게시글 리스트 -->
 				<div class="qnaList" id="qnaList1">
 					<table>
-						<thead>
-							<tr>
-								<th>No.</th>
-								<th>구분</th>
-								<th>제목</th>
-								<th>작성일</th>
-								<th>답변상태</th>
-							</tr>
-						</thead>
 						<c:forEach var="qna" items="${qnaList}">
 							<c:set var="e" value="${e+1}"></c:set>
 							<tbody class="list">

@@ -45,7 +45,7 @@
                                     <th>날짜 / 시간</th>
                                     <td>
                                     	<input type="text" name="reservedDate" id="reservedDate" value="${param.reservationDate}" readonly="readonly">
-                                    	<input type="text" name="reservedTime" id="reservedTime" value="${(param.reservationTime < 12)? '오전 '+= param.reservationTime-12+=':00':'오후 '+=param.reservationTime-12+=':00'}" readonly="readonly">
+                                    	<input type="text" name="reservedTime" id="reservedTime" value="${(param.reservationTime < 12)? '오전 '+= param.reservationTime+=':00':'오후 '+=param.reservationTime-12+=':00'}" readonly="readonly">
                                     </td>
                                 </tr>
                                 <tr>

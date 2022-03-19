@@ -3,6 +3,8 @@ package project.pack.service;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -204,10 +206,10 @@ public class JMyPageService {
 		String alertMSG = "";
 		
 		//잔여 예약 확인
-		account_reservationVO result = sqlSessionTemplate.selectOne("reservation.selectReservationList", vo);
-		System.out.println("잔여예약체크 :"+result);
+		List<account_reservationVO> result = new ArrayList<account_reservationVO>();
+		result = sqlSessionTemplate.selectList("reservation.selectReservationList", vo);
 		
-		if(result == null) {
+		if(result.size() < 1) {
 			alertMSG = "탈퇴가능";
 		}
 		else {
@@ -235,19 +237,19 @@ public class JMyPageService {
 			account_reservationVO vo1 = new account_reservationVO();
 			if(isFaver == null) {
 				vo1.setMemberOid(vo.getMemberId());
-				System.out.println(vo1.getMemberOid());
+				System.out.println("점 : "+vo1.getMemberOid());
 			}
 			else if(isFaver != null) {
 				vo1.setMemberBid(vo.getMemberId());
-				System.out.println(vo1.getMemberBid());
+				System.out.println("횐 : "+vo1.getMemberBid());
 			}
 			
 			//today ~ today+14 사이 예약 존재시 탈퇴 불가
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 			String today = LocalDate.now(ZoneId.of("Asia/Seoul")).format(formatter);
 			String last = LocalDate.now(ZoneId.of("Asia/Seoul")).plusDays(14).format(formatter);
-			System.out.println(today);
-			System.out.println(last);
+			//System.out.println(today);
+			//System.out.println(last);
 			
 			vo1.setReservationDate(today);
 			vo1.setReservationDate2(last);
