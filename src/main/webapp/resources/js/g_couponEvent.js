@@ -2,6 +2,7 @@
  * 
  */
 
+//쿠폰받기 클릭 시 로그인 여부 확인
 function getCouponBtn() {
 
 	const form = document.getElementById("couponForm");
@@ -25,6 +26,7 @@ function getCouponBtn() {
 
 } getCouponBtn();
 
+//쿠폰 획득 후 메세지
 function afterGettingCoupon() {
 	
 	
@@ -35,3 +37,4 @@ function afterGettingCoupon() {
 	}
 
 } afterGettingCoupon();
+

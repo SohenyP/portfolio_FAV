@@ -358,3 +358,12 @@ function execDaumPostcode() {
 		},
 	}).open();
 }
+
+//뒤로가기 금지
+function blockBackward() {
+	window.history.forward();
+	noBack();
+	function noBack() {
+		window.history.forward();
+	}
+}blockBackward();

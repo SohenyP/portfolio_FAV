@@ -70,7 +70,7 @@ loginModal();
 //로그인 실패시 알림창 띄우기
 function isItUser() {
 	let user = document.querySelector("#isItUser");
-	
+
 	if (user != null) {
 		let userchk = user.value;
 		if (userchk == "NID") {
@@ -175,6 +175,7 @@ function findIdsetAddress() {
 		});
 	}
 } findIdsetAddress();
+
 
 
 

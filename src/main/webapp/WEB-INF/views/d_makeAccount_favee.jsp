@@ -214,6 +214,7 @@
 	
 	<jsp:include page="/WEB-INF/views/layout/mobileBar.jsp"/>
 	
+	<script type="text/javascript" src="js/z_backward.js"></script>
 	<script src="js/d_makeAccount.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script src="js/z_script.js"></script>

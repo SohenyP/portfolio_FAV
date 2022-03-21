@@ -102,7 +102,7 @@ function userMenu() {
 		userMenu.style.display = "none";
 	}
 	userIcon.addEventListener("mouseover", function() {
-		
+
 		if (memId.value) {
 			afterMenu.style.display = "block";
 		}
@@ -111,8 +111,8 @@ function userMenu() {
 		}
 
 	});
-	
-	userIcon.addEventListener("mouseout", function(){
+
+	userIcon.addEventListener("mouseout", function() {
 		if (memId.value) {
 			afterMenu.style.display = "none";
 		}
@@ -130,11 +130,10 @@ function setPath() {
 	const logout = document.querySelector("#logout");
 	let path = location.pathname;
 	let goTo = path.split('/')[2];
-	
-	logout.href = "logout?path="+goTo;
-	
-}setPath();
 
+	logout.href = "logout?path=" + goTo;
+
+} setPath();
 
 
 

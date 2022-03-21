@@ -138,6 +138,7 @@
     
 	<jsp:include page="/WEB-INF/views/layout/mobileBar.jsp"/>
 	
+	<script type="text/javascript" src="js/z_backward.js"></script>
     <script type="text/javascript" src="js/z_script.js"></script>
     <script type="text/javascript" src="js/i_reservation.js"></script>
 </body>
