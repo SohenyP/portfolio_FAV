@@ -18,7 +18,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-3.6.0.min.js"></script>
 </head>
 
-<body>
+<script type="text/javascript" src="js/z_backward.js"></script>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
     <div class="container">
 		
 		<jsp:include page="/WEB-INF/views/layout/header.jsp"/>

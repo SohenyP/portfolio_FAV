@@ -12,7 +12,8 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 
-<body>
+<script type="text/javascript" src="js/z_backward.js"></script>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
     <div class="container">
 		
 		<jsp:include page="/WEB-INF/views/layout/header.jsp"/>

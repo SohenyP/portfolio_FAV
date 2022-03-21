@@ -130,9 +130,19 @@ function setPath() {
 	const logout = document.querySelector("#logout");
 	let path = location.pathname;
 	let goTo = path.split('/')[2];
+	let search = location.search;
 
-	if(goTo )
-	logout.href = "logout?path=" + goTo;
+	if (goTo == "myPage") {
+		logout.href = "logout?path=home";
+	}
+	else if (search != "") {
+		let num = search.split('=')[1];
+		logout.href = "logout?path=coupon&rowNum=" + num;	
+	}
+	else {
+		logout.href = "logout?path=" + goTo;	
+	}
+	
 
 } setPath();
 

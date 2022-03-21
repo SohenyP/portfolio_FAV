@@ -41,17 +41,26 @@ public class CLoginController {
 
 	//로그아웃
 	@RequestMapping(value = "/logout")
-	public String logout(HttpServletRequest request, @RequestParam String path, @RequestParam(defaultValue = "") String rowNum) {
+	public String logout(
+			HttpServletRequest request, 
+			@RequestParam String path, 
+			@RequestParam(defaultValue = "") String rowNum) {
 
 		HttpSession session = request.getSession();
 		service.initLoginSession(session);
 		
 		System.out.println("path:"+path);
 		
+		String finalPath = "";
+		
 		if(rowNum != "") {
-			return "redirect:/"+path+"?rowNum="+rowNum;
+			finalPath = "redirect:/"+path+"?rowNum="+rowNum;
 		}
-		return "redirect:/"+path;
+		else if(rowNum == "") {
+			finalPath = "redirect:/"+path;	
+		}
+		
+		return finalPath;
 	}
 	
 	

@@ -18,7 +18,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-3.6.0.min.js"></script>
 </head>
 
-<body>
+<script type="text/javascript" src="js/z_backward.js"></script>
+<body onload="noBack();" onpageshow="if(event.persisted) noBack();" onunload="">
     <div class="container">
 		
 		<jsp:include page="/WEB-INF/views/layout/header.jsp"/>
@@ -166,7 +167,6 @@
 	</script>
 	
 	
-	<script type="text/javascript" src="js/z_backward.js"></script>
     <script type="text/javascript" src="js/z_script.js"></script>
     <script type="text/javascript" src="js/i_reservation.js"></script>
 </body>
