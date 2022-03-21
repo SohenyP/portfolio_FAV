@@ -131,6 +131,7 @@ function setPath() {
 	let path = location.pathname;
 	let goTo = path.split('/')[2];
 
+	if(goTo )
 	logout.href = "logout?path=" + goTo;
 
 } setPath();
