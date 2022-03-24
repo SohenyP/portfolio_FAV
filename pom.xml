@@ -4,7 +4,7 @@
   <artifactId>PrjA_Fav_SPR_XML</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-    <!-- 소스의 디렉토리 구조, 빌드 산출물 디렉토리 구조, 빌드시 사용할 플러긴 정보 관리 -->
+   <!-- 소스의 디렉토리 구조, 빌드 산출물 디렉토리 구조, 빌드시 사용할 플러긴 정보 관리 -->
   <build>
   	<!-- sourceDirectory : 자바 소스 코드를 관리하는 디렉토리 -->
   	<sourceDirectory>src/main/java</sourceDirectory>

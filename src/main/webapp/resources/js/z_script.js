@@ -142,7 +142,6 @@ function setPath() {
 	else {
 		logout.href = "logout?path=" + goTo;	
 	}
-	
 
 } setPath();
 
